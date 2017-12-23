@@ -1,5 +1,7 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import { Logo } from './icon';
 
 
 /**
@@ -26,12 +28,6 @@ const Page = ({
 		<div className="wrapper">
 			{ header }
 			<main>
-				<svg className="cuttlebelle" role="img" title="The Cuttlebelle logo">
-					<title>Cuttlebelle log</title>
-					<desc>A cute cuttlefish as the logo for cuttlebelle</desc>
-					<use xlinkHref={ _relativeURL( '/code/assets/svg/map.svg#cuttlebelle', _ID ) }/>
-				</svg>
-
 				{ main }
 			</main>
 			{ footer }
@@ -41,7 +37,6 @@ const Page = ({
 	</body>
  </html>
 );
-
 
 Page.propTypes = {
 	/**
@@ -65,8 +60,6 @@ Page.propTypes = {
 	footer: PropTypes.node,
 };
 
-
 Page.defaultProps = {};
-
 
 export default Page;

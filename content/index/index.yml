@@ -1,3 +1,4 @@
 title: Homepage
 main:
+  - header.md
   - main.md

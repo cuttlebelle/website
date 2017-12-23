@@ -11,7 +11,6 @@ const Partial = ({ _body }) => (
 	<div className="body">{ _body }</div>
 );
 
-
 Partial.propTypes = {
 	/**
 	 * _body: (partials)(4)
@@ -19,8 +18,6 @@ Partial.propTypes = {
 	_body: PropTypes.node.isRequired,
 };
 
-
 Partial.defaultProps = {};
-
 
 export default Partial;
