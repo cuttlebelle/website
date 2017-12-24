@@ -1,10 +1,10 @@
 ---
 layout: navigation/nav
 links:
-  - name: What is Cuttlebelle
+  - name: Home
     link: /
   - name: Docs
-    link: /docs
+    link: /documentation
   - name: CheatSheet
     link: /cheatsheet
   - name: Contribute

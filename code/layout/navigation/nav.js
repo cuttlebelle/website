@@ -29,10 +29,12 @@ const Nav = ({ links, _relativeURL, _ID }) => (
 						}>
 							{
 								link.name === 'GitHub'
-									? <Github className="nav__link__github" title="GitHub" desc="The GitHub logo" />
-									: null
+									? <span>
+											<Github className="nav__link__github" title="GitHub" desc="The GitHub logo" />
+											<span className="nav__link__github__text">{ link.name }</span>
+										</span>
+									: link.name
 							}
-							{ link.name }
 						</a>
 					</li>
 				))
