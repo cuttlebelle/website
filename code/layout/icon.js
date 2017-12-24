@@ -1,5 +1,24 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+
+
+/**
+ * All icons as individual exports
+ *
+ * @disable-docs
+ */
+export const Github = ({ title, desc, ...attribute }) => (
+	<svg role="img" title={ title } viewBox="0 0 32.6 31.8" { ...attribute }>
+		<title>{ title }</title>
+		<desc>{ desc }</desc>
+		<path fillRule="evenodd" clipRule="evenodd" fill="#191717" d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5
+			c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+			c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+			C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+			c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+			c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
+	</svg>
+);
 
 
 export const Logo = ({ title, desc, ...attribute }) => (
@@ -31,7 +50,7 @@ export const Logo = ({ title, desc, ...attribute }) => (
 			c9.3,0,18.6-1.1,27.4-3.4c3.9-1,8.1-2.3,11.8-5c1.6-1.1,5.3-3.8,4.9-8.2c-0.3-2.5-1.8-4.6-4.1-5.6c-37.3-16.5-46.2-42.2-28.9-83.5
 			c9.2-22,11.6-42.3,12.1-54c1.5,1.2,3.1,2.3,4.7,3.6c3.6,2.8,7.4,5.7,11.3,8.4c22.7,15.7,50.3,23.8,77.8,23.8c19.3,0,38.6-4,56.2-12
 			c15.9-7.3,29-17,38.8-28.8c8.4-10.1,14.3-21.9,17-33.9c0.1-0.4,0.2-0.8,0.3-1.3C771.6,591.6,773.8,582.5,768.1,577.8z"/>
-		<path class="logo-shadow" fill="#007766" d="M577.2,299.8l0.3,0c15.7-0.7,31.4-11.1,37.5-24.7c6.7-14.9,1.7-33.9-11.2-42.3c-2.5-1.6-5.1-3-7.9-4.5
+		<path className="logo-shadow" fill="#007766" d="M577.2,299.8l0.3,0c15.7-0.7,31.4-11.1,37.5-24.7c6.7-14.9,1.7-33.9-11.2-42.3c-2.5-1.6-5.1-3-7.9-4.5
 			c-3.2-1.7-6.5-3.5-9.8-5.7c-8-5.4-13.2-12.2-14.9-19.5c-1.9-8,0.8-14.6,3.1-20.5l0.1-0.2c2.1-5.2,2.9-10.6,2.4-15.6
 			c-0.6-6.5-3.6-12.4-8.1-16.2c-4.4-3.6-10.7-5.8-18.9-6.4c-1.5-0.1-3-0.2-4.7-0.2c-7.1-0.3-15.2-0.6-22.4-5.8
 			c-6.9-5-10.3-12.7-12.3-18c-0.7-2-1.4-4.2-2-6.2c-1.8-5.8-3.7-11.7-7.2-15.2c-3.7-3.7-10-8-18.6-7.4c-9.1,0.6-21.4-0.5-28.8-5.5
@@ -53,89 +72,89 @@ export const Logo = ({ title, desc, ...attribute }) => (
 			c20.2,0,27.7,14.2,27.7,52.2c0,0.7,0,1.4,0,2.1c-5.1-13.9-16-23.5-26.9-23.5c-12.3,0-24.5,12.2-28.6,28.9c-0.1-2.5-0.2-5-0.2-7.5
 			C477.4,364.5,482.3,336.1,505.4,336.1z"/>
 		<path fill="#B2E1D8" d="M433,532.7c0,0-6.1,10.2-15.6,9.1C409.2,540.8,410.1,529.3,433,532.7z"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="227.6" cy="260.4" r="8"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="249.1" cy="262.9" r="3.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="293.1" cy="235.9" r="9.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="274.6" cy="259.4" r="5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="277.1" cy="202.9" r="9.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="369.1" cy="203.9" r="9.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="481.1" cy="230.9" r="9.5"/>
-		<path class="logo-bubble" fill="#3BD4AE" d="M420.7,82.2c0,5.3,4.3,9.6,9.6,9.6c4.1,0,7.5-2.5,8.9-6.1c-4.2-5.4-7.7-9.8-10.4-13
+		<circle className="logo-bubble" fill="#3BD4AE" cx="227.6" cy="260.4" r="8"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="249.1" cy="262.9" r="3.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="293.1" cy="235.9" r="9.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="274.6" cy="259.4" r="5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="277.1" cy="202.9" r="9.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="369.1" cy="203.9" r="9.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="481.1" cy="230.9" r="9.5"/>
+		<path className="logo-bubble" fill="#3BD4AE" d="M420.7,82.2c0,5.3,4.3,9.6,9.6,9.6c4.1,0,7.5-2.5,8.9-6.1c-4.2-5.4-7.7-9.8-10.4-13
 			C424.2,73.4,420.7,77.4,420.7,82.2z"/>
-		<path class="logo-bubble" fill="#009383" d="M430.3,72.6c-0.5,0-1,0-1.5,0.1c2.6,3.2,6.2,7.6,10.4,13c0.4-1.1,0.7-2.3,0.7-3.5
+		<path className="logo-bubble" fill="#009383" d="M430.3,72.6c-0.5,0-1,0-1.5,0.1c2.6,3.2,6.2,7.6,10.4,13c0.4-1.1,0.7-2.3,0.7-3.5
 			C439.9,76.9,435.6,72.6,430.3,72.6z"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="310.1" cy="165.9" r="9.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="281.6" cy="165.4" r="5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="345.6" cy="178.4" r="5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="396.1" cy="182.9" r="5.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="348.1" cy="94.9" r="6.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="455.1" cy="118.9" r="6.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="398.1" cy="226.9" r="6.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="298.1" cy="145.9" r="3.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="360.1" cy="109.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="472.1" cy="167.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="457.1" cy="250.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="420.1" cy="100.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="446.1" cy="186.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="383.1" cy="160.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="357.1" cy="241.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="549.1" cy="214.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="303.1" cy="266.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="404.1" cy="252.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="330.1" cy="287.9" r="4.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="389.6" cy="99.4" r="3"/>
-		<circle class="logo-bubble" fill="#009383" cx="470.6" cy="98.4" r="3"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="423.1" cy="272.9" r="6.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="310.1" cy="194.9" r="5.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="437.1" cy="152.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="349.6" cy="132.4" r="3"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="258.1" cy="293.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="333.1" cy="225.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="439.1" cy="222.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="505.1" cy="280.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="491.1" cy="197.9" r="7.5"/>
-		<path class="logo-bubble" fill="#3BD4AE" d="M470.2,142.4c0,4,3.2,7.3,7.3,7.3c1.7,0,3.3-0.6,4.6-1.6c-2.5-4.2-5-8.3-7.5-12.3
+		<circle className="logo-bubble" fill="#3BD4AE" cx="310.1" cy="165.9" r="9.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="281.6" cy="165.4" r="5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="345.6" cy="178.4" r="5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="396.1" cy="182.9" r="5.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="348.1" cy="94.9" r="6.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="455.1" cy="118.9" r="6.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="398.1" cy="226.9" r="6.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="298.1" cy="145.9" r="3.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="360.1" cy="109.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="472.1" cy="167.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="457.1" cy="250.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="420.1" cy="100.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="446.1" cy="186.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="383.1" cy="160.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="357.1" cy="241.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="549.1" cy="214.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="303.1" cy="266.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="404.1" cy="252.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="330.1" cy="287.9" r="4.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="389.6" cy="99.4" r="3"/>
+		<circle className="logo-bubble" fill="#009383" cx="470.6" cy="98.4" r="3"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="423.1" cy="272.9" r="6.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="310.1" cy="194.9" r="5.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="437.1" cy="152.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="349.6" cy="132.4" r="3"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="258.1" cy="293.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="333.1" cy="225.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="439.1" cy="222.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="505.1" cy="280.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="491.1" cy="197.9" r="7.5"/>
+		<path className="logo-bubble" fill="#3BD4AE" d="M470.2,142.4c0,4,3.2,7.3,7.3,7.3c1.7,0,3.3-0.6,4.6-1.6c-2.5-4.2-5-8.3-7.5-12.3
 			C471.9,136.9,470.2,139.4,470.2,142.4z"/>
-		<path class="logo-bubble" fill="#009383" d="M484.7,142.4c0-4-3.2-7.3-7.3-7.3c-1.1,0-2.1,0.2-3,0.6c2.5,4,5,8.1,7.5,12.3
+		<path className="logo-bubble" fill="#009383" d="M484.7,142.4c0-4-3.2-7.3-7.3-7.3c-1.1,0-2.1,0.2-3,0.6c2.5,4,5,8.1,7.5,12.3
 			C483.6,146.7,484.7,144.7,484.7,142.4z"/>
-		<circle class="logo-bubble" fill="#009383" cx="495.1" cy="98.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="502.6" cy="125.4" r="4"/>
-		<circle class="logo-bubble" fill="#009383" cx="542.1" cy="142.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="544.1" cy="185.9" r="7.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="570.1" cy="170.9" r="5.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="569.6" cy="202.4" r="5"/>
-		<circle class="logo-bubble" fill="#009383" cx="571.6" cy="241.4" r="15"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="391.6" cy="128.4" r="15"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="375.6" cy="273.4" r="15"/>
-		<circle class="logo-bubble" fill="#009383" cx="605.1" cy="235.9" r="5.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="548.1" cy="273.9" r="5.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="614.1" cy="277.9" r="5.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="591.6" cy="267.4" r="7"/>
-		<circle class="logo-bubble" fill="#009383" cx="591.1" cy="294.9" r="7.5"/>
-		<path class="logo-bubble" fill="#3BD4AE" d="M514.1,236.7c0,3.9,3,7.1,6.8,7.4c-0.7-4.6-1.7-9.3-2.8-14C515.7,231.3,514.1,233.8,514.1,236.7z"/>
-		<path class="logo-bubble" fill="#009383" d="M529,236.7c0-4.1-3.3-7.5-7.5-7.5c-1.3,0-2.4,0.3-3.5,0.9c1.2,4.7,2.1,9.4,2.8,14c0.2,0,0.4,0,0.6,0
+		<circle className="logo-bubble" fill="#009383" cx="495.1" cy="98.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="502.6" cy="125.4" r="4"/>
+		<circle className="logo-bubble" fill="#009383" cx="542.1" cy="142.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="544.1" cy="185.9" r="7.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="570.1" cy="170.9" r="5.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="569.6" cy="202.4" r="5"/>
+		<circle className="logo-bubble" fill="#009383" cx="571.6" cy="241.4" r="15"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="391.6" cy="128.4" r="15"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="375.6" cy="273.4" r="15"/>
+		<circle className="logo-bubble" fill="#009383" cx="605.1" cy="235.9" r="5.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="548.1" cy="273.9" r="5.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="614.1" cy="277.9" r="5.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="591.6" cy="267.4" r="7"/>
+		<circle className="logo-bubble" fill="#009383" cx="591.1" cy="294.9" r="7.5"/>
+		<path className="logo-bubble" fill="#3BD4AE" d="M514.1,236.7c0,3.9,3,7.1,6.8,7.4c-0.7-4.6-1.7-9.3-2.8-14C515.7,231.3,514.1,233.8,514.1,236.7z"/>
+		<path className="logo-bubble" fill="#009383" d="M529,236.7c0-4.1-3.3-7.5-7.5-7.5c-1.3,0-2.4,0.3-3.5,0.9c1.2,4.7,2.1,9.4,2.8,14c0.2,0,0.4,0,0.6,0
 			C525.7,244.1,529,240.8,529,236.7z"/>
-		<circle class="logo-bubble" fill="#009383" cx="548.6" cy="159.4" r="2"/>
-		<circle class="logo-bubble" fill="#009383" cx="504.6" cy="161.4" r="2"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="352.6" cy="154.4" r="2"/>
-		<circle class="logo-bubble" fill="#009383" cx="605.6" cy="253.4" r="2"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="504.6" cy="256.4" r="2"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="252.1" cy="241.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="289.1" cy="286.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="430.1" cy="242.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="326.1" cy="203.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="329.1" cy="256.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="423.1" cy="199.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="431.1" cy="123.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="476.1" cy="114.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="460.1" cy="209.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="413.1" cy="158.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="477.1" cy="260.9" r="2.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="454.6" cy="280.4" r="4"/>
-		<circle class="logo-bubble" fill="#009383" cx="518.1" cy="193.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#009383" cx="524.1" cy="144.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="327.1" cy="142.9" r="1.5"/>
-		<circle class="logo-bubble" fill="#3BD4AE" cx="407.1" cy="80.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="548.6" cy="159.4" r="2"/>
+		<circle className="logo-bubble" fill="#009383" cx="504.6" cy="161.4" r="2"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="352.6" cy="154.4" r="2"/>
+		<circle className="logo-bubble" fill="#009383" cx="605.6" cy="253.4" r="2"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="504.6" cy="256.4" r="2"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="252.1" cy="241.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="289.1" cy="286.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="430.1" cy="242.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="326.1" cy="203.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="329.1" cy="256.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="423.1" cy="199.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="431.1" cy="123.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="476.1" cy="114.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="460.1" cy="209.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="413.1" cy="158.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="477.1" cy="260.9" r="2.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="454.6" cy="280.4" r="4"/>
+		<circle className="logo-bubble" fill="#009383" cx="518.1" cy="193.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#009383" cx="524.1" cy="144.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="327.1" cy="142.9" r="1.5"/>
+		<circle className="logo-bubble" fill="#3BD4AE" cx="407.1" cy="80.9" r="1.5"/>
 		<path fill="#007766" d="M352.2,743.1c-1.7,10.8-0.8,20,2.7,27.4c4.1,8.8,11.8,14.8,17.5,18.4c11,6.8,27.7,11.7,41.9,8.5l0.1-0.2
 			c-1.4-1.9-2.8-3.7-4.3-5.6c0-0.1-0.1-0.1-0.1-0.2c-18.3-1.2-35.8-8.4-44.1-20.6c-11.4-16.8-0.7-65.1,1.3-73.5c-1.1,3-2.3,6-3.5,8.9
 			C358.8,718.8,354.1,730.6,352.2,743.1z"/>

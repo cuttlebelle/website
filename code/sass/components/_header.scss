@@ -2,8 +2,8 @@
 	position: relative;
 	display: block;
 	height: 45rem;
-	background-color: #b2e1d8;
-	background: linear-gradient(135deg, #b2e1d8 0%,#007565 100%);
+	background-color: $color-Background-light;
+	background: linear-gradient( 135deg, $color-Background-light 0%, #007565 100% );
 	overflow: hidden;
 	z-index: 10;
 
@@ -13,26 +13,32 @@
 		position: absolute;
 		top: -50%;
 		left: 20%;
-		background-color: #b2e1d8;
+		background-color: $color-Background-light;
 		background: linear-gradient(
 			to right,
-			rgba( 178, 225, 216, 0 ) 0%,
-			rgba( 178, 225, 216, 1 ) 30%,
-			rgba( 178, 225, 216, 1 ) 70%,
-			rgba( 178, 225, 216, 0 ) 100%
+			rgba( $color-Background-light, 0 ) 0%,
+			rgba( $color-Background-light, 1 ) 30%,
+			rgba( $color-Background-light, 1 ) 70%,
+			rgba( $color-Background-light, 0 ) 100%
 		);
 		width: 8rem;
 		height: 250%;
 		transform: rotate( -45deg );
 		opacity: 0.2;
 		z-index: 10;
-		animation: light1 10s infinite;
+
+		@media screen and ( min-width: 500px ) {
+			animation: light1 10s infinite;
+		}
 	}
 
 	&:before {
 		opacity: 0.3;
 		width: 20rem;
-		animation: light2 20s infinite;
+
+		@media screen and ( min-width: 500px ) {
+			animation: light2 20s infinite;
+		}
 	}
 }
 
@@ -134,11 +140,11 @@
 .header__logo__description {
 	font-size: 1.125rem;
 	text-align: center;
+	color: $color-Text;
 }
 
 .logo-bubble {
-	fill: #3bd4ae;
-	animation: skin 80s infinite;
+	animation: skin 4s steps( 16 ) infinite;
 }
 
 @keyframes skin {
@@ -221,7 +227,7 @@
 	position: absolute;
 	left: 220px;
 	bottom: 160px;
-	animation: swim 100s infinite;
+	animation: swim 80s infinite;
 
 	@media screen and ( min-width: 500px ) {
 		bottom: 57px;
@@ -294,6 +300,6 @@
 	}
 
 	to {
-		left: 50%;
+		left: 100%;
 	}
 }

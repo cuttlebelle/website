@@ -42,6 +42,10 @@ const Header = ({ description }) => (
 );
 
 Header.propTypes = {
+	/**
+	 * description: Homepage
+	 */
+	description: PropTypes.string.isRequired,
 };
 
 Header.defaultProps = {};

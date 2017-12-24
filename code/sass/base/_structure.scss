@@ -6,3 +6,11 @@ body {
 	line-height: 1.2;
 	height: 100%;
 }
+
+a {
+	color: $color-Text;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
