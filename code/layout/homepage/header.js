@@ -5,7 +5,7 @@ import { Logo, Cuttlebelle, RocksLeft, RocksRight, RocksBack, Code, Content, Fis
 
 
 /**
- * The page component
+ * The Header component
  */
 const Header = ({ description }) => (
 	<header className="header header--large">
@@ -43,7 +43,7 @@ const Header = ({ description }) => (
 
 Header.propTypes = {
 	/**
-	 * description: Homepage
+	 * description: The react static site generator that separates editing and code concerns
 	 */
 	description: PropTypes.string.isRequired,
 };

@@ -1,0 +1,24 @@
+.btn {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background-color: $color-Hero-Background;
+	color: $color-Text;
+	border-radius: 4px;
+	border: 3px solid $color-Text;
+	text-decoration: none;
+	transition: background 0.2s ease;
+
+	&:focus {
+		outline: 3px solid $color-Focus;
+		border-radius: 0;
+	}
+
+	&.btn--soft {
+		background-color: transparent;
+	}
+
+	&.btn--soft:hover,
+	&:hover {
+		background-color: $color-Hero-Background-light;
+	}
+}

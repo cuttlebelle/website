@@ -2,3 +2,9 @@ title: Cheat-Sheet - Cuttlebelle
 
 header:
   - /shared/nav.md
+
+main:
+  - main
+
+footer:
+  - footer

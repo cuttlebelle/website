@@ -5,4 +5,7 @@ header:
   - /shared/nav.md
 
 main:
-  - main.md
+  - what.md
+
+footer:
+  - footer

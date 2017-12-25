@@ -5,7 +5,7 @@ import { Cuttlebelle, Github } from '../icon';
 
 
 /**
- * The page component
+ * The Nav component
  */
 const Nav = ({ links, _relativeURL, _ID }) => (
 	<nav className="nav">

@@ -2,8 +2,8 @@
 	position: relative;
 	display: block;
 	height: 45rem;
-	background-color: $color-Background-light;
-	background: linear-gradient( 135deg, $color-Background-light 0%, #007565 100% );
+	background-color: $color-Hero-Background-light;
+	background: linear-gradient( 135deg, $color-Hero-Background-light 0%, #007565 100% );
 	overflow: hidden;
 	z-index: 10;
 
@@ -13,13 +13,13 @@
 		position: absolute;
 		top: -50%;
 		left: 20%;
-		background-color: $color-Background-light;
+		background-color: $color-Hero-Background-light;
 		background: linear-gradient(
 			to right,
-			rgba( $color-Background-light, 0 ) 0%,
-			rgba( $color-Background-light, 1 ) 30%,
-			rgba( $color-Background-light, 1 ) 70%,
-			rgba( $color-Background-light, 0 ) 100%
+			rgba( $color-Hero-Background-light, 0 ) 0%,
+			rgba( $color-Hero-Background-light, 1 ) 30%,
+			rgba( $color-Hero-Background-light, 1 ) 70%,
+			rgba( $color-Hero-Background-light, 0 ) 100%
 		);
 		width: 8rem;
 		height: 250%;

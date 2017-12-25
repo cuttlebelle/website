@@ -1,0 +1,18 @@
+.what {
+	padding: 8rem 5rem;
+	background-color: $color-Background-light;
+	overflow: hidden;
+}
+
+.what__section {
+	width: 50%;
+	float: left;
+}
+
+.what__section__body {
+	margin: 2rem 4rem;
+
+	.btn {
+		margin-top: 1rem;
+	}
+}
