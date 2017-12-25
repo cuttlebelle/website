@@ -9,4 +9,4 @@ main:
   - why.md
 
 footer:
-  - footer
+  - /shared/footer.md

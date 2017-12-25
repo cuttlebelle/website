@@ -5,14 +5,16 @@ reasons:
   - image: code
     headline: Multiple layouts
     text: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, est. Ex quo voluptatem obcaecati ratione deserunt voluptatibus quia voluptates
-      reprehenderit accusantium temporibus maiores, optio minus. Corporis obcaecati ipsa eveniet itaque.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, est. Ex quo voluptatem obcaecati ratione deserunt voluptatibus quia voluptates
-      reprehenderit accusantium temporibus maiores, optio minus. Corporis obcaecati ipsa eveniet itaque.
-  - image: content
-    headline: Easy templating
-    text: (text)[2]
+      Each page is divided into components that have their own layouts. Think of it like little [Lego blocks](https://www.lego.com) that make up your site.
+      You can now build completely new page layouts by assembling them from your smaller partials.
   - image: fish
     headline: Clean separation
-    text: (text)[2]
+    text: |
+      Keeping your content free of any code empowers more users to change the content of your site. And because we chunk it all up into partials, content
+      authors are able to build completely new layouts all by them self without ever touching more complex code.
+  - image: content
+    headline: Easy templating
+    text: |
+      Cuttlebelle uses [JSX](https://facebook.github.io/jsx/) as the templating language. This makes is very convenient to build out from simple to super
+      complex partials.
 ---

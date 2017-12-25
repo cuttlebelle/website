@@ -15,7 +15,7 @@ const Page = ({
 	main,
 	footer
 }) => (
- <html className="background">
+ <html lang="en" className="background">
 	<head>
 		<title>{ title }</title>
 		<meta charSet="UTF-8" />

@@ -70,8 +70,10 @@
 
 .nav__link--fixed {
 	margin-bottom: 2rem;
+	display: none;
 
 	@media screen and ( min-width: 650px ) {
+		display: inline;
 		float: left;
 		margin-bottom: 0.7rem;
 	}

@@ -1,0 +1,5 @@
+---
+layout: footer
+---
+
+the end.
