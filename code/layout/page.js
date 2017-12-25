@@ -18,6 +18,7 @@ const Page = ({
  <html className="background">
 	<head>
 		<title>{ title }</title>
+		<meta charSet="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" type="image/x-icon" href={ _relativeURL( '/code/assets/img/favicon.ico', _ID ) } />
 		<link rel="stylesheet" href={ _relativeURL( '/code/assets/css/style.css', _ID ) } />
