@@ -1,18 +1,37 @@
 .what {
-	padding: 8rem 5rem;
+	padding: 4rem 2rem;
 	background-color: $color-Background-light;
 	overflow: hidden;
+
+	@media screen and ( min-width: 1000px ) {
+		padding: 8rem 5rem;
+	}
 }
 
-.what__section {
-	width: 50%;
-	float: left;
+@media screen and ( min-width: 1000px ) {
+	.what__section {
+		width: 60%;
+		float: left;
+	}
+
+	.what__section--top {
+		float: right;
+		width: 40%;
+	}
 }
 
 .what__section__body {
 	margin: 2rem 4rem;
+	max-width: 42em;
 
 	.btn {
 		margin-top: 1rem;
 	}
+}
+
+.what__section__logo {
+	display: block;
+	margin: 0 auto;
+	max-height: 20rem;
+	width: auto;
 }

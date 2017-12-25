@@ -6,13 +6,20 @@ body {
 	line-height: 1.6;
 	height: 100%;
 	color: $color-Text;
+	text-decoration-skip: ink;
 }
 
 a {
 	color: $color-Text;
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip: ink;
 
 	&:hover {
 		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 3px solid $color-Focus;
 	}
 }
 

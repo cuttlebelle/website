@@ -8,5 +8,5 @@ cta:
 
 ## What is Cuttlebelle
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ad, nihil modi praesentium similique magnam. Asperiores veritatis eveniet id nesciunt,
-consequuntur voluptatibus optio nobis, nemo consectetur autem odit quam sapiente!
+Cuttlebelle is a static site generator that uses [react](https://reactjs.org/) for layouts, let’s you use one layout per page-partial and cleanly separates
+content from code.
