@@ -2,14 +2,6 @@
 	padding: 0;
 	background-color: $color-Background-light;
 	overflow: hidden;
-
-	@media screen and ( min-width: 480px ) {
-		padding: 2rem 1rem;
-	}
-
-	@media screen and ( min-width: 1000px ) {
-		padding: 8rem 5rem;
-	}
 }
 
 @media screen and ( min-width: 1000px ) {
@@ -25,13 +17,6 @@
 }
 
 .what__section__body {
-	margin: 2rem 1rem;
-	max-width: 42em;
-
-	@media screen and ( min-width: 650px ) {
-		margin: 2rem 4rem;
-	}
-
 	.btn {
 		margin-top: 1rem;
 	}

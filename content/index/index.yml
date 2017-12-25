@@ -6,6 +6,7 @@ header:
 
 main:
   - what.md
+  - why.md
 
 footer:
   - footer

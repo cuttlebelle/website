@@ -1,0 +1,16 @@
+.body {
+	padding: 2rem 1rem;
+	max-width: 42em;
+
+	@media screen and ( min-width: 480px ) {
+		padding: 4rem 2rem;
+	}
+
+	@media screen and ( min-width: 650px ) {
+		padding: 2rem 4rem;
+	}
+
+	@media screen and ( min-width: 1000px ) {
+		padding: 10rem 8rem;
+	}
+}

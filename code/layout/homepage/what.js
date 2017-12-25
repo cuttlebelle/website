@@ -10,12 +10,12 @@ import { Logo } from '../icon';
 const What = ({ cta, _body }) => (
 	<section className="what">
 		<div className="what__section what__section--top">
-			<div className="what__section__body">
+			<div className="what__section__body body">
 				<Logo className="what__section__logo" title="Cuttlebelle logo" desc="A cute, green cuttlefish with a big smile" />
 			</div>
 		</div>
 		<div className="what__section what__section--bottom">
-			<div className="what__section__body">
+			<div className="what__section__body body">
 				{ _body }
 				<a className="btn" href={ cta.link }>{ cta.text }</a>
 			</div>
