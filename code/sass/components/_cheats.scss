@@ -1,0 +1,47 @@
+.cheats {
+	margin: 3.5rem 2rem;
+}
+
+.cheat {
+	overflow: hidden;
+	border-bottom: 3px solid $color-Text;
+	padding-bottom: 1.5rem;
+}
+
+.cheat__headline {
+	font-size: 1.5rem;
+	margin: 1.5rem 0;
+}
+
+.cheat__item {
+	border: 3px solid $color-Hero-Background;
+	margin: 1rem 0;
+	box-sizing: border-box;
+
+	@media screen and ( min-width: 650px ) {
+		width: 50%;
+		float: left;
+	}
+}
+
+.cheat__item__headline {
+	padding: 0.5rem;
+	cursor: pointer;
+	background-color: $color-Hero-Background-light;
+}
+
+.cheat__item__details__description {
+	padding: 1rem;
+}
+
+.cheat__item__details__example {
+	pre {
+		margin: 0;
+
+		code {
+			border-right: none;
+			border-bottom: none;
+			border-left: none;
+		}
+	}
+}

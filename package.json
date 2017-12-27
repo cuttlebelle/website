@@ -48,6 +48,7 @@
 		"onchange": "^3.2.1",
 		"postcss-cli": "^4.1.1",
 		"react": "^16.0.0",
+		"slugify": "^1.2.8",
 		"uglify-js": "^3.1.5"
 	},
 	"cuttlebelle": {

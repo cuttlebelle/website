@@ -1,5 +1,4 @@
-html,
-body {
+html {
 	margin: 0;
 	padding: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -71,6 +70,13 @@ code {
 	background-color: $color-Background;
 	border-radius: 3px;
 	color: #000;
+
+	pre > & {
+		display: block;
+		padding: 0.6em 1em;
+		border: 3px solid darken( $color-Background, 20% );
+		border-radius: 0;
+	}
 }
 
 .markdown-trademark {

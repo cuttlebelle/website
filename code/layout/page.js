@@ -6,6 +6,8 @@ import { Logo } from './icon';
 
 /**
  * The page component
+ *
+ * @disable-docs
  */
 const Page = ({
 	_ID,
