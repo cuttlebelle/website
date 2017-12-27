@@ -1,0 +1,41 @@
+- yaml
+  - string
+  - array
+  - object
+  - array-object
+  - object-array
+- markdown
+  - paragraph/line break
+  - headline
+  - link
+  - image
+  - bold
+  - italic
+  - code
+- extend markdown
+  - headlines with classes
+  - external links
+  - html entities
+- layout
+  - _ID
+  - _parents
+  - _storeSet
+  - _store
+  - _pages
+  - _nav
+  - _parseMD
+  - _relativeURL
+  - _body
+  - lists
+  - hide from docs
+- settings
+  - folder
+  - layouts
+  - site
+  - docs
+- propTypes
+  - string
+  - array
+  - object
+  - array-object
+  - object-array

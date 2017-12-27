@@ -4,7 +4,7 @@ header:
   - /shared/nav.md
 
 main:
-  - main
+  - toc.md
 
 footer:
   - /shared/footer.md

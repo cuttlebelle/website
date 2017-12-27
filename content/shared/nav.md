@@ -1,14 +1,14 @@
 ---
 layout: navigation/nav
 links:
-  - name: Home
+  - name: home
     link: /
-  - name: Docs
+  - name: docs
     link: /documentation
-  - name: CheatSheet
+  - name: cheatsheet
     link: /cheatsheet
-  - name: Contribute
+  - name: contribute
     link: /contribute
-  - name: GitHub
+  - name: github
     link: https://github.com/cuttlebelle/cuttlebelle
 ---
