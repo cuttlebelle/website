@@ -32,6 +32,7 @@ renderer.link = ( href, title, text ) => {
  */
 renderer.preparse = ( markdown ) => {
 	return markdown
+		.replace(/\™/g, '<span class="markdown-trademark">&trade;</span>')
 		.replace(/\’/g, '<span class="markdown-quote">&rsquo;</span>')
 		.replace(/\—/g, '<span class="markdown-mdash">&mdash;</span>')
 		.replace(/\–/g, '<span class="markdown-ndash">&ndash;</span>')

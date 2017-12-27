@@ -61,4 +61,18 @@ h6 {
 
 p {
 	font-size: 1.125rem;
+	margin: 0.5rem 0;
+}
+
+code {
+	padding: 0.2em 0.4em;
+	margin: 0;
+	font-size: 85%;
+	background-color: $color-Background;
+	border-radius: 3px;
+	color: #000;
+}
+
+.markdown-trademark {
+	font-size: 85%;
 }

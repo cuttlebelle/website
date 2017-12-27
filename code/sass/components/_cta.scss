@@ -1,28 +1,28 @@
-.what {
+.cta {
 	padding: 0;
 	background-color: $color-Background-light;
 	overflow: hidden;
 }
 
 @media screen and ( min-width: 1000px ) {
-	.what__section {
+	.cta__section {
 		width: 60%;
 		float: left;
 	}
 
-	.what__section--top {
+	.cta__section--top {
 		float: right;
 		width: 40%;
 	}
 }
 
-.what__section__body {
+.cta__section__body {
 	.btn {
 		margin-top: 1rem;
 	}
 }
 
-.what__section__logo {
+.cta__section__logo {
 	display: block;
 	margin: 0 auto;
 	max-height: 20rem;
