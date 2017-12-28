@@ -70,9 +70,9 @@ code {
 	background-color: $color-Background;
 	border-radius: 3px;
 	color: #000;
-	overflow: auto;
 
 	pre > & {
+		overflow: auto;
 		display: block;
 		padding: 0.6em 1em;
 		border: 3px solid $color-Background-dark;

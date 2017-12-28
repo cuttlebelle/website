@@ -1,54 +1,44 @@
+$cheats-border: $color-Text;
+
 .cheats {
-	margin: 3.2rem 2rem 0 2rem;
+	margin: 0 2rem 0 2rem;
 	overflow: hidden;
+
+	@media screen and ( min-width: 650px ) {
+		margin-top: 3.2rem;
+	}
 }
 
 .cheat {
 	padding-bottom: 1.5rem;
-
-	@media screen and ( min-width: 650px ) {
-		width: 49%;
-		float: left;
-		margin: 0 0.5%;
-	}
-
-	@media screen and ( min-width: 1000px ) {
-		width: 32.333333333%;
-	}
-
-	@media screen and ( min-width: 1400px ) {
-		width: 19%;
-	}
 }
 
 @supports ( columns: 18rem 4 ) {
 	.cheats {
 		@media screen and ( min-width: 650px ) {
-			columns: 18rem 4;
+			columns: 20rem 4;
 			column-fill: balance;
 		}
 	}
 
 	.cheat {
 		display: inline-block;
-		float: none;
 		width: 100%;
-		margin: 0;
 	}
 }
 
 .cheat__headline {
 	font-size: 1.3rem;
 	margin: 1.5rem 0 0 0;
-	padding: 0.5rem;
-	border: 3px solid $color-Hero-Background;
+	padding: 1.3rem 0.5rem 0.5rem 0.5rem;
+	border: 3px solid $cheats-border;
 	border-bottom: none;
 	text-align: center;
 }
 
 .cheat__description {
-	border-left: 3px solid $color-Hero-Background;
-	border-right: 3px solid $color-Hero-Background;
+	border-left: 3px solid $cheats-border;
+	border-right: 3px solid $cheats-border;
 	padding: 0.5rem;
 
 	p {
@@ -58,12 +48,12 @@
 }
 
 .cheat__item {
-	border: 3px solid $color-Hero-Background;
+	border: 3px solid $cheats-border;
 	border-bottom: none;
 	box-sizing: border-box;
 
 	&:last-child {
-		border-bottom: 3px solid $color-Hero-Background;
+		border-bottom: 3px solid $cheats-border;
 	}
 }
 
@@ -88,6 +78,7 @@
 		code {
 			padding-top: 0.8rem;
 			border: none;
+			border-top: 2px dotted $color-Hero-Background;
 		}
 	}
 }

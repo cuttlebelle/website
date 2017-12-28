@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Slugify from 'slugify';
 import React from 'react';
 
 import { Logo } from './icon';
@@ -27,7 +28,7 @@ const Page = ({
 
 		<script src={ _relativeURL( '/code/assets/js/header.js', _ID ) } />
 	</head>
-	<body>
+	<body className={`page-${ Slugify( _ID ) }`}>
 
 		<div className="wrapper">
 			{ header }

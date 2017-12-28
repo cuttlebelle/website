@@ -39,6 +39,10 @@
 	&:last-child {
 		margin-right: 0;
 	}
+
+	& > a {
+		display: block;
+	}
 }
 
 .nav__link--active a {
@@ -46,9 +50,13 @@
 }
 
 .nav__link__logo {
-	height: 1.5rem;
+	height: 2.5rem;
 	width: auto;
 	vertical-align: middle;
+
+	@media screen and ( min-width: 650px ) {
+		height: 1.5rem;
+	}
 }
 
 .nav__link__github {
@@ -73,14 +81,19 @@
 }
 
 .nav__link--fixed {
-	margin-bottom: 2rem;
-	margin-left: 0;
-	display: none;
+	margin: 1.5rem 0;
 
 	@media screen and ( min-width: 650px ) {
-		display: inline;
 		float: left;
-		margin-bottom: 0.7rem;
+		margin-top: 0.7rem;
+	}
+
+	.page-index & {
+		display: none;
+
+		@media screen and ( min-width: 650px ) {
+			display: inline;
+		}
 	}
 }
 
