@@ -6,7 +6,7 @@ import React from 'react';
 /**
  * The Cheat component
  */
-const Cheat = ({ section, description, cheats, _parseMD }) => (
+const Cheat = ({ section, description, cheats, _parseMD, _relativeURL }) => (
 	<div id={ Slugify( section ) } className="cheat">
 		<h3 className="cheat__headline">{ section }</h3>
 		<div className="cheat__description">{ _parseMD( description ) }</div>
@@ -46,13 +46,11 @@ Cheat.propTypes = {
 	 *
 	 *       New paragraph
 	 *       ```
-	 *   - headline: Headline
-	 *     description: To add a headline add the `#` symbol in-front of your line. The amount of hashes represents the headline level.
+	 *   - headline: Bold
+	 *     description: Making some text bold only requires you to use `**`.
 	 *     example: |
 	 *       ```
-	 *       # A headline level 1
-	 *       ## A headline level 2
-	 *       ### A headline level 3
+	 *       Text with a single **bold** word.
 	 *       ```
 	 */
 	cheats: PropTypes.arrayOf(

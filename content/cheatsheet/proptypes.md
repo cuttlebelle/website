@@ -1,6 +1,6 @@
 ---
 layout: cheats/cheat
-section: Settings
+section: PropTypes
 description: |
   Something something
 cheats:
@@ -48,5 +48,11 @@ cheats:
       multi-line: |
         line 1
         line 2
+      ```
+  - headline: Hide from docs
+    description: bla bla
+    example: |
+      ```
+      thing: hello
       ```
 ---

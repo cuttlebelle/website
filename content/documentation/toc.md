@@ -1,7 +1,8 @@
 ## Table of contents
 
 - Basics
-  - How is a page assembled?
+  - How a page is assembled
+  - Cuttlebelle commands
 - For content authors
   - Using the docs
   - Add a new page

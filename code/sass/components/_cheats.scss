@@ -1,37 +1,84 @@
 .cheats {
-	margin: 3.5rem 2rem;
+	margin: 3.2rem 2rem 0 2rem;
+	overflow: hidden;
 }
 
 .cheat {
-	overflow: hidden;
-	border-bottom: 3px solid $color-Text;
 	padding-bottom: 1.5rem;
+
+	@media screen and ( min-width: 650px ) {
+		width: 49%;
+		float: left;
+		margin: 0 0.5%;
+	}
+
+	@media screen and ( min-width: 1000px ) {
+		width: 32.333333333%;
+	}
+
+	@media screen and ( min-width: 1400px ) {
+		width: 19%;
+	}
+}
+
+@supports ( columns: 18rem 4 ) {
+	.cheats {
+		@media screen and ( min-width: 650px ) {
+			columns: 18rem 4;
+			column-fill: balance;
+		}
+	}
+
+	.cheat {
+		display: inline-block;
+		float: none;
+		width: 100%;
+		margin: 0;
+	}
 }
 
 .cheat__headline {
-	font-size: 1.5rem;
-	margin: 1.5rem 0;
+	font-size: 1.3rem;
+	margin: 1.5rem 0 0 0;
+	padding: 0.5rem;
+	border: 3px solid $color-Hero-Background;
+	border-bottom: none;
+	text-align: center;
+}
+
+.cheat__description {
+	border-left: 3px solid $color-Hero-Background;
+	border-right: 3px solid $color-Hero-Background;
+	padding: 0.5rem;
+
+	p {
+		font-size: 0.888888888rem;
+		margin-top: 0;
+	}
 }
 
 .cheat__item {
 	border: 3px solid $color-Hero-Background;
-	margin: 1rem 0;
+	border-bottom: none;
 	box-sizing: border-box;
 
-	@media screen and ( min-width: 650px ) {
-		width: 50%;
-		float: left;
+	&:last-child {
+		border-bottom: 3px solid $color-Hero-Background;
 	}
 }
 
 .cheat__item__headline {
 	padding: 0.5rem;
 	cursor: pointer;
-	background-color: $color-Hero-Background-light;
+	background-color: $color-Background-light;
 }
 
 .cheat__item__details__description {
-	padding: 1rem;
+	padding: 0.5rem;
+
+	p {
+		font-size: 0.888888888rem;
+	}
 }
 
 .cheat__item__details__example {
@@ -39,9 +86,8 @@
 		margin: 0;
 
 		code {
-			border-right: none;
-			border-bottom: none;
-			border-left: none;
+			padding-top: 0.8rem;
+			border: none;
 		}
 	}
 }

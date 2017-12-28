@@ -2,10 +2,11 @@
 layout: cheats/cheat
 section: Markdown
 description: |
-  Something something
+  Cuttlebelles [markdown](https://github.com/chjj/marked) is a text-to-HTML conversion tool for content authors. Markdown allows you to write using an
+  easy-to-read, easy-to-write plain text format, then convert it to structurally valid HTML.
 cheats:
   - headline: Paragraph/line break
-    description: To create a paragraph simply add a line of text. To add a line break add two empty lines.
+    description: To create a paragraph simply add a line of text. To add a line break add an empty line.
     example: |
       ```
       One paragraph
@@ -15,55 +16,40 @@ cheats:
       ```
   - headline: Headline
     description: To add a headline add the `#` symbol in-front of your line. The amount of hashes represents the headline level.
-    example: |
-      ```
-      # A headline level 1
-      ## A headline level 2
-      ### A headline level 3
-      ```
+    example: <pre><code># A headline level 1<br>## A headline level 2<br>### A headline level 3</code></pre>
   - headline: Link
-    description: bla bla
+    description: To link to another page or asset just us the `[]()` notation.
     example: |
       ```
-      thing: hello
-      multi-line: |
-        line 1
-        line 2
+      A [link](/checkout) inside text
+
+      Another [link](https://dominik-wilkowski.com) could be to another site.
       ```
   - headline: Image
-    description: bla bla
+    description: Adding an image should be done with a proper layout but if you want inline images you can use the notation below.
     example: |
       ```
-      thing: hello
-      multi-line: |
-        line 1
-        line 2
-      ```
-  - headline: Bold
-    description: bla bla
-    example: |
-      ```
-      thing: hello
-      multi-line: |
-        line 1
-        line 2
+      ![image alt text](/assets/logo.png)
       ```
   - headline: Italic
-    description: bla bla
+    description: Making some text italic only requires you to use `*`.
     example: |
       ```
-      thing: hello
-      multi-line: |
-        line 1
-        line 2
+      Text with a single *italic* word.
+      ```
+  - headline: Bold
+    description: Making some text bold only requires you to use `**`.
+    example: |
+      ```
+      Text with a single **bold** word.
       ```
   - headline: Code
-    description: bla bla
+    description: Mark a word as code with the `` ` character.
     example: |
       ```
-      thing: hello
-      multi-line: |
-        line 1
-        line 2
+      Sometimes we talk `code`.
       ```
+  - headline: Code block
+    description: If you have a block of code you should us ```` `.
+    example: <pre><code>```<br>code block<br>```</code></pre>
 ---

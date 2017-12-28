@@ -35,6 +35,10 @@
 	@media screen and ( min-width: 650px ) {
 		display: inline-block;
 	}
+
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
 .nav__link--active a {
@@ -70,6 +74,7 @@
 
 .nav__link--fixed {
 	margin-bottom: 2rem;
+	margin-left: 0;
 	display: none;
 
 	@media screen and ( min-width: 650px ) {

@@ -1,10 +1,10 @@
 ---
 layout: cheats/wrapper
 cheats:
-  - yaml.md
-  - markdown.md
-  - extend-markdown.md
   - layout.md
+  - yaml.md
+  - extend-markdown.md
+  - markdown.md
   - settings.md
   - proptypes.md
 ---

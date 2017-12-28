@@ -46,11 +46,11 @@ const Nav = ({ links, _relativeURL, _ID }) => (
 Nav.propTypes = {
 	/**
 	 * links:
-	 *  - name: What is Cuttlebelle
+	 *  - name: home
 	 *    link: /
-	 *  - name: Docs
+	 *  - name: docs
 	 *    link: /docs
-	 *  - name: GitHub
+	 *  - name: github  # the string 'github' will have the GitHub logo attached to it
 	 *    link: https://github.com/cuttlebelle/cuttlebelle
 	 */
 	links: PropTypes.array.isRequired,
