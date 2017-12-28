@@ -61,6 +61,10 @@ $cheats-border: $color-Text;
 	padding: 0.5rem;
 	cursor: pointer;
 	background-color: $color-Background-light;
+
+	&:focus {
+		outline: 3px solid $color-Focus;
+	}
 }
 
 .cheat__item__details__description {
