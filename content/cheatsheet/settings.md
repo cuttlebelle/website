@@ -2,14 +2,14 @@
 layout: cheats/cheat
 section: Settings
 description: |
-  The default settings of Cuttlebelle can be changed by adding a `cuttlebelle` object to your `package.json` file.
+  The default settings of Cuttlebelle can be changed by adding an `cuttlebelle` object to your `package.json` file.
 
   All below examples show the default values.
 cheats:
   - headline: folder.content
     description: The folder in which your content lives. Path relative to your `package.json` file.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -24,7 +24,7 @@ cheats:
   - headline: folder.code
     description: The folder in which your layout components live. Path relative to your `package.json` file.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -39,7 +39,7 @@ cheats:
   - headline: folder.site
     description: The folder in which your site content is supposed to be generated into. Path relative to your `package.json` file.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -54,7 +54,7 @@ cheats:
   - headline: folder.docs
     description: The folder in which your layout documentation is supposed to be generated into. Path relative to your `package.json` file.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -69,7 +69,7 @@ cheats:
   - headline: folder.index
     description: The name of the YAML file that describes the partials of a page.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -84,7 +84,7 @@ cheats:
   - headline: folder.homepage
     description: The name of the homepage folder.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -102,7 +102,7 @@ cheats:
 
       The `.js` extension should be omitted.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -120,7 +120,7 @@ cheats:
 
       The `.js` extension should be omitted.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -135,7 +135,7 @@ cheats:
   - headline: site.root
     description: What should cuttlebelle append to links?
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -148,9 +148,11 @@ cheats:
       }
       ```
   - headline: site.doctype
-    description: Because react does not allow you to change the doctype of an HTML page, this is where you can declare your own custom doctype.
+    description: |
+      Because react does not allow you to add [complex doctypes](https://github.com/facebook/react/issues/1035) to an HTML page,
+      this is where you can declare your own custom doctype.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -165,7 +167,7 @@ cheats:
   - headline: site.redirectReact
     description: You can disable redirecting `import` calls to the locally installed react instance of cuttlebelle rather than your local folder.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -185,7 +187,7 @@ cheats:
       The only Cuttlebelle addition is the `preparse` key that will be run before we go into the markdown parsing.
       Path relative to your `package.json` file.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -200,7 +202,7 @@ cheats:
   - headline: site.watchTimeout
     description: This is the time in milliseconds the watch waits to detect a double saves action.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -215,7 +217,7 @@ cheats:
   - headline: docs.root
     description: What is the root folder called where all categories are generated in.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -230,7 +232,7 @@ cheats:
   - headline: docs.index
     description: The path to the index layout file. Path relative to your `package.json` file.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -245,7 +247,7 @@ cheats:
   - headline: docs.category
     description: The path to the category layout file. Path relative to your `package.json` file.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -263,7 +265,7 @@ cheats:
 
       This is the `_ID` sample data.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -281,7 +283,7 @@ cheats:
 
       This is the `_nav` sample data.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",
@@ -307,7 +309,7 @@ cheats:
 
       This is the `_pages` sample data.
     example: |
-      ```
+      ```json
       {
         "name": "your site",
         "version": "1.0.0",

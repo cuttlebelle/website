@@ -83,6 +83,27 @@ $cheats-border: $color-Text;
 			padding-top: 0.8rem;
 			border: none;
 			border-top: 2px dotted $color-Hero-Background;
+			border-bottom: 2px dotted $color-Hero-Background;
+		}
+
+		&:last-child {
+			code {
+				border-bottom: none;
+			}
+		}
+	}
+
+	p {
+		padding: 0.5rem;
+		font-size: 0.888888888rem;
+
+		&:first-child {
+			padding-top: 0;
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 }

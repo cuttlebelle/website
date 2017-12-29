@@ -40,7 +40,7 @@ Cheat.propTypes = {
 	 *   - headline: Paragraph/line break
 	 *     description: To create a paragraph simply add a line of text. To add a line break add two empty lines.
 	 *     example: |
-	 *       ```
+	 *       ```markdown
 	 *       One paragraph
 	 *       Still the same paragraph
 	 *
@@ -49,7 +49,7 @@ Cheat.propTypes = {
 	 *   - headline: Bold
 	 *     description: Making some text bold only requires you to use `**`.
 	 *     example: |
-	 *       ```
+	 *       ```markdown
 	 *       Text with a single **bold** word.
 	 *       ```
 	 */

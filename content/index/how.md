@@ -12,7 +12,7 @@ examples:
     example: cuttlebelle --init
   - headline: Compile your website
     text: |
-      Now compile your website into the `site` folder. The watch will wait after for any additional changes you make to your files and only run on those pages
+      Now compile your website into the `site` folder. The watch will start after for any additional changes you make to your files and only run on those pages
       you change affected.
     example: cuttlebelle --watch
 ---

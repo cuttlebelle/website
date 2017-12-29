@@ -2,13 +2,15 @@
 layout: cheats/cheat
 section: Extend Markdown
 description: |
-  You can extend the [built in markdown parser](https://github.com/chjj/marked#renderer) by defining a `markdownRenderer` file inside your `site`
+  You can extend the [built-in markdown parser](https://github.com/chjj/marked#renderer) by defining a `markdownRenderer` file inside your `site`
   settings.
+
+  Read more about how to set this up in the settings section.
 cheats:
   - headline: Html entities
     description: Encode HTML entities so content authors don’t have to worry about that.
     example: |
-      ```
+      ```js
       const Marked = require(`marked`);
       const renderer = new Marked.Renderer();
 
@@ -26,7 +28,7 @@ cheats:
   - headline: External links
     description: The script below will add `rel="external"` to external links.
     example: |
-      ```
+      ```js
       const Marked = require(`marked`);
       const renderer = new Marked.Renderer();
 
@@ -44,9 +46,9 @@ cheats:
   - headline: Headlines with classes
     description: |
       Sometimes you want to split the semantic value and the look of a headline. The below script will let your content author use the new markdown syntax:
-      `# [2]headline`. This will render `<h1 class="display-2"></h1>`
+      `# [2]headline` which will render `<h1 class="display-2">headline</h1>` or `# [3]headline` which will render `<h1 class="display-3">headline</h1>`.
     example: |
-      ```
+      ```js
       const Marked = require(`marked`);
       const renderer = new Marked.Renderer();
 
