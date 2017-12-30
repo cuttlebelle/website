@@ -71,6 +71,17 @@ cheats:
         years: PropTypes.number,
       }
       ```
+  - headline: Keyword
+    description: If you have a finite of words you allow.
+    example: |
+      ```js
+      Page.propTypes = {
+        /**
+         * type: command
+         */
+        type: PropTypes.oneOf([ 'command', 'ask' ]),
+      }
+      ```
   - headline: Array
     description: A list of things like strings, numbers booleans etc.
     example: |

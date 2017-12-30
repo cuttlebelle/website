@@ -1,8 +1,18 @@
 ---
 layout: homepage/cta
 code:
-  - npm install cuttlebelle --global
-  - cuttlebelle
+  - type: command
+    display: npm install cuttlebelle --global
+  - type: stdout
+    display: '+ cuttlebelle@1.0.0'
+  - type: command
+    display: cuttlebelle
+  - type: stdout
+    display: '🐙           Cuttlebelle v1.0.0'
+  - type: stdout
+    display: '🔔  INFO:    Generating pages'
+  - type: stdout
+    display: '🚀           Successfully built 629 pages to site/ in 4.027s'
 ---
 
 

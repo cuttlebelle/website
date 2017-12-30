@@ -4,6 +4,10 @@
 	background-color: $color-Background-light;
 	margin-bottom: 8rem;
 
+	@media screen and ( min-width: 760px ) {
+		margin-bottom: 13rem;
+	}
+
 	@include clearfix();
 }
 
@@ -26,7 +30,7 @@
 
 .cta__section__body,
 .cta__section--bottom {
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 
 	@media screen and ( min-width: 1000px ) {
 		margin-top: 3rem;
@@ -47,22 +51,42 @@
 }
 
 .cta__section__body.body {
-	padding-bottom: 3rem;
+	padding-bottom: 2rem;
+
+	@media screen and ( min-width: 760px ) {
+		padding-bottom: 6rem;
+	}
+
+	@media screen and ( min-width: 1000px ) {
+		padding-bottom: 4rem;
+	}
 }
 
 .cta__section__logo {
 	display: block;
-	margin: 0 auto;
+	margin: 2rem auto 0 auto;
 	max-height: 20rem;
 	width: auto;
 }
 
 .cta__code {
 	display: block;
-	margin: 0 2rem;
+	margin: 0 1rem;
 
-	@media screen and ( min-width: 650px ) {
-		width: 28rem;
+	@media screen and ( min-width: 480px ) {
+		margin: 0 2rem;
+	}
+
+	.code__stdout {
+		display: none;
+	}
+
+	@media screen and ( min-width: 760px ) {
+		max-width: 43rem;
 		margin: 0 auto;
+
+		.code__stdout {
+			display: block;
+		}
 	}
 }

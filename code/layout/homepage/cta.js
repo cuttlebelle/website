@@ -25,7 +25,9 @@ const Cta = ({ code, _body }) => (
 			<div className="cta__code code">
 				{
 					code.map( ( line, i ) => (
-						<p key={ i } className="code__line">{ line }</p>
+						<p key={ i } className={ line.type === 'command' ? 'code__command' : 'code__stdout'}>
+							{ line.display }
+						</p>
 					))
 				}
 			</div>
@@ -36,10 +38,19 @@ const Cta = ({ code, _body }) => (
 Cta.propTypes = {
 	/**
 	 * code:
-	 *   - npm install cuttlebelle --global
-	 *   - cuttlebelle
+	 *   - type: command
+	 *     display: npm install cuttlebelle --global
+	 *   - type: stdout
+	 *     display: '+ cuttlebelle@1.0.0'
+	 *   - type: command
+	 *     display: cuttlebelle
 	 */
-	code: PropTypes.array.isRequired,
+	code: PropTypes.arrayOf(
+		PropTypes.shape({
+			type: PropTypes.oneOf([ 'command', 'stdout' ]).isRequired,
+			display: PropTypes.string.isRequired,
+		})
+	).isRequired,
 
 	/**
 	 * _body: (text)(2)

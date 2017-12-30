@@ -7,9 +7,10 @@
 	color: #fff;
 	font-size: 1.125rem;
 	box-shadow: 0 0 1em rgba( 0, 0, 0, 0.25 );
+	overflow: auto;
 }
 
-.code__line {
+.code__command {
 	display: block;
 
 	&:before {
@@ -18,4 +19,11 @@
 		color: #666;
 		margin-right: 0.5rem;
 	}
+}
+
+.code__stdout {
+	white-space: pre;
+	padding-left: 1rem;
+	margin: 0;
+	opacity: 0.3;
 }

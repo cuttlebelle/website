@@ -21,7 +21,7 @@ const Examples = ({ headline, examples, _parseMD }) => (
 						</div>
 						<div className="examples__list__example">
 							<code className="code">
-								<p className="code__line">{ example.example }</p>
+								<p className="code__command">{ example.example }</p>
 							</code>
 						</div>
 					</li>
