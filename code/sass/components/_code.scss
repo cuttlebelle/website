@@ -1,0 +1,21 @@
+.code {
+	display: block;
+	padding: 1.25rem;
+	background-color: #404040;
+	border-radius: 3px;
+	font-family: "fira-mono", "PT Sans Mono", "Monaco", "Iconsolas", "Droid Sans Mono", monospace;
+	color: #fff;
+	font-size: 1.125rem;
+	box-shadow: 0 0 1em rgba( 0, 0, 0, 0.25 );
+}
+
+.code__line {
+	display: block;
+
+	&:before {
+		content: '$';
+		display: inline-block;
+		color: #666;
+		margin-right: 0.5rem;
+	}
+}

@@ -1,7 +1,10 @@
 .cta {
+	position: relative;
 	padding: 0;
 	background-color: $color-Background-light;
-	overflow: hidden;
+	margin-bottom: 8rem;
+
+	@include clearfix();
 }
 
 @media screen and ( min-width: 1000px ) {
@@ -14,6 +17,27 @@
 		float: right;
 		width: 40%;
 	}
+
+	.cta__section--code {
+		width: 100%;
+		clear: both;
+	}
+}
+
+.cta__section__body,
+.cta__section--bottom {
+	margin-bottom: 3rem;
+
+	@media screen and ( min-width: 1000px ) {
+		margin-top: 3rem;
+	}
+}
+
+.cta__section--code {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	transform: translateY( 50% );
 }
 
 .cta__section__body {
@@ -22,9 +46,23 @@
 	}
 }
 
+.cta__section__body.body {
+	padding-bottom: 3rem;
+}
+
 .cta__section__logo {
 	display: block;
 	margin: 0 auto;
 	max-height: 20rem;
 	width: auto;
+}
+
+.cta__code {
+	display: block;
+	margin: 0 2rem;
+
+	@media screen and ( min-width: 650px ) {
+		width: 28rem;
+		margin: 0 auto;
+	}
 }

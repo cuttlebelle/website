@@ -6,3 +6,17 @@ $color-Background: #ededed;
 $color-Background-light: #f5f5f5;
 $color-Background-dark: darken( $color-Background, 20% );
 $color-Focus: #ff5400;
+
+
+// mixins
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}

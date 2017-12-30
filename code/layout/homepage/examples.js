@@ -19,7 +19,11 @@ const Examples = ({ headline, examples, _parseMD }) => (
 							<h3 className="examples__list__headline">{ example.headline }</h3>
 							<div className="examples__list__body">{ _parseMD( example.text ) }</div>
 						</div>
-						<code className="examples__list__example">{ example.example }</code>
+						<div className="examples__list__example">
+							<code className="code">
+								<p className="code__line">{ example.example }</p>
+							</code>
+						</div>
 					</li>
 				))
 			}

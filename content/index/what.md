@@ -1,8 +1,8 @@
 ---
 layout: homepage/cta
-cta:
-  text: Install Cuttlebelle
-  link: '#install'
+code:
+  - npm install cuttlebelle --global
+  - cuttlebelle
 ---
 
 
