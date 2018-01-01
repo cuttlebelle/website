@@ -2,7 +2,7 @@
 layout: homepage/tiles
 headline: Why another static site generator?
 tiles:
-  - image: code
+  - image: fish
     headline: Multiple layouts
     text: |
       Each page is divided into components that have their own layouts. Think of it like little [Lego™ blocks](https://www.lego.com) that make up your
@@ -16,7 +16,7 @@ tiles:
       authors are able to build completely new layouts all by them-self without ever touching more complex code.
 
       Separation also means searching through your content is easier and you can reuse layout as well as content blocks easily.
-  - image: content
+  - image: fish
     headline: Easy templating
     text: |
       Cuttlebelle uses [JSX](https://facebook.github.io/jsx/) as the templating language. This makes it very convenient to build simple partials all the way to

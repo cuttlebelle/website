@@ -33,7 +33,7 @@ const Examples = ({ headline, examples, _parseMD }) => (
 
 Examples.propTypes = {
 	/**
-	 * headline: Examples another static site generator?
+	 * headline: Why another static site generator?
 	 */
 	headline: PropTypes.node.isRequired,
 
