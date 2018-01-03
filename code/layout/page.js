@@ -23,10 +23,10 @@ const Page = ({
 		<title>{ title }</title>
 		<meta charSet="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="shortcut icon" type="image/x-icon" href={ _relativeURL( '/code/assets/img/favicon.ico', _ID ) } />
-		<link rel="stylesheet" href={ _relativeURL( '/code/assets/css/style.css', _ID ) } />
+		<link rel="shortcut icon" type="image/x-icon" href={ _relativeURL( '/assets/img/favicon.ico', _ID ) } />
+		<link rel="stylesheet" href={ _relativeURL( '/assets/css/style.css', _ID ) } />
 
-		<script src={ _relativeURL( '/code/assets/js/header.js', _ID ) } />
+		<script src={ _relativeURL( '/assets/js/header.js', _ID ) } />
 	</head>
 	<body className={`page-${ Slugify( _ID ) }`}>
 
@@ -40,7 +40,7 @@ const Page = ({
 			{ footer }
 		</div>
 
-		<script src={ _relativeURL( '/code/assets/js/footer.js', _ID ) } />
+		<script src={ _relativeURL( '/assets/js/footer.js', _ID ) } />
 	</body>
  </html>
 );

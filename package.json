@@ -41,16 +41,18 @@
 			"url": "https://github.com/cuttlebelle/website/blob/master/LICENSE"
 		}
 	],
-	"devDependencies": {
+	"dependencies": {
 		"autoprefixer": "^7.1.6",
-		"concat-cli": "^4.0.0",
-		"cuttlebelle": "^1.0.0-alpha.34",
+		"cuttlebelle": "^1.0.0-alpha.35",
 		"node-sass": "^4.5.3",
-		"onchange": "^3.2.1",
 		"postcss-cli": "^4.1.1",
 		"react": "^16.0.0",
 		"slugify": "^1.2.8",
 		"uglify-js": "^3.1.5"
+	},
+	"devDependencies": {
+		"concat-cli": "^4.0.0",
+		"onchange": "^3.2.1"
 	},
 	"cuttlebelle": {
 		"folder": {
