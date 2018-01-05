@@ -15,7 +15,7 @@ cheats:
       ```js
       // export a function called `renderer`
       module.exports = exports = function renderer({
-        Marked,      // The MArked instance you want to extend
+        Marked,      // The Marked instance you want to extend
         _ID,         // The ID of the current page
         _parents,    // An array of all parent pages IDs
         _storeSet,   // The store setter
@@ -33,9 +33,9 @@ cheats:
         return Marked;
       };
       ```
-      So if you want to extend two or more methods you add them all before the export call in the end:
+      And if you want to extend two or more methods you add them all onto the `Marked` method.
       ```js
-      module.exports = exports = function renderer({ Marked, _ID }) {
+      module.exports = exports = function renderer({ Marked }) {
 
         Marked.hr = () => {
           return `<hr />`;
@@ -50,126 +50,199 @@ cheats:
       ```
 
   - headline: code
-    description: code
+    description: The `code` default function.
     example: |
       ```js
-      code(string code, string language)
+      Marked.code = ( code, language ) => {
+        if( !language ) {
+          return `<pre><code>${ code }\n</code></pre>`;
+        }
+
+        return `<pre class="language-${ language }"><code>${ code }\n</code></pre>\n`;
+      }
       ```
   - headline: blockquote
-    description: blockquote
+    description: The `blockquote` default function.
     example: |
       ```js
-      blockquote(string quote)
+      Marked.blockquote = ( quote ) => {
+        return `<blockquote>\n${ + quote + }</blockquote>\n`;
+      }
       ```
   - headline: html
-    description: html
+    description: The `html` default function.
     example: |
       ```js
-      html(string html)
+      Marked.html = ( html ) => {
+        return html;
+      }
       ```
   - headline: heading
-    description: heading
+    description: The `heading` default function.
     example: |
       ```js
-      heading(string text, number level)
+      Marked.heading = ( text, level ) => {
+        return `<h${ level } id="${ text.toLowerCase().replace(/[^\w]+/g, '-') }">${ text }</h${ level }>\n`;
+      }
       ```
   - headline: hr
-    description: hr
+    description: The `hr` default function.
     example: |
       ```js
-      hr()
+      Marked.hr = () => {
+        return `<hr>\n`;
+      }
       ```
   - headline: list
-    description: list
+    description: The `list` default function.
     example: |
       ```js
-      list(string body, boolean ordered)
+      Marked.list = ( body, ordered ) => {
+        const type = ordered ? 'ol' : 'ul';
+
+        return `<${ type }>\n${ body }</${ type }>\n`;
+      }
       ```
   - headline: listitem
-    description: listitem
+    description: The `listitem` default function.
     example: |
       ```js
-      listitem(string text)
+      Marked.listitem = ( text ) => {
+        return `<li>${ text }</li>\n`;
+      }
       ```
   - headline: paragraph
-    description: paragraph
+    description: The `paragraph` default function.
     example: |
       ```js
-      paragraph(string text)
+      Marked.paragraph = ( text ) => {
+        return `<p>${ text }</p>\n`;
+      }
       ```
   - headline: table
-    description: table
+    description: The `table` default function.
     example: |
       ```js
-      table(string header, string body)
+      Marked.table = ( header, body ) => {
+        return `<table>\n<thead>\n${ header }</thead>\n<tbody>\n${ body }</tbody>\n</table>\n`;
+      }
       ```
   - headline: tablerow
-    description: tablerow
+    description: The `tablerow` default function.
     example: |
       ```js
-      tablerow(string content)
+      Marked.tablerow = ( content ) => {
+        return `<tr>\n${ content }</tr>\n`;
+      }
       ```
   - headline: tablecell
-    description: tablecell
+    description: The `tablecell` default function.
     example: |
+      ```js
+      Marked.tablecell = ( content, flags ) => {
+        const type = flags.header ? 'th' : 'td';
+        const tag = flags.align
+          ? `<${ type } style="text-align:${ flags.align }">`
+          : `<${ type }>`;
+
+        return `${ tag }${ content }</${ type }>\n`;
+      }
+      ```
+      The `flag` option can be:
       ```js
       {
         header: true || false,
-        align: 'center' || 'left' || 'right'
+        align: 'center' || 'left' || 'right',
       }
       ```
-      thing
-      ```js
-      tablecell(string content, object flags)
-      ```
   - headline: strong
-    description: strong
+    description: The `strong` default function.
     example: |
       ```js
-      strong(string text)
+      Marked.strong = ( text ) => {
+        return `<strong>${ text }</strong>`;
+      }
       ```
   - headline: em
-    description: em
+    description: The `em` default function.
     example: |
       ```js
-      em(string text)
+      Marked.em = ( text ) => {
+        return `<em>${ text }</em>`;
+      }
       ```
   - headline: codespan
-    description: codespan
+    description: The `codespan` default function.
     example: |
       ```js
-      codespan(string code)
+      Marked.codespan = ( code ) => {
+        return `<code>${ text }</code>`;
+      }
       ```
   - headline: br
-    description: br
+    description: The `br` default function.
     example: |
       ```js
-      br()
+      Marked.br = () => {
+        return `<br>`;
+      }
       ```
   - headline: del
-    description: del
+    description: The `del` default function.
     example: |
       ```js
-      del(string text)
+      Marked.del = ( text ) => {
+        return `<del>${ text }</del>`;
+      }
       ```
   - headline: link
-    description: link
+    description: The `link` default function.
     example: |
       ```js
-      link(string href, string title, string text)
+      Marked.link = ( href, title, text ) => {
+        let out = `<a href="${ href }"`;
+
+        if( title ) {
+          out += ` title="${ title }"`;
+        }
+
+        out += `>${ text }</a>`;
+
+        return out;
+      }
       ```
   - headline: image
-    description: image
+    description: The `image` default function.
     example: |
       ```js
-      image(string href, string title, string text)
-      ```
+      Marked.image = ( href, title, text ) => {
+        let out = `<img src="${ href }" alt="${ text }"`;
 
+        if( title ) {
+          out += ` title="${ title }"`;
+        }
+
+        out += '>';
+
+        return out;
+      }
+      ```
+  - headline: preparse
+    description: |
+      The `preparse` default function.
+
+      _Cuttlebelle let’s you run code on the content of markdown before it goes into the markdown renderer via the `preparse` function._
+    example: |
+      ```js
+      Marked.preparse = ( markdown ) => {
+        return markdown;
+      };
+      ```
   - headline: Html entities
     description: Encode HTML entities so content authors don’t have to worry about that.
     example: |
       ```js
-      module.exports = exports = function renderer({ Marked, _ID }) {
+      module.exports = exports = function renderer({ Marked }) {
 
         Marked.preparse = ( markdown ) => {
           return markdown
@@ -183,11 +256,33 @@ cheats:
         return Marked;
       };
       ```
+  - headline: Relative links
+    description: The script below will make all links relative to your current page.
+    example: |
+      ```js
+      module.exports = exports = function renderer({ Marked, _relativeURL, _ID }) {
+
+        Marked.link = ( href, title, text ) => {
+          if(
+            !href.startsWith('http://') &&
+            !href.startsWith('https://') &&
+            !href.startsWith('#') &&
+            typeof _relativeURL === 'function'
+          ) {
+            href = _relativeURL( href, _ID );
+          }
+
+          return `<a href="${ href }"${ title ? ` title="${ title }"` : '' }>${ text }</a>`;
+        };
+
+        return Marked;
+      };
+      ```
   - headline: External links
     description: The script below will add `rel="external"` to external links.
     example: |
       ```js
-      module.exports = exports = function renderer({ Marked, _ID }) {
+      module.exports = exports = function renderer({ Marked }) {
 
         Marked.link = ( href, title, text ) => {
           let attr = '';
@@ -207,7 +302,7 @@ cheats:
       `# [2]headline` which will render `<h1 class="display-2">headline</h1>` or `# [3]headline` which will render `<h1 class="display-3">headline</h1>`.
     example: |
       ```js
-      module.exports = exports = function renderer({ Marked, _ID }) {
+      module.exports = exports = function renderer({ Marked }) {
 
         const headingLevels = {
           1: 'display-1',

@@ -169,7 +169,7 @@ settings.</p>
 your <code>package.json</code> file.</p>
 </div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">// export a function called `renderer`
 module.exports = exports = function renderer({
-  Marked,      // The MArked instance you want to extend
+  Marked,      // The Marked instance you want to extend
   _ID,         // The ID of the current page
   _parents,    // An array of all parent pages IDs
   _storeSet,   // The store setter
@@ -187,8 +187,8 @@ module.exports = exports = function renderer({
   return Marked;
 };
 </code></pre>
-<p>So if you want to extend two or more methods you add them all before the export call in the end:</p>
-<pre><code class="lang-js">module.exports = exports = function renderer({ Marked, _ID }) {
+<p>And if you want to extend two or more methods you add them all onto the <code>Marked</code> method.</p>
+<pre><code class="lang-js">module.exports = exports = function renderer({ Marked }) {
 
   Marked.hr = () =&gt; {
     return `&lt;hr /&gt;`;
@@ -201,68 +201,137 @@ module.exports = exports = function renderer({
   return Marked;
 };
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-code"><summary class="cheat__item__headline">code</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>code</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">code(string code, string language)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-blockquote"><summary class="cheat__item__headline">blockquote</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>blockquote</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">blockquote(string quote)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-html"><summary class="cheat__item__headline">html</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>html</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">html(string html)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-heading"><summary class="cheat__item__headline">heading</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>heading</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">heading(string text, number level)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-hr"><summary class="cheat__item__headline">hr</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>hr</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">hr()
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-list"><summary class="cheat__item__headline">list</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>list</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">list(string body, boolean ordered)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-listitem"><summary class="cheat__item__headline">listitem</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>listitem</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">listitem(string text)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-paragraph"><summary class="cheat__item__headline">paragraph</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>paragraph</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">paragraph(string text)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-table"><summary class="cheat__item__headline">table</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>table</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">table(string header, string body)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-tablerow"><summary class="cheat__item__headline">tablerow</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>tablerow</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">tablerow(string content)
-</code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-tablecell"><summary class="cheat__item__headline">tablecell</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>tablecell</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">{
-  header: true || false,
-  align: &#39;center&#39; || &#39;left&#39; || &#39;right&#39;
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-code"><summary class="cheat__item__headline">code</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>code</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.code = ( code, language ) =&gt; {
+  if( !language ) {
+    return `&lt;pre&gt;&lt;code&gt;${ code }\n&lt;/code&gt;&lt;/pre&gt;`;
+  }
+
+  return `&lt;pre class=&quot;language-${ language }&quot;&gt;&lt;code&gt;${ code }\n&lt;/code&gt;&lt;/pre&gt;\n`;
 }
 </code></pre>
-<p>thing</p>
-<pre><code class="lang-js">tablecell(string content, object flags)
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-blockquote"><summary class="cheat__item__headline">blockquote</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>blockquote</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.blockquote = ( quote ) =&gt; {
+  return `&lt;blockquote&gt;\n${ + quote + }&lt;/blockquote&gt;\n`;
+}
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-strong"><summary class="cheat__item__headline">strong</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>strong</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">strong(string text)
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-html"><summary class="cheat__item__headline">html</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>html</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.html = ( html ) =&gt; {
+  return html;
+}
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-em"><summary class="cheat__item__headline">em</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>em</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">em(string text)
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-heading"><summary class="cheat__item__headline">heading</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>heading</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.heading = ( text, level ) =&gt; {
+  return `&lt;h${ level } id=&quot;${ text.toLowerCase().replace(/[^\w]+/g, &#39;-&#39;) }&quot;&gt;${ text }&lt;/h${ level }&gt;\n`;
+}
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-codespan"><summary class="cheat__item__headline">codespan</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>codespan</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">codespan(string code)
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-hr"><summary class="cheat__item__headline">hr</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>hr</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.hr = () =&gt; {
+  return `&lt;hr&gt;\n`;
+}
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-br"><summary class="cheat__item__headline">br</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>br</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">br()
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-list"><summary class="cheat__item__headline">list</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>list</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.list = ( body, ordered ) =&gt; {
+  const type = ordered ? &#39;ol&#39; : &#39;ul&#39;;
+
+  return `&lt;${ type }&gt;\n${ body }&lt;/${ type }&gt;\n`;
+}
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-del"><summary class="cheat__item__headline">del</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>del</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">del(string text)
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-listitem"><summary class="cheat__item__headline">listitem</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>listitem</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.listitem = ( text ) =&gt; {
+  return `&lt;li&gt;${ text }&lt;/li&gt;\n`;
+}
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-link"><summary class="cheat__item__headline">link</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>link</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">link(string href, string title, string text)
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-paragraph"><summary class="cheat__item__headline">paragraph</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>paragraph</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.paragraph = ( text ) =&gt; {
+  return `&lt;p&gt;${ text }&lt;/p&gt;\n`;
+}
 </code></pre>
-</div></div></div></details><details class="cheat__item" id="Extend-Markdown-image"><summary class="cheat__item__headline">image</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>image</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">image(string href, string title, string text)
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-table"><summary class="cheat__item__headline">table</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>table</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.table = ( header, body ) =&gt; {
+  return `&lt;table&gt;\n&lt;thead&gt;\n${ header }&lt;/thead&gt;\n&lt;tbody&gt;\n${ body }&lt;/tbody&gt;\n&lt;/table&gt;\n`;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-tablerow"><summary class="cheat__item__headline">tablerow</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>tablerow</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.tablerow = ( content ) =&gt; {
+  return `&lt;tr&gt;\n${ content }&lt;/tr&gt;\n`;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-tablecell"><summary class="cheat__item__headline">tablecell</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>tablecell</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.tablecell = ( content, flags ) =&gt; {
+  const type = flags.header ? &#39;th&#39; : &#39;td&#39;;
+  const tag = flags.align
+    ? `&lt;${ type } style=&quot;text-align:${ flags.align }&quot;&gt;`
+    : `&lt;${ type }&gt;`;
+
+  return `${ tag }${ content }&lt;/${ type }&gt;\n`;
+}
+</code></pre>
+<p>The <code>flag</code> option can be:</p>
+<pre><code class="lang-js">{
+  header: true || false,
+  align: &#39;center&#39; || &#39;left&#39; || &#39;right&#39;,
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-strong"><summary class="cheat__item__headline">strong</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>strong</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.strong = ( text ) =&gt; {
+  return `&lt;strong&gt;${ text }&lt;/strong&gt;`;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-em"><summary class="cheat__item__headline">em</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>em</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.em = ( text ) =&gt; {
+  return `&lt;em&gt;${ text }&lt;/em&gt;`;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-codespan"><summary class="cheat__item__headline">codespan</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>codespan</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.codespan = ( code ) =&gt; {
+  return `&lt;code&gt;${ text }&lt;/code&gt;`;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-br"><summary class="cheat__item__headline">br</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>br</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.br = () =&gt; {
+  return `&lt;br&gt;`;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-del"><summary class="cheat__item__headline">del</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>del</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.del = ( text ) =&gt; {
+  return `&lt;del&gt;${ text }&lt;/del&gt;`;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-link"><summary class="cheat__item__headline">link</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>link</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.link = ( href, title, text ) =&gt; {
+  let out = `&lt;a href=&quot;${ href }&quot;`;
+
+  if( title ) {
+    out += ` title=&quot;${ title }&quot;`;
+  }
+
+  out += `&gt;${ text }&lt;/a&gt;`;
+
+  return out;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-image"><summary class="cheat__item__headline">image</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>image</code> default function.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.image = ( href, title, text ) =&gt; {
+  let out = `&lt;img src=&quot;${ href }&quot; alt=&quot;${ text }&quot;`;
+
+  if( title ) {
+    out += ` title=&quot;${ title }&quot;`;
+  }
+
+  out += &#39;&gt;&#39;;
+
+  return out;
+}
+</code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-preparse"><summary class="cheat__item__headline">preparse</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The <code>preparse</code> default function.</p>
+<p><em>Cuttlebelle let<span class="markdown-quote">&rsquo;</span>s you run code on the content of markdown before it goes into the markdown renderer via the <code>preparse</code> function.</em></p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">Marked.preparse = ( markdown ) =&gt; {
+  return markdown;
+};
 </code></pre>
 </div></div></div></details><details class="cheat__item" id="Extend-Markdown-Html-entities"><summary class="cheat__item__headline">Html entities</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>Encode HTML entities so content authors don<span class="markdown-quote">&rsquo;</span>t have to worry about that.</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">module.exports = exports = function renderer({ Marked, _ID }) {
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">module.exports = exports = function renderer({ Marked }) {
 
   Marked.preparse = ( markdown ) =&gt; {
     return markdown
@@ -276,8 +345,27 @@ module.exports = exports = function renderer({
   return Marked;
 };
 </code></pre>
+</div></div></div></details><details class="cheat__item" id="Extend-Markdown-Relative-links"><summary class="cheat__item__headline">Relative links</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The script below will make all links relative to your current page.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">module.exports = exports = function renderer({ Marked, _relativeURL, _ID }) {
+
+  Marked.link = ( href, title, text ) =&gt; {
+    if(
+      !href.startsWith(&#39;http://&#39;) &amp;&amp;
+      !href.startsWith(&#39;https://&#39;) &amp;&amp;
+      !href.startsWith(&#39;#&#39;) &amp;&amp;
+      typeof _relativeURL === &#39;function&#39;
+    ) {
+      href = _relativeURL( href, _ID );
+    }
+
+    return `&lt;a href=&quot;${ href }&quot;${ title ? ` title=&quot;${ title }&quot;` : &#39;&#39; }&gt;${ text }&lt;/a&gt;`;
+  };
+
+  return Marked;
+};
+</code></pre>
 </div></div></div></details><details class="cheat__item" id="Extend-Markdown-External-links"><summary class="cheat__item__headline">External links</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>The script below will add <code>rel=&quot;external&quot;</code> to external links.</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">module.exports = exports = function renderer({ Marked, _ID }) {
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">module.exports = exports = function renderer({ Marked }) {
 
   Marked.link = ( href, title, text ) =&gt; {
     let attr = &#39;&#39;;
@@ -293,7 +381,7 @@ module.exports = exports = function renderer({
 </code></pre>
 </div></div></div></details><details class="cheat__item" id="Extend-Markdown-Headlines-with-classes"><summary class="cheat__item__headline">Headlines with classes</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>Sometimes you want to split the semantic value and the look of a headline. The below script will let your content author use the new markdown syntax:
 <code># [2]headline</code> which will render <code>&lt;h1 class=&quot;display-2&quot;&gt;headline&lt;/h1&gt;</code> or <code># [3]headline</code> which will render <code>&lt;h1 class=&quot;display-3&quot;&gt;headline&lt;/h1&gt;</code>.</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">module.exports = exports = function renderer({ Marked, _ID }) {
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">module.exports = exports = function renderer({ Marked }) {
 
   const headingLevels = {
     1: &#39;display-1&#39;,
