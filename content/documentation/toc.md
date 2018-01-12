@@ -3,17 +3,21 @@
 - Basics
   - How a page is assembled
   - Cuttlebelle commands
+  - Markdown and front matter
 - For content authors
+  - Get started
   - Using the docs
   - Add a new page
   - Primer on yaml
   - Primer on Markdown
 - For developers
-  - Get started with `init`
+  - Get started
   - Create a new layout
+  - Relative links
+  - Code components vs layout components
   - The difference between page and partial layouts
   - Enable self documentation
   - Using the watch
-  - Change the defaults
+  - Change the settings
   - Helpful npm scripts
   - A typical setup with Sass

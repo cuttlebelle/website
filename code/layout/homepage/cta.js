@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Logo } from '../icon';
+import { Computer } from '../icon';
 
 
 /**
@@ -11,7 +11,8 @@ const Cta = ({ code, _body }) => (
 	<section className="cta">
 		<div className="cta__section cta__section--top">
 			<div className="cta__section__body">
-				<Logo className="cta__section__logo" title="Cuttlebelle logo" desc="A cute, green cuttlefish with a big smile" />
+				<Computer className="cta__section__logo" title="Cuttlebelle computer" desc="A computer with keyboard and a monitor that has tentacles couming out of it
+					behind it" />
 			</div>
 		</div>
 

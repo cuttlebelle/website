@@ -227,6 +227,14 @@ cheats:
         return out;
       }
       ```
+  - headline: text
+    description: The `text` default function.
+    example: |
+      ```js
+      Marked.text = ( text ) => {
+        return text;
+      }
+      ```
   - headline: preparse
     description: |
       The `preparse` default function.

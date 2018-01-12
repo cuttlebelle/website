@@ -1,6 +1,25 @@
 .footer {
-	padding: 6rem;
+	position: relative;
+	padding: 10rem 6rem 6rem 6rem;
 	background-color: $color-Text;
 	color: #fff;
 	text-align: right;
+}
+
+.footer__bottom {
+	position: absolute;
+	width: auto;
+	bottom: 100%;
+	left: -1px;
+	right: -1px;
+	margin-bottom: -1px;
+}
+
+.footer__hole {
+	width: 230px;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	margin-left: -115px;
+	top: -60px;
 }

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Cuttlebelle } from './icon';
+import { Bottom, Hole } from './icon';
 
 
 /**
@@ -9,6 +9,8 @@ import { Cuttlebelle } from './icon';
  */
 const Footer = ({ _body }) => (
 	<footer className="footer">
+		<Bottom className="footer__bottom" title="" desc="" />
+		<Hole className="footer__hole" title="" desc="" />
 		{ _body }
 	</footer>
 );

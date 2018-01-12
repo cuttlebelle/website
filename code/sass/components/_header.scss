@@ -102,7 +102,7 @@
 }
 
 .header__rocks--back {
-	left: 15%;
+	left: 30%;
 	bottom: 0;
 	width: auto;
 	height: 16rem;
@@ -131,6 +131,25 @@
 .header__logo__logo {
 	width: 184px;
 	margin-bottom: 1rem;
+
+	.logo-bubble,
+	.logo-head,
+	.logo-head-shadow {
+		transition: fill 20s ease;
+	}
+
+	&:hover {
+		.logo-bubble {
+			fill: #c42b51;
+			animation: skin 4s steps( 16 ) infinite;
+		}
+
+		.logo-head,
+		.logo-head-shadow {
+			fill: #ff5778;
+			animation: skin 10s steps( 64 ) 0s infinite reverse;
+		}
+	}
 }
 
 .header__logo__cuttlebelle {
@@ -141,10 +160,6 @@
 	font-size: 1.125rem;
 	text-align: center;
 	color: $color-Text;
-}
-
-.logo-bubble {
-	animation: skin 4s steps( 16 ) infinite;
 }
 
 @keyframes skin {
@@ -229,7 +244,7 @@
 	bottom: 160px;
 	animation: swim 80s infinite;
 
-	@media screen and ( min-width: 500px ) {
+	@media screen and ( min-width: 1100px ) {
 		bottom: 57px;
 	}
 }

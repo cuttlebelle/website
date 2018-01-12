@@ -49,7 +49,7 @@ cheats:
       { variable: "value" }
       ```
   - headline: _store
-    description: To get the data set by `_storeSet` just call this helper function:
+    description: 'To get the data set by `_storeSet` just call this helper function:'
     example: |
       `partial1.js`:
       ```js
@@ -60,7 +60,7 @@ cheats:
       { variable: "value" }
       ```
   - headline: _pages
-    description: An object of all pages and their props; with `_ID` as their key.
+    description: An object of all pages and their props; with `_ID` as their key. Each page also get the `_url` prop automatically attached.
     example: |
       ```shell
       .

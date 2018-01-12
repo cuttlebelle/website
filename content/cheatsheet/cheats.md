@@ -5,6 +5,6 @@ cheats:
   - yaml.md
   - extend-markdown.md
   - markdown.md
-  - settings.md
   - proptypes.md
+  - settings.md
 ---
