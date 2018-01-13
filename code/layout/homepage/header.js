@@ -9,6 +9,37 @@ import { Logo, Cuttlebelle, RocksLeft, RocksRight, RocksBack, Code, Content, Fis
  */
 const Header = ({ description }) => (
 	<header className="header header--large">
+		<div className="header__bubble header__bubble--floater header__bubble--floater2 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater2 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater3 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater1 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater2 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater3 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater1 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater2 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater3 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater3 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater1 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater2 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater3 header__bubble--floater1 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater2 js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater js-header__bubble"></div>
+		<div className="header__bubble header__bubble--floater header__bubble--floater1 js-header__bubble"></div>
+
 		<div className="header__fishschool">
 			<Fish className="header__fishschool__fish header__fishschool__fish--1" title="" desc="" />
 			<Fish className="header__fishschool__fish header__fishschool__fish--2" title="" desc="" />

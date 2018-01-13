@@ -66,8 +66,15 @@
 	display: block;
 	margin: 2rem auto 0 auto;
 	padding: 0 1rem;
-	max-height: 20rem;
-	width: auto;
+	max-width: 90%;
+	height: auto;
+
+	@media screen and ( min-width: 480px ) {
+		height: auto;
+		max-width: none;
+		width: auto;
+		max-height: 20rem;
+	}
 }
 
 .cta__code {

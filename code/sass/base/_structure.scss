@@ -83,3 +83,19 @@ code {
 .markdown-trademark {
 	font-size: 85%;
 }
+
+.content {
+	margin: 0 1rem;
+
+	@media screen and ( min-width: 480px ) {
+		margin: 0 2rem;
+	}
+}
+
+main > div:first-child > .content {
+	margin-top: 6rem;
+}
+
+main > div:last-child > .content {
+	margin-bottom: 8rem;
+}
