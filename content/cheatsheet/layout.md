@@ -17,6 +17,15 @@ cheats:
       /foo/     => foo
       /         => index
       ```
+  - headline: _self
+    description: |
+      `_self` is the relative path of the current partial markdown or index.yml.
+    example: |
+      ```js
+      console.log( _self ); // page2/index.yml
+      console.log( _self ); // page1/partial1.md
+      console.log( _self ); // page4/subpage/partial-x.md
+      ```
   - headline: _parents
     description: An array of all parent pages IDs
     example: |
@@ -112,6 +121,19 @@ cheats:
       _parseMD( markdownString );
       ```
       The output would be `'Hello <strong>World</strong>'`.
+  - headline: _parseYaml
+    description: A helper function to parse YAML into an javascript object.
+    example: |
+      ```js
+      const yamlString = `
+        test:
+          - one
+          - two
+      `;
+
+      _parseYaml( yamlString );
+      ```
+      The output would be `[ 'one', 'two' ]`.
   - headline: _relativeURL
     description: A helper function to make an absolute URL relative. First argument is the target, second is the base.
     example: |

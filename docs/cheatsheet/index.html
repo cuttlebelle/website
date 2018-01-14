@@ -6,6 +6,11 @@
 /foo/     =&gt; foo
 /         =&gt; index
 </code></pre>
+</div></div></div></details><details class="cheat__item" id="Layout-_self"><summary class="cheat__item__headline">_self</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p><code>_self</code> is the relative path of the current partial markdown or index.yml.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">console.log( _self ); // page2/index.yml
+console.log( _self ); // page1/partial1.md
+console.log( _self ); // page4/subpage/partial-x.md
+</code></pre>
 </div></div></div></details><details class="cheat__item" id="Layout-_parents"><summary class="cheat__item__headline">_parents</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>An array of all parent pages IDs</p>
 </div></div><div class="cheat__item__details__example"><div><pre><code class="lang-shell">.
 ├── overview
@@ -78,6 +83,16 @@
 _parseMD( markdownString );
 </code></pre>
 <p>The output would be <code>&#39;Hello &lt;strong&gt;World&lt;/strong&gt;&#39;</code>.</p>
+</div></div></div></details><details class="cheat__item" id="Layout-_parseYaml"><summary class="cheat__item__headline">_parseYaml</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>A helper function to parse YAML into an javascript object.</p>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">const yamlString = `
+  test:
+    - one
+    - two
+`;
+
+_parseYaml( yamlString );
+</code></pre>
+<p>The output would be <code>[ &#39;one&#39;, &#39;two&#39; ]</code>.</p>
 </div></div></div></details><details class="cheat__item" id="Layout-_relativeURL"><summary class="cheat__item__headline">_relativeURL</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>A helper function to make an absolute URL relative. First argument is the target, second is the base.</p>
 </div></div><div class="cheat__item__details__example"><div><pre><code class="lang-js">_relativeURL( &#39;/foo/bar&#39;, &#39;/foo&#39; );
 </code></pre>

@@ -7,10 +7,12 @@ import PropTypes from 'prop-types';
  */
 const Content = ({ _body, _self }) => {
 	const section = _self.split('/')[ ( _self.split('/').length - 1 ) ].replace( '.md', '' ).replace( 'content-', '' );
+	const SentenceCase = ( text ) => text.charAt( 0 ).toUpperCase() + text.slice( 1 );
 
 	return (
 		<div id={ section } className="partial content">
 			<a href={`#${ section }`} className="content__link">#</a>
+			<h2>{ SentenceCase( section.replace( /-/g, ' ' ) ) }</h2>
 			{ _body }
 		</div>
 	);

@@ -43,9 +43,12 @@ const TOC = ({ sections, _pages, _ID }) => {
 
 TOC.propTypes = {
 	/**
-	 * _body: (partials)(4)
+	 * sections:
+	 *   - page1
+	 *   - page1/nested
+	 *   - page2
 	 */
-	// _body: PropTypes.node.isRequired,
+	sections: PropTypes.node.isRequired,
 };
 
 TOC.defaultProps = {};

@@ -16,7 +16,7 @@
 	&:before {
 		content: '$';
 		display: inline-block;
-		color: #666;
+		color: lighten( $color-Text, 30 );
 		margin-right: 0.5rem;
 	}
 }
