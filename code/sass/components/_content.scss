@@ -1,10 +1,13 @@
 .content {
-	position: relative;
 	padding-top: 3rem;
 
+	pre {
+		transform: translate3d( 0, 0, 0 );
+	}
+
 	pre code {
-		border-radius: 3px;
 		position: relative;
+		border-radius: 3px;
 		padding-top: 2.5rem;
 		padding-bottom: 1rem;
 
@@ -20,7 +23,7 @@
 
 		&:after {
 			content: '';
-			position: absolute;
+			position: fixed;
 			top: 0;
 			left: 1em;
 			width: 54px;
