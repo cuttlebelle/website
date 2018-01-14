@@ -7,7 +7,7 @@ import { Cuttlebelle, Github } from '../icon';
 /**
  * The Nav component
  */
-const Nav = ({ links, _relativeURL, _ID }) => (
+const Nav = ({ links, _pages, _relativeURL, _ID }) => (
 	<nav className="nav">
 		<ul>
 			<li className="nav__link nav__link--fixed">
@@ -16,28 +16,32 @@ const Nav = ({ links, _relativeURL, _ID }) => (
 				</a>
 			</li>
 			{
-				links.map( ( link, i ) => (
-					<li className={`nav__link nav__link--generated${
-						link.link.endsWith( _ID ) || link.link === '/' && _ID === 'index'
-							? ` nav__link--active`
-							: ''
-						}`} key={ i }>
-						<a href={
-							link.link.startsWith('http')
-								? link.link
-								: _relativeURL( link.link, _ID )
-						}>
-							{
-								link.name === 'github'
-									? <span>
-											<Github className="nav__link__github" title="GitHub" desc="The GitHub logo" />
-											<span className="nav__link__github__text">{ link.name }</span>
-										</span>
-									: link.name
-							}
-						</a>
-					</li>
-				))
+				links.map( ( link, i ) => {
+					const url = link.link === undefined ? _pages[ link.name ]._url : link.link;
+
+					return (
+						<li key={ i } className={`nav__link nav__link--generated${
+							_pages[ _ID ]._url.startsWith( url ) && url != '/' || url === '/' && _ID === 'index'
+								? ` nav__link--active`
+								: ''
+							}`}>
+							<a href={
+								url.startsWith('http')
+									? url
+									: _relativeURL( url, _ID )
+							}>
+								{
+									link.name === 'github'
+										? <span>
+												<Github className="nav__link__github" title="GitHub" desc="The GitHub logo" />
+												<span className="nav__link__github__text">{ link.name }</span>
+											</span>
+										: link.name
+								}
+							</a>
+						</li>
+					);
+				})
 			}
 		</ul>
 	</nav>

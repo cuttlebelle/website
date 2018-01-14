@@ -6,9 +6,7 @@ links:
   - name: docs
     link: /documentation
   - name: cheatsheet
-    link: /cheatsheet
   - name: contribute
-    link: /contribute
   - name: github
     link: https://github.com/cuttlebelle/cuttlebelle
 ---

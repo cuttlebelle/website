@@ -1,7 +1,7 @@
 .code {
 	display: block;
 	padding: 1.25rem;
-	background-color: #404040;
+	background-color: $color-Text;
 	border-radius: 3px;
 	font-family: "fira-mono", "PT Sans Mono", "Monaco", "Iconsolas", "Droid Sans Mono", monospace;
 	color: #fff;
@@ -25,5 +25,5 @@
 	white-space: pre;
 	padding-left: 1rem;
 	margin: 0;
-	opacity: 0.3;
+	opacity: 0.4;
 }

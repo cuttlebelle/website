@@ -1,10 +1,9 @@
-title: Documentation
+title: Documentation for content authors
 
 header:
   - /shared/nav.md
 
 main:
-  - toc.md
   - content-getting-started.md
 
 footer:

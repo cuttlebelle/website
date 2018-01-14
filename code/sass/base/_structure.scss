@@ -75,7 +75,7 @@ code {
 		overflow: auto;
 		display: block;
 		padding: 0.6em 1em;
-		border: 3px solid $color-Background-dark;
+		background-color: $color-Text;
 		border-radius: 0;
 	}
 }
@@ -84,7 +84,7 @@ code {
 	font-size: 85%;
 }
 
-.content {
+.partial {
 	margin: 0 1rem;
 
 	@media screen and ( min-width: 480px ) {
@@ -92,10 +92,10 @@ code {
 	}
 }
 
-main > div:first-child > .content {
+main > div:first-child > .partial {
 	margin-top: 6rem;
 }
 
-main > div:last-child > .content {
+main > div:last-child > .partial {
 	margin-bottom: 8rem;
 }

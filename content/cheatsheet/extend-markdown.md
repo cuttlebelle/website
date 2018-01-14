@@ -175,7 +175,7 @@ cheats:
     description: The `codespan` default function.
     example: |
       ```js
-      Marked.codespan = ( code ) => {
+      Marked.codespan = ( text ) => {
         return `<code>${ text }</code>`;
       }
       ```

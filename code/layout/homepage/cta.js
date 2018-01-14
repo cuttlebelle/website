@@ -9,16 +9,18 @@ import { Computer } from '../icon';
  */
 const Cta = ({ code, _body }) => (
 	<section className="cta">
-		<div className="cta__section cta__section--top">
-			<div className="cta__section__body">
-				<Computer className="cta__section__logo" title="Cuttlebelle computer" desc="A computer with keyboard and a monitor that has tentacles couming out of it
-					behind it" />
+		<div className="cta__section__wrapper">
+			<div className="cta__section cta__section--top">
+				<div className="cta__section__body2">
+					<Computer className="cta__section__logo" title="Cuttlebelle computer" desc="A computer with keyboard and a monitor that has tentacles couming out of it
+						behind it" />
+				</div>
 			</div>
-		</div>
 
-		<div className="cta__section cta__section--bottom">
-			<div className="cta__section__body body">
-				{ _body }
+			<div className="cta__section cta__section--bottom">
+				<div className="cta__section__body body">
+					{ _body }
+				</div>
 			</div>
 		</div>
 
