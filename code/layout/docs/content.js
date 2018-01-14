@@ -9,7 +9,10 @@ const Content = ({ _body, _self }) => {
 	const section = _self.split('/')[ ( _self.split('/').length - 1 ) ].replace( '.md', '' ).replace( 'content-', '' );
 
 	return (
-		<div className="partial content">{ section }{ _body }</div>
+		<div id={ section } className="partial content">
+			<a href={`#${ section }`} className="content__link">#</a>
+			{ _body }
+		</div>
 	);
 }
 

@@ -4,7 +4,12 @@ header:
   - /shared/nav.md
 
 main:
+  - /documentation/toc.md
   - content-getting-started.md
+  - content-using-the-docs.md
+  - content-add-a-new-page.md
+  - content-primer-on-yaml.md
+  - content-primer-on-markdown.md
 
 footer:
   - /shared/footer.md

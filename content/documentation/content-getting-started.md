@@ -2,7 +2,7 @@
 layout: docs/content
 ---
 
-## Installing
+## Getting started
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repellat voluptates ipsa incidunt asperiores quae dolore illo provident corporis vero, recusandae, modi laboriosam harum! Commodi consequuntur blanditiis odio architecto culpa.
 

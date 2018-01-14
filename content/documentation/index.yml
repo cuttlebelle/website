@@ -4,8 +4,11 @@ header:
   - /shared/nav.md
 
 main:
-  - toc.md
+  - /documentation/toc.md
   - content-getting-started.md
+  - content-how-a-page-is-assembled.md
+  - content-cuttlebelle-commands.md
+  - content-markdown-and-front-matter.md
 
 footer:
   - /shared/footer.md

@@ -4,7 +4,17 @@ header:
   - /shared/nav.md
 
 main:
+  - /documentation/toc.md
   - content-getting-started.md
+  - content-create-a-new-layout.md
+  - content-relative-links.md
+  - content-code-components-vs-layout-components.md
+  - content-the-difference-between-page-and-partial-layouts.md
+  - content-enable-self-documentation.md
+  - content-using-the-watch.md
+  - content-change-the-settings.md
+  - content-helpful-npm-scripts.md
+  - content-a-typical-setup-with-sass.md
 
 footer:
   - /shared/footer.md

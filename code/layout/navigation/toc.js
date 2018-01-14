@@ -6,21 +6,40 @@ import Slugify from 'slugify';
 /**
  * The toc component
  */
-const TOC = ({ sections, _pages, _ID }) => (
-	<section className="toc">
-		{
-			sections.map( ( section, i ) => {
-				const page = _pages[ section ];
-				return (
-					<nav key={ i } className={`toc__section toc__section--${ i }`}>
-						<h2><a href={ page._url }>{ page.title }</a></h2>
-						?{ JSON.stringify(page.main) }?
-					</nav>
-				)
-			})
-		}
-	</section>
-);
+const TOC = ({ sections, _pages, _ID }) => {
+	const SentenceCase = ( text ) => text.charAt( 0 ).toUpperCase() + text.slice( 1 );
+
+	return (
+		<section className="toc">
+			{
+				sections.map( ( section, i ) => {
+					const page = _pages[ section ];
+					return (
+						<nav key={ i } className={`toc__section toc__section--${ i }`}>
+							<h2><a href={ page._url }>{ page.title }</a></h2>
+
+							<ul>
+								{
+									page.main.map( ( partial, i ) => {
+										if( partial.startsWith('content-') ) {
+											const sectionName = partial.replace( 'content-', '' ).replace( '.md', '' );
+
+											return (
+												<li key={ i }>
+													<a href={`${ page._url }#${ sectionName }`}>{ SentenceCase( sectionName.replace( /-/g, ' ' ) ) }</a>
+												</li>
+											);
+										}
+									})
+								}
+							</ul>
+						</nav>
+					)
+				})
+			}
+		</section>
+	);
+}
 
 TOC.propTypes = {
 	/**

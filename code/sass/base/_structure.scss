@@ -85,17 +85,17 @@ code {
 }
 
 .partial {
-	margin: 0 1rem;
+	padding: 0 1rem;
 
 	@media screen and ( min-width: 480px ) {
-		margin: 0 2rem;
+		padding: 0 2rem;
 	}
 }
 
 main > div:first-child > .partial {
-	margin-top: 6rem;
+	padding-top: 6rem;
 }
 
 main > div:last-child > .partial {
-	margin-bottom: 8rem;
+	padding-bottom: 8rem;
 }
