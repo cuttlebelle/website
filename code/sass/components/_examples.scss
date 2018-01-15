@@ -1,6 +1,7 @@
 .examples {
 	background-color: $color-Background-light;
 	overflow: hidden;
+	padding-bottom: 5rem;
 
 	@media screen and ( min-width: 650px ) {
 		padding: 10rem 0;

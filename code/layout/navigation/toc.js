@@ -6,7 +6,7 @@ import Slugify from 'slugify';
 /**
  * The toc component
  */
-const TOC = ({ sections, _pages, _ID }) => {
+const TOC = ({ sections, _pages, _ID, _relativeURL }) => {
 	const SentenceCase = ( text ) => text.charAt( 0 ).toUpperCase() + text.slice( 1 );
 
 	return (
@@ -16,7 +16,7 @@ const TOC = ({ sections, _pages, _ID }) => {
 					const page = _pages[ section ];
 					return (
 						<nav key={ i } className={`toc__section toc__section--${ i }`}>
-							<h2><a href={ page._url }>{ page.title }</a></h2>
+							<h2><a href={ _relativeURL( page._url, _ID ) }>{ page.title }</a></h2>
 
 							<ul>
 								{
@@ -26,7 +26,7 @@ const TOC = ({ sections, _pages, _ID }) => {
 
 											return (
 												<li key={ i }>
-													<a href={`${ page._url }#${ sectionName }`}>{ SentenceCase( sectionName.replace( /-/g, ' ' ) ) }</a>
+													<a href={`${ _relativeURL( page._url, _ID ) }#${ sectionName }`}>{ SentenceCase( sectionName.replace( /-/g, ' ' ) ) }</a>
 												</li>
 											);
 										}
