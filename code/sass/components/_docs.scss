@@ -1,0 +1,17 @@
+.docs {
+	overflow: hidden;
+	margin-top: 3rem;
+	margin-bottom: 8rem;
+}
+
+@media screen and ( min-width: 980px ) {
+	.docs__nav {
+		float: left;
+		width: 30%;
+	}
+
+	.docs__content {
+		float: left;
+		width: 70%;
+	}
+}

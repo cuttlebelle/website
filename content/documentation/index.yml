@@ -1,14 +1,20 @@
-title: Documentation
+layout: docs/page
+title: Basics
 
 header:
   - /shared/nav.md
 
-main:
+navigation:
   - /documentation/toc.md
-  - content-getting-started.md
-  - content-how-a-page-is-assembled.md
-  - content-cuttlebelle-commands.md
-  - content-markdown-and-front-matter.md
+
+docs:
+  - getting-started.md
+  - create-a-new-page.md
+  - what-is-markdown.md
+  - create-a-new-layout.md
+  - what-is-frontmatter.md
+  - use-the-new-layout.md
+  - using-the-double-save.md
 
 footer:
   - /shared/footer.md

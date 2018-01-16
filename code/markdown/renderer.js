@@ -22,14 +22,14 @@ module.exports = exports = function renderer({ Marked }) {
 
 
 	/**
-	 * Pre-parse function
+	 * Text function
 	 *
-	 * @param  {string} markdown - The markdown coming from our partials
+	 * @param  {string} text - The markdown coming from our partials
 	 *
-	 * @return {string}          - The markdown after we’re finished with it
+	 * @return {string}      - The markdown after we’re finished with it
 	 */
-	Marked.preparse = ( markdown ) => {
-		return markdown
+	Marked.text = ( text ) => {
+		return text
 			.replace(/\™/g, '<span class="markdown-trademark">&trade;</span>')
 			.replace(/\’/g, '<span class="markdown-quote">&rsquo;</span>')
 			.replace(/\—/g, '<span class="markdown-mdash">&mdash;</span>')

@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Slugify from 'slugify';
 
-import { Logo } from './icon';
-
 
 /**
  * The page component
@@ -15,12 +13,13 @@ const Page = ({
 	_relativeURL,
 	title,
 	header,
-	main,
+	navigation,
+	docs,
 	footer
 }) => (
  <html lang="en" className="background">
 	<head>
-		<title>Cuttlebelle - { title }</title>
+		<title>Cuttlebelle documentation - { title }</title>
 		<meta charSet="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" type="image/x-icon" href={ _relativeURL( '/assets/img/favicon.ico', _ID ) } />
@@ -33,8 +32,14 @@ const Page = ({
 		<div className="wrapper">
 			{ header }
 
-			<main>
-				{ main }
+			<main className="docs">
+				<aside className="docs__nav">
+					{ navigation }
+				</aside>
+
+				<section className="docs__content">
+					{ docs }
+				</section>
 			</main>
 
 			{ footer }
@@ -57,9 +62,14 @@ Page.propTypes = {
 	header: PropTypes.node,
 
 	/**
-	 * main: (partials)(4)
+	 * navigation: (partials)(4)
 	 */
-	main: PropTypes.node.isRequired,
+	navigation: PropTypes.node.isRequired,
+
+	/**
+	 * docs: (partials)(4)
+	 */
+	docs: PropTypes.node.isRequired,
 
 	/**
 	 * footer: (partials)(2)

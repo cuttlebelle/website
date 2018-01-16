@@ -1,20 +1,23 @@
-title: Documentation for developers
+layout: docs/page
+title: For developers
 
 header:
   - /shared/nav.md
 
-main:
+navigation:
   - /documentation/toc.md
-  - content-getting-started.md
-  - content-create-a-new-layout.md
-  - content-relative-links.md
-  - content-code-components-vs-layout-components.md
-  - content-the-difference-between-page-and-partial-layouts.md
-  - content-enable-self-documentation.md
-  - content-using-the-watch.md
-  - content-change-the-settings.md
-  - content-helpful-npm-scripts.md
-  - content-a-typical-setup-with-sass.md
+
+docs:
+  - getting-started.md
+  - create-a-new-layout.md
+  - relative-links.md
+  - code-components-vs-layout-components.md
+  - the-difference-between-page-and-partial-layouts.md
+  - enable-self-documentation.md
+  - using-the-watch.md
+  - change-the-settings.md
+  - helpful-npm-scripts.md
+  - a-typical-setup-with-sass.md
 
 footer:
   - /shared/footer.md

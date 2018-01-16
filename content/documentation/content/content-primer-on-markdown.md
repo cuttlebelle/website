@@ -1,3 +1,0 @@
----
-layout: docs/content
----

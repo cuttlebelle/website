@@ -1,5 +1,5 @@
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import { Logo, Code, Content, Fish } from '../icon';
 

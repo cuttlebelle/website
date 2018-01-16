@@ -1,15 +1,18 @@
-title: Documentation for content authors
+layout: docs/page
+title: For content authors
 
 header:
   - /shared/nav.md
 
-main:
+navigation:
   - /documentation/toc.md
-  - content-getting-started.md
-  - content-using-the-docs.md
-  - content-add-a-new-page.md
-  - content-primer-on-yaml.md
-  - content-primer-on-markdown.md
+
+docs:
+  - getting-started.md
+  - using-the-docs.md
+  - add-a-new-page.md
+  - primer-on-yaml.md
+  - primer-on-markdown.md
 
 footer:
   - /shared/footer.md
