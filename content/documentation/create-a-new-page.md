@@ -52,7 +52,7 @@ Your folder structure should now look like this:
 Inside the `index.yml` copy / paste the below content.
 
 ```yaml
-title: Homepage
+title: Page 1
 
 main:
   - body.md
@@ -91,7 +91,7 @@ rapid in its movements than a whale.
 And now replace your `Hello world` string inside the `page1/index.yml` with `body.md` so that it looks like this:
 
 ```yaml
-title: Homepage
+title: Page 1
 
 main:
   - body.md
@@ -99,4 +99,26 @@ main:
 
 Your browser should refresh automatically and you see the new content.
 
-You’ve done it. You created a new page.
+If you compare this page to the homepage at `/` you’ll see that it’s missing it’s header and footer. We can fix that the same way we added the body partial.
+Edit your `page1/index.yml` so that it looks like the code below:
+
+```yaml
+title: Page 1
+
+header:
+  - /_shared/header.md
+
+main:
+  - body.md
+
+footer:
+  - /_shared/footer.md
+```
+
+You can easily share partials between pages by pointing to them via a path. If you start the path with a slash `/` it will be resolved relative to the root
+of your content folder. So a path like `/_shared/header.md` regardless whether it is added inside the `page1/index.yml` or the
+`page1/subpage/subsubpage/index.yml` will always point to `content/_shared/header.md`.
+
+Upon saving the `index.yml` file you should see the header and footer in your new page.
+
+**You’ve done it**. You created a new page.

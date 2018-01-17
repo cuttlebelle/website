@@ -21,10 +21,10 @@ console.log( _self ); // page4/subpage/partial-x.md
 </code></pre>
 <p>Taking the above file structure into account, the parents for the page <code>product/product1/detail</code> would be:</p>
 <pre><code class="lang-js">[
-  &quot;index&quot;,
-  &quot;products&quot;,
-  &quot;products/product1&quot;,
   &quot;products/product1/detail&quot;
+  &quot;products/product1&quot;,
+  &quot;products&quot;,
+  &quot;index&quot;,
 ]
 </code></pre>
 </div></div></div></details><details class="cheat__item" id="Layout-_storeSet"><summary class="cheat__item__headline">_storeSet</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>You can set data to persist between partials by setting them with this helper.</p>
@@ -66,7 +66,7 @@ console.log( _self ); // page4/subpage/partial-x.md
 │       └── detail
 └── index
 </code></pre>
-<p>Given the structure above; this is what the <code>_nav</code> object would look like.:</p>
+<p>Given the structure above; this is what the <code>_nav</code> object would look like:</p>
 <pre><code class="lang-js">{
   &quot;overview&quot;: &quot;overview&quot;,
   &quot;products&quot;: {
@@ -440,9 +440,10 @@ Still the same paragraph
 New paragraph
 </code></pre>
 </div></div></div></details><details class="cheat__item" id="Markdown-Headline"><summary class="cheat__item__headline">Headline</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>To add a headline add the <code>#</code> symbol in-front of your line. The amount of hashes represents the headline level.</p>
-</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-markdown">&#35; A headline level 1
-&#35;&#35; A headline level 2
-&#35;&#35;&#35; A headline level 3</code></pre>
+</div></div><div class="cheat__item__details__example"><div><pre><code class="lang-markdown"># A headline level 1
+## A headline level 2
+### A headline level 3
+</code></pre>
 </div></div></div></details><details class="cheat__item" id="Markdown-Link"><summary class="cheat__item__headline">Link</summary><div class="cheat__item__details"><div class="cheat__item__details__description"><div><p>To link to another page just us the <code>[text](link)</code> notation.</p>
 </div></div><div class="cheat__item__details__example"><div><pre><code class="lang-markdown">A [link](/checkout) inside text.
 

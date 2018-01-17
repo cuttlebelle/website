@@ -17,9 +17,11 @@ cheats:
   - headline: Headline
     description: To add a headline add the `#` symbol in-front of your line. The amount of hashes represents the headline level.
     example: |
-      <pre><code class="lang-markdown">&#35; A headline level 1
-      &#35;&#35; A headline level 2
-      &#35;&#35;&#35; A headline level 3</code></pre>
+      ```markdown
+      # A headline level 1
+      ## A headline level 2
+      ### A headline level 3
+      ```
   - headline: Link
     description: To link to another page just us the `[text](link)` notation.
     example: |

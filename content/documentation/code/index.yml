@@ -10,14 +10,15 @@ navigation:
 docs:
   - getting-started.md
   - create-a-new-layout.md
-  - relative-links.md
   - code-components-vs-layout-components.md
+  - the-assets-folder.md
+  - relative-links.md
   - the-difference-between-page-and-partial-layouts.md
   - enable-self-documentation.md
   - using-the-watch.md
   - change-the-settings.md
-  - helpful-npm-scripts.md
-  - a-typical-setup-with-sass.md
+  - extend-markdown.md
+  - default-props.md
 
 footer:
   - /shared/footer.md

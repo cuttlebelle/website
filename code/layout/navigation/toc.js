@@ -13,13 +13,14 @@ const TOC = ({ sections, _pages, _ID, _relativeURL }) => {
 			{
 				sections.map( ( section, i ) => {
 					const page = _pages[ section ];
+
 					return (
 						<nav key={ i } className={`toc__section toc__section--${ i }${ page._url === _pages[ _ID ]._url ? ' toc__section--active' : '' }`}>
 							<h2 className='toc__section__headline'><a href={ _relativeURL( page._url, _ID ) }>{ page.title }</a></h2>
 
 							<ul>
 								{
-									page.docs.map( ( partial, i ) => {
+									page.docs && page.docs.map( ( partial, i ) => {
 										const sectionName = partial.replace( '.md', '' );
 
 										return (
@@ -42,8 +43,8 @@ TOC.propTypes = {
 	/**
 	 * sections:
 	 *   - page1
-	 *   - page1/nested
 	 *   - page2
+	 *   - page2/nested
 	 */
 	sections: PropTypes.node.isRequired,
 };

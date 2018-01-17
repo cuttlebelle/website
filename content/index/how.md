@@ -9,10 +9,10 @@ examples:
   - headline: Get started
     text: |
       Before you start adding your files and pages, run the `init` command to get you started quickly with some common components.
-    example: cuttlebelle --init
+    example: cuttlebelle init
   - headline: Compile your website
     text: |
       Now compile your website into the `site` folder. The watch will start after for any additional changes you make to your files and only run on those pages
       you change affected.
-    example: cuttlebelle --watch
+    example: cuttlebelle watch
 ---

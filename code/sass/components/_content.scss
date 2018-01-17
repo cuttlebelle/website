@@ -22,6 +22,7 @@
 		border-radius: 3px;
 		padding-top: 2.5rem;
 		padding-bottom: 1rem;
+		color: #fff;
 
 		&:before {
 			content: '';
@@ -42,13 +43,17 @@
 			height: 1rem;
 			padding: 0.5rem 0;
 			background-image: svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 14" width="54px" height="14px">' +
-				'<circle stroke="#F24941" stroke-width="1" fill="#FF5F58" cx="6" cy="6" r="5.5"></circle>' +
-				'<circle stroke="#DF9F27" stroke-width="1" fill="#FFBE2D" cx="26" cy="6" r="5.5"></circle>' +
-				'<circle stroke="#2AAA2C" stroke-width="1" fill="#27CA41" cx="46" cy="6" r="5.5"></circle>' +
+				'<circle fill="#FF5F58" cx="6" cy="6" r="5.5"></circle>' +
+				'<circle fill="#FFBE2D" cx="26" cy="6" r="5.5"></circle>' +
+				'<circle fill="#27CA41" cx="46" cy="6" r="5.5"></circle>' +
 			'</svg>');
 			background-repeat: no-repeat;
 			background-position: center;
 		}
+	}
+
+	pre.code-toolbar > .toolbar {
+		right: .5em;
 	}
 
 	h1,
@@ -58,6 +63,25 @@
 	h5,
 	h6 {
 		margin-top: 0;
+	}
+
+	hr {
+		border: none;
+		border-top: 2px dashed $color-Text;
+		margin: 1.5rem 0;
+	}
+
+	th {
+		text-align: left;
+		padding: 0.5rem;
+	}
+
+	tbody tr:nth-child( odd ) {
+		background-color: $color-Background-light;
+	}
+
+	td {
+		padding: 0.5rem;
 	}
 }
 

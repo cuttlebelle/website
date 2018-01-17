@@ -40,10 +40,10 @@ cheats:
       Taking the above file structure into account, the parents for the page `product/product1/detail` would be:
       ```js
       [
-        "index",
-        "products",
-        "products/product1",
         "products/product1/detail"
+        "products/product1",
+        "products",
+        "index",
       ]
       ```
   - headline: _storeSet
@@ -100,7 +100,7 @@ cheats:
       │       └── detail
       └── index
       ```
-      Given the structure above; this is what the `_nav` object would look like.:
+      Given the structure above; this is what the `_nav` object would look like:
       ```js
       {
         "overview": "overview",
