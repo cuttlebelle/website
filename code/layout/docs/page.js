@@ -23,7 +23,14 @@ const Page = ({
 		<title>Cuttlebelle documentation - { title }</title>
 		<meta charSet="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="shortcut icon" type="image/x-icon" href={ _relativeURL( '/assets/img/favicon.ico', _ID ) } />
+		<link rel="apple-touch-icon" sizes="180x180" href={ _relativeURL('/assets/apple-touch-icon.png', _ID ) }/>
+		<link rel="icon" type="image/png" sizes="32x32" href={ _relativeURL('/assets/favicon-32x32.png', _ID ) }/>
+		<link rel="icon" type="image/png" sizes="16x16" href={ _relativeURL('/assets/favicon-16x16.png', _ID ) }/>
+		<link rel="manifest" href={ _relativeURL('/assets/manifest.json', _ID ) }/>
+		<link rel="mask-icon" href={ _relativeURL('/assets/safari-pinned-tab.svg', _ID ) } color="#06262d"/>
+		<link rel="shortcut icon" href={ _relativeURL('/assets/favicon.ico', _ID ) }/>
+		<meta name="msapplication-config" content={ _relativeURL('/assets/browserconfig.xml', _ID ) }/>
+		<meta name="theme-color" content="#ffffff"/>
 		<link rel="stylesheet" href={ _relativeURL( '/assets/css/style.css', _ID ) } />
 
 		<script src={ _relativeURL( '/assets/js/header.js', _ID ) } />
