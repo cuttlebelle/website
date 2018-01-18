@@ -1,0 +1,16 @@
+layout: docs/page
+title: How to contribute
+
+header:
+  - /shared/nav.md
+
+navigation:
+  - toc.md
+
+docs:
+  - help-cuttlebelle-development.md
+  - help-plugin-development.md
+  - help-gui-development.md
+
+footer:
+  - /shared/footer.md

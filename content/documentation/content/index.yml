@@ -1,0 +1,17 @@
+layout: docs/page
+title: For content authors
+
+header:
+  - /shared/nav.md
+
+navigation:
+  - /documentation/toc.md
+
+docs:
+  - getting-started.md
+  - using-the-docs.md
+  - primer-on-yaml.md
+  - primer-on-markdown.md
+
+footer:
+  - /shared/footer.md

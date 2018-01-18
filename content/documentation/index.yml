@@ -1,0 +1,22 @@
+layout: docs/page
+title: Basics
+
+header:
+  - /shared/nav.md
+
+navigation:
+  - /documentation/toc.md
+
+intro:
+  - basics.md
+
+docs:
+  - getting-started.md
+  - create-a-new-page.md
+  - what-is-markdown.md
+  - create-a-new-layout.md
+  - what-is-frontmatter.md
+  - using-the-double-save.md
+
+footer:
+  - /shared/footer.md

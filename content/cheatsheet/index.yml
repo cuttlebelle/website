@@ -1,0 +1,10 @@
+title: Cheat-Sheet
+
+header:
+  - /shared/nav.md
+
+main:
+  - cheats.md
+
+footer:
+  - /shared/footer.md

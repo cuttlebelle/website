@@ -1,0 +1,57 @@
+.toc {
+	margin: 0 1rem 0 1rem;
+	overflow: hidden;
+
+	@media screen and ( min-width: 650px ) {
+		padding-top: 3rem;
+	}
+}
+
+.toc__section__headline {
+	margin: 0.5rem 0 0 0;
+	font-size: 1.2rem;
+}
+
+.toc__section {
+	margin-bottom: 1rem;
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0 0 0 0.5rem;
+	}
+
+	&.toc__section--active ul {
+		display: block;
+	}
+
+	@media screen and ( min-width: 700px ) {
+		margin-bottom: 0;
+		width: 33.333333333%;
+		float: left;
+
+		ul,
+		&.toc__section--active ul {
+			display: block;
+		}
+	}
+
+	@media screen and ( min-width: 980px ) {
+		margin-bottom: 2.5rem;
+		float: none;
+		width: auto;
+	}
+
+	h2,
+	ul {
+		padding: 0 1rem;
+	}
+
+	li {
+		margin: 0.5rem 0;
+	}
+}
+
+.toc__section--active .toc__section__headline {
+	font-weight: bold;
+}

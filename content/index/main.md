@@ -1,4 +1,0 @@
----
----
-
-## Website coming soon

@@ -1,5 +1,5 @@
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 
 /**
@@ -8,9 +8,8 @@ import React from 'react';
  * @disable-docs
  */
 const Partial = ({ _body }) => (
-	<div className="body">{ _body }</div>
+	<div className="partial">{ _body }</div>
 );
-
 
 Partial.propTypes = {
 	/**
@@ -19,8 +18,6 @@ Partial.propTypes = {
 	_body: PropTypes.node.isRequired,
 };
 
-
 Partial.defaultProps = {};
-
 
 export default Partial;

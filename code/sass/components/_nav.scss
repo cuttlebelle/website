@@ -1,0 +1,102 @@
+.nav {
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 9;
+	overflow: hidden;
+	background-color: $color-Hero-Background-light;
+	border-bottom: 3px solid $color-Text;
+
+	@media screen and ( min-width: 650px ) {
+		position: fixed;
+		height: 3rem;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0 2rem;
+		font-size: 1.125rem;
+		vertical-align: middle;
+		text-align: center;
+		white-space: nowrap;
+
+		@media screen and ( min-width: 650px ) {
+			text-align: right;
+		}
+	}
+}
+
+.nav__link {
+	display: block;
+	vertical-align: middle;
+	margin: 0.7rem;
+
+	@media screen and ( min-width: 650px ) {
+		display: inline-block;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	& > a {
+		display: block;
+	}
+}
+
+.nav__link--active a {
+	font-weight: bold;
+}
+
+.nav__link__logo {
+	height: 2.5rem;
+	width: auto;
+	vertical-align: middle;
+
+	@media screen and ( min-width: 650px ) {
+		height: 1.5rem;
+	}
+}
+
+.nav__link__github {
+	display: inline-block;
+	height: 1.2rem;
+	width: auto;
+	vertical-align: middle;
+	margin-right: 0.5rem;
+	margin-bottom: 0.1rem;
+}
+
+.nav__link__github__text {
+	display: inline;
+
+	@media screen and ( min-width: 650px ) {
+		display: none;
+	}
+
+	@media screen and ( min-width: 710px ) {
+		display: inline;
+	}
+}
+
+.nav__link--fixed {
+	margin: 1.5rem 0;
+
+	@media screen and ( min-width: 650px ) {
+		float: left;
+		margin-top: 0.7rem;
+	}
+
+	.page-index & {
+		display: none;
+
+		@media screen and ( min-width: 650px ) {
+			display: inline;
+		}
+	}
+}
+
+.nav__link--generated {
+	margin: 0.8rem;
+}

@@ -1,0 +1,94 @@
+.examples {
+	overflow: hidden;
+	padding-bottom: 3rem;
+
+	@media screen and ( min-width: 650px ) {
+		padding: 4rem 0;
+	}
+
+	@media screen and ( min-width: 1250px ) {
+		padding: 4rem 4rem;
+	}
+}
+
+.examples__headline {
+	text-align: center;
+	margin: 4rem 0;
+
+	@media screen and ( min-width: 650px ) {
+		margin: 0 0 4rem 0;
+	}
+}
+
+.examples__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	@media screen and ( min-width: 1110px ) {
+		display: flex;
+	}
+
+	li {
+		margin-bottom: 5rem;
+
+		@media screen and ( min-width: 650px ) {
+			width: 100%;
+			max-width: 35rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@media screen and ( min-width: 1110px ) {
+			display: flex;
+			flex-direction: column;
+			float: left;
+			width: 50%;
+		}
+	}
+}
+
+.examples__list__headline,
+.examples__list__body,
+.examples__list__example {
+	margin: 0 1rem;
+
+	@media screen and ( min-width: 480px ) {
+		margin: 0 2rem;
+	}
+}
+
+@media screen and ( min-width: 650px ) {
+	.examples__list__headline,
+	.examples__list__body {
+		text-align: center;
+	}
+
+	.examples__list__example {
+		margin: 0;
+	}
+}
+
+.examples__list__text {
+	max-width: 27rem;
+	margin: 0 auto;
+}
+
+.examples__list__headline {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 2rem;
+}
+
+.examples__list__body {
+	max-width: 42em;
+}
+
+.examples__list__example {
+	display: block;
+
+	.content {
+		padding-top: 1rem;
+	}
+}

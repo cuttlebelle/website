@@ -1,0 +1,31 @@
+.btn {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	background-color: #fff;
+	color: $color-Text;
+	border-radius: 8px;
+	border: 3px solid $color-Text;
+	font-size: 1.125rem;
+	font-weight: bold;
+	text-decoration: none;
+	transition: background 0.2s ease;
+
+	&:focus {
+		border-color: $color-Focus;
+		border-radius: 0;
+		outline: none;
+	}
+
+	&:hover {
+		background-color: $color-Hero-Background-light;
+	}
+
+	&.btn--block {
+		display: block;
+		text-align: center;
+	}
+
+	&.btn--is-hidden {
+		display: none;
+	}
+}

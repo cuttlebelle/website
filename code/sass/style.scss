@@ -1,6 +1,20 @@
 // Our base and structure
 @import 'base/reset';
+@import 'base/variables';
 @import 'base/structure';
+@import 'base/highlighter';
 
 // Our components
-// @import 'components/xxx';
+@import 'components/header';
+@import 'components/nav';
+@import 'components/btn';
+@import 'components/code';
+@import 'components/body';
+@import 'components/cta';
+@import 'components/tiles';
+@import 'components/footer';
+@import 'components/examples';
+@import 'components/cheats';
+@import 'components/toc';
+@import 'components/content';
+@import 'components/docs';

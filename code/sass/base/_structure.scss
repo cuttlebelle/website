@@ -1,25 +1,102 @@
-.background {
+html {
 	margin: 0;
 	padding: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	line-height: 1.2;
-	background-color: rgb(178,225,216);
-	background: linear-gradient(135deg, rgba(178,225,216,1) 0%,rgba(0,117,101,1) 100%);
-	background-attachment: fixed;
+	line-height: 1.6;
 	height: 100%;
+	color: $color-Text;
+	text-decoration-skip: ink;
+}
+
+a {
+	color: $color-Text;
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip: ink;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 3px solid $color-Focus;
+	}
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	line-height: 1.3;
+}
+
+h1 {
+	font-size: 2.5rem;
 }
 
 h2 {
-	margin: 6rem 0;
-	text-align: center;
-	font-size: 4rem;
-	color: #06262d;
-	font-weight: 300;
+	font-size: 2.2rem;
 }
 
-.cuttlebelle {
-	display: block;
-	margin: 6rem auto;
-	width: 20rem;
-	height: 20rem;
+h3 {
+	font-size: 1.9rem;
+}
+
+h4 {
+	font-size: 1.6rem;
+}
+
+h5 {
+	font-size: 1.2rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+
+
+p {
+	font-size: 1.125rem;
+	margin: 0.5rem 0;
+}
+
+code {
+	padding: 0.2em 0.4em;
+	margin: 0;
+	font-size: 85%;
+	background-color: $color-Background;
+	border-radius: 3px;
+	color: #000;
+
+	pre > & {
+		overflow: auto;
+		display: block;
+		padding: 0.6em 1em;
+		background-color: $color-Text;
+		border-radius: 0;
+		color: #fff;
+	}
+}
+
+.markdown-trademark {
+	font-size: 85%;
+}
+
+.partial {
+	margin: 0 1rem;
+
+	@media screen and ( min-width: 480px ) {
+		margin: 0 2rem;
+	}
+}
+
+main > div:first-child > .partial {
+	margin-top: 6rem;
+}
+
+main > div:last-child > .partial {
+	margin-bottom: 8rem;
 }

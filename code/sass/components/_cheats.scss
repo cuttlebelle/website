@@ -1,0 +1,100 @@
+$cheats-border: $color-Text;
+
+.cheats {
+	margin: 0 2rem 5rem 2rem;
+	overflow: hidden;
+
+	@media screen and ( min-width: 650px ) {
+		margin-top: 3.2rem;
+	}
+}
+
+.cheat {
+	padding-bottom: 1.5rem;
+}
+
+@supports ( columns: 18rem 4 ) {
+	.cheats {
+		@media screen and ( min-width: 650px ) {
+			columns: 20rem 4;
+			column-fill: balance;
+		}
+	}
+
+	.cheat {
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+.cheat__headline {
+	font-size: 1.3rem;
+	margin: 1.5rem 0 0 0;
+	padding: 1.3rem 0.5rem 0.5rem 0.5rem;
+	border: 3px solid $cheats-border;
+	border-bottom: none;
+	text-align: center;
+}
+
+.cheat__description {
+	border-left: 3px solid $cheats-border;
+	border-right: 3px solid $cheats-border;
+	padding: 0.5rem;
+
+	p {
+		font-size: 0.888888888rem;
+		margin-top: 0;
+	}
+}
+
+.cheat__item {
+	border: 3px solid $cheats-border;
+	border-bottom: none;
+	box-sizing: border-box;
+
+	&:last-child {
+		border-bottom: 3px solid $cheats-border;
+	}
+}
+
+.cheat__item__headline {
+	padding: 0.5rem;
+	cursor: pointer;
+	background-color: $color-Background-light;
+
+	&:focus {
+		outline: 3px solid $color-Focus;
+	}
+}
+
+.cheat__item__details__description {
+	padding: 0.5rem;
+
+	p {
+		font-size: 0.888888888rem;
+	}
+}
+
+.cheat__item__details__example {
+	pre {
+		margin: 0;
+
+		code {
+			padding-top: 0.8rem;
+		}
+	}
+
+	p {
+		padding: 0.5rem;
+		font-size: 0.888888888rem;
+
+		&:first-child {
+			padding-top: 0;
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

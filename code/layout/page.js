@@ -1,9 +1,14 @@
-import PropTypes from "prop-types";
-import React from "react";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Slugify from 'slugify';
+
+import { Logo } from './icon';
 
 
 /**
  * The page component
+ *
+ * @disable-docs
  */
 const Page = ({
 	_ID,
@@ -13,35 +18,39 @@ const Page = ({
 	main,
 	footer
 }) => (
- <html className="background">
+ <html lang="en" className="background">
 	<head>
-		<title>{ title }</title>
-		<link rel="shortcut icon" type="image/x-icon" href={ _relativeURL( '/code/assets/img/favicon.ico', _ID ) } />
-		<link rel="stylesheet" href={ _relativeURL( '/code/assets/css/style.css', _ID ) } />
+		<title>Cuttlebelle - { title }</title>
+		<meta charSet="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="apple-touch-icon" sizes="180x180" href={ _relativeURL('/assets/apple-touch-icon.png', _ID ) }/>
+		<link rel="icon" type="image/png" sizes="32x32" href={ _relativeURL('/assets/favicon-32x32.png', _ID ) }/>
+		<link rel="icon" type="image/png" sizes="16x16" href={ _relativeURL('/assets/favicon-16x16.png', _ID ) }/>
+		<link rel="manifest" href={ _relativeURL('/assets/manifest.json', _ID ) }/>
+		<link rel="mask-icon" href={ _relativeURL('/assets/safari-pinned-tab.svg', _ID ) } color="#06262d"/>
+		<link rel="shortcut icon" href={ _relativeURL('/assets/favicon.ico', _ID ) }/>
+		<meta name="msapplication-config" content={ _relativeURL('/assets/browserconfig.xml', _ID ) }/>
+		<meta name="theme-color" content="#ffffff"/>
+		<link rel="stylesheet" href={ _relativeURL( '/assets/css/style.css', _ID ) } />
 
-		<script src={ _relativeURL( '/code/assets/js/header.js', _ID ) } />
+		<script src={ _relativeURL( '/assets/js/header.js', _ID ) } />
 	</head>
-	<body>
+	<body className={`page-${ Slugify( _ID ) }`}>
 
 		<div className="wrapper">
 			{ header }
-			<main>
-				<svg className="cuttlebelle" role="img" title="The Cuttlebelle logo">
-					<title>Cuttlebelle log</title>
-					<desc>A cute cuttlefish as the logo for cuttlebelle</desc>
-					<use xlinkHref={ _relativeURL( '/code/assets/svg/map.svg#cuttlebelle', _ID ) }/>
-				</svg>
 
+			<main>
 				{ main }
 			</main>
+
 			{ footer }
 		</div>
 
-		<script src={ _relativeURL( '/code/assets/js/footer.js', _ID ) } />
+		<script src={ _relativeURL( '/assets/js/footer.js', _ID ) } />
 	</body>
  </html>
 );
-
 
 Page.propTypes = {
 	/**
@@ -65,8 +74,6 @@ Page.propTypes = {
 	footer: PropTypes.node,
 };
 
-
 Page.defaultProps = {};
-
 
 export default Page;

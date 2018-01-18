@@ -1,0 +1,29 @@
+.code {
+	display: block;
+	padding: 1.25rem;
+	background-color: $color-Text;
+	border-radius: 3px;
+	font-family: "fira-mono", "PT Sans Mono", "Monaco", "Iconsolas", "Droid Sans Mono", monospace;
+	color: #fff;
+	font-size: 1.125rem;
+	box-shadow: 0 0 1em rgba( 0, 0, 0, 0.25 );
+	overflow: auto;
+}
+
+.code__command {
+	display: block;
+
+	&:before {
+		content: '$';
+		display: inline-block;
+		color: lighten( $color-Text, 30 );
+		margin-right: 0.5rem;
+	}
+}
+
+.code__stdout {
+	white-space: pre;
+	padding-left: 1rem;
+	margin: 0;
+	opacity: 0.4;
+}
