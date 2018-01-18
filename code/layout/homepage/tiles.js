@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { Logo, Code, Content, Fish } from '../icon';
+import { Logo, MultipleLayouts, NoLockIn, Separation, EasyTemplating } from '../icon';
 
 
 /**
@@ -14,9 +14,10 @@ const Tiles = ({ headline, tiles, _parseMD }) => (
 		{
 			tiles.map( ( reason, i ) => {
 				const allowedIcons = {
-					code: Code,
-					fish: Fish,
-					content: Content,
+					Separation: Separation,
+					MultipleLayouts: MultipleLayouts,
+					NoLockIn: NoLockIn,
+					EasyTemplating: EasyTemplating,
 				};
 				const ImageTag = allowedIcons[ reason.image ];
 
@@ -52,17 +53,17 @@ Tiles.propTypes = {
 
 	/**
 	 * tiles:
-	 *   - image: fish
+	 *   - image: MultipleLayouts
 	 *     headline: Multiple layouts
 	 *     text: |
 	 *       Each page is divided into components that have their own layouts. Think of it like little [Lego™ blocks](https://www.lego.com) that make up your
 	 *       site.
-	 *   - image: code
+	 *   - image: EasyTemplating
 	 *     headline: Easy templating
 	 *     text: |
 	 *       Keeping your content free of any code empowers more users to change the content of your site. And because we chunk it all up into partials, content
 	 *       authors are able to build completely new layouts all by them self without ever touching more complex code.
-	 *   - image: content
+	 *   - image: Separation
 	 *     headline: Clean separation
 	 *     text: |
 	 *       Cuttlebelle uses [JSX](https://facebook.github.io/jsx/) as the templating language. This makes is very convenient to build simple partials all the way to
@@ -70,7 +71,7 @@ Tiles.propTypes = {
 	 */
 	tiles: PropTypes.arrayOf(
 		PropTypes.shape({
-			image: PropTypes.oneOf([ 'code', 'fish', 'content' ]).isRequired,
+			image: PropTypes.oneOf([ 'NoLockIn', 'MultipleLayouts', 'Separation', 'EasyTemplating' ]).isRequired,
 			headline: PropTypes.string,
 			text: PropTypes.string,
 		})

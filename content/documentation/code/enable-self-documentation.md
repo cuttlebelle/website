@@ -9,7 +9,12 @@ When a developer creates a new layout, that layout has to make its way to the co
 This is where documentation comes in. Cuttlebelle actually automates this process for you as a build artifact. All developers have to do is add
 [`PropTypes`](https://reactjs.org/docs/typechecking-with-proptypes.html) and provide example YAML in a comment for each.
 
-Let’s have a look at an [example documentation](TODO) that describes each layout for this very site.
+Let’s have a look at an example documentation that describes each layout for this very site:
+
+![A screenshot of the docs site showing several categories with each having a bunch of components](/assets/img/docs.png)
+
+You can see the components are sorted into categories. Those categories mirror the folders you put your layouts into. Organizing your layouts into folders
+makes it easier for content authors to know what belongs together and where to use them.
 
 To enable automatic documentation for a simple layout like this:
 

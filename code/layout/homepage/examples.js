@@ -15,14 +15,14 @@ const Examples = ({ headline, examples, _parseMD }) => (
 			{
 				examples.map( ( example, i ) => (
 					<li key={ i }>
-						<div>
+						<div className="examples__list__text">
 							<h3 className="examples__list__headline">{ example.headline }</h3>
 							<div className="examples__list__body">{ _parseMD( example.text ) }</div>
 						</div>
 						<div className="examples__list__example">
-							<code className="code">
-								<p className="code__command">{ example.example }</p>
-							</code>
+							<div className="content">
+								{ _parseMD( example.example ) }
+							</div>
 						</div>
 					</li>
 				))

@@ -6,7 +6,9 @@ Each folder inside the `content` folder with an `index.yml` file represents a we
 Each partial has a part of the content of your page. It is all glued together by the `index.yml` file. This file lists all the partials in the order you want
 them to appear on the page.
 
-If we look at the folder inside `content` now you will notice two folders.
+![An animation of how partials add content blocks to your browser](/assets/img/filesystem.gif)
+
+If we look at the folder inside `content` you will notice two folders.
 
 ```shell
 .
@@ -60,7 +62,7 @@ main:
 
 Now in your browser append `/page1` to your URL. You should now see the new site.
 
-TODO: image
+![A screenshot of a browser showing the new page with the content](/assets/img/website-page.jpg)
 
 Let’s have a look at this `index.yml` file again.
 

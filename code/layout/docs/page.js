@@ -14,6 +14,7 @@ const Page = ({
 	title,
 	header,
 	navigation,
+	intro,
 	docs,
 	footer
 }) => (
@@ -38,6 +39,7 @@ const Page = ({
 				</aside>
 
 				<section className="docs__content">
+					{ intro && intro }
 					{ docs }
 				</section>
 			</main>

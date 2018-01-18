@@ -7,6 +7,9 @@ header:
 navigation:
   - /documentation/toc.md
 
+intro:
+  - basics.md
+
 docs:
   - getting-started.md
   - create-a-new-page.md

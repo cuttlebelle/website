@@ -94,3 +94,5 @@ export default Book;
 ```
 
 _(I personally would use a proper CSS file here but that is out of scope for this quick basics intro)_
+
+![A screenshot of a browser showing the new layout with the image on the left](/assets/img/website-layout.jpg)

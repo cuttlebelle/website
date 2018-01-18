@@ -1,9 +1,9 @@
 // https://github.com/chjj/marked
 
-module.exports = exports = function renderer({ Marked }) {
+module.exports = exports = function renderer({ Marked, _ID, _relativeURL }) {
 
 	/**
-	 * Link overwrite
+	 * Link overwrite to support external and relative links
 	 *
 	 * @param  {string} href  - The href attribute
 	 * @param  {string} title - The title attribute
@@ -16,9 +16,39 @@ module.exports = exports = function renderer({ Marked }) {
 		if( href.startsWith('http://') || href.startsWith('https://') ) {
 			attr = ` rel="external"`;
 		}
+		else if( !href.startsWith('#') && typeof _relativeURL === 'function' ) {
+			href = _relativeURL( href, _ID );
+		}
 
 		return `<a href="${ href }"${ title ? ` title="${ title }"` : '' }${ attr }>${ text }</a>`;
 	};
+
+
+	/**
+	 * Image overwrite to support relative links
+	 *
+	 * @param  {string} href  - The source of the image
+	 * @param  {string} title - The title of the image
+	 * @param  {string} text  - The alt text for the image
+	 *
+	 * @return {string}       -
+	 */
+	Marked.image = ( href, title, text ) => {
+		let sourcePath = href;
+		if( !sourcePath.startsWith('http://') && !sourcePath.startsWith('https://') ) {
+			sourcePath = _relativeURL( href, _ID );
+		}
+
+		let out = `<img src="${ sourcePath }" alt="${ text }"`;
+
+		if( title ) {
+			out += ` title="${ title }"`;
+		}
+
+		out += '>';
+
+		return out;
+	}
 
 
 	/**

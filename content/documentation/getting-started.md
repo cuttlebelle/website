@@ -53,4 +53,4 @@ cuttlebelle watch
 The address the server will listen on starts at http://localhost:8080/ and increase it’s port number depending on what ports are available on your machine.
 So the address you put in your browser could be http://localhost:8081/ or http://localhost:8085/ etc.
 
-TODO: image
+![A screenshot of a browser showing an almost empty star page that welcomes you to your new Cuttlebelle site](/assets/img/website.jpg)
