@@ -56,9 +56,7 @@
 	"cuttlebelle": {
 		"folder": {
 			"code": "code/layout",
-			"assets": "code/assets",
-			"site": "docs/",
-			"docs": "components/"
+			"assets": "code/assets"
 		},
 		"site": {
 			"doctype": "<!DOCTYPE html><!--[if lt IE 8]><html class=\"no-js lt-ie8 lt-ie9\" lang=\"en\"><![endif]--><!--[if IE 8]><html class=\"no-js lt-ie9 ie8\" lang=\"en\"><![endif]--><!--[if IE 9 ]><html class=\"no-js ie9\" lang=\"en\"><![endif]--><!--[if !(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![endif]-->",
