@@ -31,6 +31,19 @@ const Page = ({
 		<link rel="shortcut icon" href={ _relativeURL('/assets/favicon.ico', _ID ) }/>
 		<meta name="msapplication-config" content={ _relativeURL('/assets/browserconfig.xml', _ID ) }/>
 		<meta name="theme-color" content="#ffffff"/>
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Dominik Wilkowski" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Cuttlebelle" />
+		<meta name="twitter:description" content="The react static site generator that separates editing and code concerns" />
+		<meta name="twitter:name" content="cuttlebelle" />
+		<meta name="twitter:image" content="https://cuttlebelle.com/assets/img/cuttlebelle.jpg" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Cuttlebelle" />
+		<meta property="og:site_name" content="Cuttlebelle" />
+		<meta property="og:description" content="The react static site generator that separates editing and code concerns" />
+		<meta property="og:image" content="https://cuttlebelle.com/assets/img/cuttlebelle.jpg" />
+		<meta property="og:url" content="https://cuttlebelle.com/" />
 		<link rel="stylesheet" href={ _relativeURL( '/assets/css/style.css', _ID ) } />
 
 		<script src={ _relativeURL( '/assets/js/header.js', _ID ) } />
