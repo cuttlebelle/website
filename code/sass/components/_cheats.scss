@@ -52,9 +52,6 @@ $cheats-border: $color-Text;
 	border-bottom: none;
 	box-sizing: border-box;
 
-	&:last-child {
-		border-bottom: 3px solid $cheats-border;
-	}
 }
 
 .cheat__item__headline {
@@ -67,15 +64,13 @@ $cheats-border: $color-Text;
 	}
 }
 
-.cheat__item__details__description {
-	padding: 0.5rem;
-
-	p {
-		font-size: 0.888888888rem;
-	}
+.cheat > div:last-child .cheat__item {
+	border-bottom: 3px solid $cheats-border;
 }
 
-.cheat__item__details__example {
+.cheat__item__details {
+	padding-top: 1rem;
+
 	pre {
 		margin: 0;
 
@@ -85,7 +80,7 @@ $cheats-border: $color-Text;
 	}
 
 	p {
-		padding: 0.5rem;
+		margin: 0.5rem;
 		font-size: 0.888888888rem;
 
 		&:first-child {
@@ -95,6 +90,7 @@ $cheats-border: $color-Text;
 
 		&:last-child {
 			margin-bottom: 0;
+			padding-bottom: 0.5rem;
 		}
 	}
 }
