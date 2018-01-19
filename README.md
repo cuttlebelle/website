@@ -1,8 +1,12 @@
 Cuttlebelle documentation website
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=https://cuttlebelle.com&hashtags=react,reactjs,static-site-generator,jsx)
 =================================
 
+**<p align="center">This website was built with **[Cuttlebelle](https://github.com/cuttlebelle/cuttlebelle/)**. Please have a look at the source if you’re curious.</p>**
 
-This website was built with [Cuttlebelle](https://cuttlebelle.com/). Please have a look at the source if you’re curious.
+## <p align="center">[Visit our website](https://cuttlebelle.com/)</p>
+
+[![Cuttlebelle](https://cuttlebelle.com/assets/img/cuttlebelle.jpg)](https://cuttlebelle.com/)
 
 ## How to build the site locally
 
