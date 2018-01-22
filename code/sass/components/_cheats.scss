@@ -52,6 +52,9 @@ $cheats-border: $color-Text;
 	border-bottom: none;
 	box-sizing: border-box;
 
+	&:last-child {
+		border-bottom: 3px solid $cheats-border;
+	}
 }
 
 .cheat__item__headline {
@@ -62,10 +65,6 @@ $cheats-border: $color-Text;
 	&:focus {
 		outline: 3px solid $color-Focus;
 	}
-}
-
-.cheat > div:last-child .cheat__item {
-	border-bottom: 3px solid $cheats-border;
 }
 
 .cheat__item__details {
