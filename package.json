@@ -43,7 +43,7 @@
 	],
 	"dependencies": {
 		"autoprefixer": "^7.1.6",
-		"cuttlebelle": "^1.0.0-alpha.44",
+		"cuttlebelle": "^1.0.0-alpha.45",
 		"node-sass": "^4.5.3",
 		"postcss-cli": "^4.1.1",
 		"slugify": "^1.2.8",
