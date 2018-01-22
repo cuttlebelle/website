@@ -13,6 +13,7 @@ module.exports = exports = function renderer({ Marked, _relativeURL, _ID }) {
       !href.startsWith('http://') &&
       !href.startsWith('https://') &&
       !href.startsWith('#') &&
+      !href.startsWith('mailto:') &&
       typeof _relativeURL === 'function'
     ) {
       href = _relativeURL( href, _ID );
