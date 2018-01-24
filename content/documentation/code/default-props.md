@@ -7,17 +7,18 @@ All default props begin with an underscore `_` to avoid overwriting possible use
 
 | prop name      | description                                                                           
 |----------------|---------------------------------------------------------------------------------------
-| `_ID`          | The ID of the current page                                                            
-| `_self`        | The relative path to the content file; can be md or yaml file                         
-| `_parents`     | An array of all parent pages IDs                                                      
-| `_body`        | The body of your markdown file (empty for `index.yml` files)                          
-| `_pages`       | An object of all pages and their props; with ID as key                                
-| `_nav`         | A nested object of your site structure                                                
-| `_storeSet`    | You can set data to persist between react components by setting them with this helper 
-| `_store`       | To get that data just call this prop function                                         
-| `_relativeURL` | A helper function to make an absolute URL relative                                    
-| `_parseMD`     | A helper function to parse markdown into HTML                                         
-| `_parseYaml`   | A helper function to parse yaml into an object                                        
+| `_ID`          | The ID of the current page
+| `_self`        | The relative path to the content file; can be md or yaml file
+| `_isDocs`      | A boolean value, `true` in docs context only
+| `_parents`     | An array of all parent pages IDs
+| `_body`        | The body of your markdown file (empty for `index.yml` files)
+| `_pages`       | An object of all pages and their props; with ID as key
+| `_nav`         | A nested object of your site structure
+| `_storeSet`    | You can set data to persist between react components by setting them with this helper
+| `_store`       | To get that data just call this prop function
+| `_relativeURL` | A helper function to make an absolute URL relative
+| `_parseMD`     | A helper function to parse markdown into HTML
+| `_parseYaml`   | A helper function to parse yaml into an object
 
 
 ---
@@ -81,6 +82,16 @@ page2/index.yml
 page1/partial1.md
 page4/subpage/partial-x.md
 ```
+
+
+---
+
+### `_isDocs`
+
+`_isDocs` is a boolean that let’s you know if your layout is running in docs content or not. In the docs you may not have all variables available to you so
+this comes in handy to write alternative logic so your automated documentation is still spot on.
+
+The value will be `false` when compiling with `cuttlebelle` but true when you compile your layouts with `cuttlebelle docs`.
 
 ---
 

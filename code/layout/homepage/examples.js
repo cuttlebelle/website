@@ -33,25 +33,24 @@ const Examples = ({ headline, examples, _parseMD }) => (
 
 Examples.propTypes = {
 	/**
-	 * headline: Why another static site generator?
+	 * headline: Separate content and code
 	 */
 	headline: PropTypes.node.isRequired,
 
 	/**
 	 * examples:
-	 *   - headline: Install cuttlebelle
-	 *     text: |
-	 *       Install Cuttlebelle globally from [npm](https://www.npmjs.com/). Now the `cuttlebelle` command is available to you globally.
-	 *     example: npm install cuttlebelle -g
-	 *   - headline: Get started
-	 *     text: |
-	 *       Before you start adding your files and pages, run the `init` command to get you started quickly with some common components.
-	 *     example: cuttlebelle --init
-	 *   - headline: Compile your website
-	 *     text: |
-	 *       Now compile your website into the `site` folder. The watch will wait after for any additional changes you make to your files and only run on those
-	 *       pages you change affected.
-	 *     example: cuttlebelle --watch
+	 *   - headline: We use markdown with front-matter
+	 *     text: Some description of the example.
+	 *     example: |
+	 *       ```
+	 *       code example
+	 *       ```
+	 *   - headline: With JSX front-mater become props in react
+	 *     text: Some description of the example.
+	 *     example: |
+	 *       ```
+	 *       code example
+	 *       ```
 	 */
 	examples: PropTypes.arrayOf(
 		PropTypes.shape({

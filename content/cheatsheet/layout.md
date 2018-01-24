@@ -4,6 +4,7 @@ section: Layout
 cheats:
   - layout/_id.md
   - layout/_self.md
+  - layout/_isDocs.md
   - layout/_parents.md
   - layout/_storeSet.md
   - layout/_store.md
