@@ -8,11 +8,11 @@ examples:
       [markdown](https://github.com/chjj/marked). A layout is nominated per partial.
     example: |
       ```yaml
-      -- -
+      - - -
       layout: cta
       link: Buy our product now
       url: http://your-product.com
-      -- -
+      - - -
       
       # Look at our range of products
       
