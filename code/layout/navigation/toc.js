@@ -5,14 +5,21 @@ import PropTypes from 'prop-types';
 /**
  * The toc component
  */
-const TOC = ({ sections, _pages, _ID, _relativeURL }) => {
+const TOC = ({ sections, _pages, _ID, _relativeURL, _isDocs }) => {
 	const SentenceCase = ( text ) => text.charAt( 0 ).toUpperCase() + text.slice( 1 );
 
 	return (
 		<div className="toc">
 			{
 				sections.map( ( section, i ) => {
-					const page = _pages[ section ];
+					let page = _pages[ section ];
+					if( _isDocs ) {
+						page.docs = [
+							'how-to-get-started.md',
+							'install-your-software.md',
+							'profit.md',
+						];
+					}
 
 					return (
 						<nav key={ i } className={`toc__section toc__section--${ i }${ page._url === _pages[ _ID ]._url ? ' toc__section--active' : '' }`}>
@@ -20,7 +27,7 @@ const TOC = ({ sections, _pages, _ID, _relativeURL }) => {
 
 							<ul>
 								{
-									page.docs && page.docs.map( ( partial, i ) => {
+									page.docs.map( ( partial, i ) => {
 										const sectionName = partial.replace( '.md', '' );
 
 										return (

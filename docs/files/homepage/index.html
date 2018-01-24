@@ -81,70 +81,50 @@ in its movements than a whale...</pre><div class="cuttlebelle-docs__main__compon
       &lt;p class=&quot;code__command&quot;&gt;cuttlebelle&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/section&gt;</code></pre></details></div></div><div id="homepage/examples" class="cuttlebelle-docs__main__component"><h2 class="cuttlebelle-docs__main__component__name">homepage/examples</h2><div class="cuttlebelle-docs__main__component__example"><section class="examples"><h2 class="examples__headline">Why another static site generator?</h2><ul class="examples__list"><li><div class="examples__list__text"><h3 class="examples__list__headline">Install cuttlebelle</h3><div class="examples__list__body"><p>Install Cuttlebelle globally from <a href="https://www.npmjs.com/" rel="external">npm</a>. Now the <code>cuttlebelle</code> command is available to you globally.</p>
-</div></div><div class="examples__list__example"><div class="content"><p>npm install cuttlebelle -g</p>
-</div></div></li><li><div class="examples__list__text"><h3 class="examples__list__headline">Get started</h3><div class="examples__list__body"><p>Before you start adding your files and pages, run the <code>init</code> command to get you started quickly with some common components.</p>
-</div></div><div class="examples__list__example"><div class="content"><p>cuttlebelle --init</p>
-</div></div></li><li><div class="examples__list__text"><h3 class="examples__list__headline">Compile your website</h3><div class="examples__list__body"><p>Now compile your website into the <code>site</code> folder. The watch will wait after for any additional changes you make to your files and only run on those
-pages you change affected.</p>
-</div></div><div class="examples__list__example"><div class="content"><p>cuttlebelle --watch</p>
-</div></div></li></ul></section></div><pre class="cuttlebelle-docs__main__component__yaml"><span class="cuttlebelle-yaml-line">layout: homepage/examples</span>
-<span class="cuttlebelle-yaml-line">headline: Why another static site generator?</span>
+&lt;/section&gt;</code></pre></details></div></div><div id="homepage/examples" class="cuttlebelle-docs__main__component"><h2 class="cuttlebelle-docs__main__component__name">homepage/examples</h2><div class="cuttlebelle-docs__main__component__example"><section class="examples"><h2 class="examples__headline">Separate content and code</h2><ul class="examples__list"><li><div class="examples__list__text"><h3 class="examples__list__headline">We use markdown with front-matter</h3><div class="examples__list__body"><p>Some description of the example.</p>
+</div></div><div class="examples__list__example"><div class="content"><pre><code>code example
+</code></pre></div></div></li><li><div class="examples__list__text"><h3 class="examples__list__headline">With JSX front-mater become props in react</h3><div class="examples__list__body"><p>Some description of the example.</p>
+</div></div><div class="examples__list__example"><div class="content"><pre><code>code example
+</code></pre></div></div></li></ul></section></div><pre class="cuttlebelle-docs__main__component__yaml"><span class="cuttlebelle-yaml-line">layout: homepage/examples</span>
+<span class="cuttlebelle-yaml-line">headline: Separate content and code</span>
 <span class="cuttlebelle-yaml-line">examples:
-  - headline: Install cuttlebelle
-    text: |
-      Install Cuttlebelle globally from [npm](https://www.npmjs.com/). Now the `cuttlebelle` command is available to you globally.
-    example: npm install cuttlebelle -g
-  - headline: Get started
-    text: |
-      Before you start adding your files and pages, run the `init` command to get you started quickly with some common components.
-    example: cuttlebelle --init
-  - headline: Compile your website
-    text: |
-      Now compile your website into the `site` folder. The watch will wait after for any additional changes you make to your files and only run on those
-      pages you change affected.
-    example: cuttlebelle --watch</span>
+  - headline: We use markdown with front-matter
+    text: Some description of the example.
+    example: |
+      ```
+      code example
+      ```
+  - headline: With JSX front-mater become props in react
+    text: Some description of the example.
+    example: |
+      ```
+      code example
+      ```</span>
 </pre><div class="cuttlebelle-docs__main__component__html"><details><summary class="cuttlebelle-docs__main__component__html__showhide">Show/Hide</summary><pre><code>&lt;section class=&quot;examples&quot;&gt;
-  &lt;h2 class=&quot;examples__headline&quot;&gt;Why another static site generator?&lt;/h2&gt;
+  &lt;h2 class=&quot;examples__headline&quot;&gt;Separate content and code&lt;/h2&gt;
   &lt;ul class=&quot;examples__list&quot;&gt;
     &lt;li&gt;
       &lt;div class=&quot;examples__list__text&quot;&gt;
-        &lt;h3 class=&quot;examples__list__headline&quot;&gt;Install cuttlebelle&lt;/h3&gt;
+        &lt;h3 class=&quot;examples__list__headline&quot;&gt;We use markdown with front-matter&lt;/h3&gt;
         &lt;div class=&quot;examples__list__body&quot;&gt;
-          &lt;p&gt;Install Cuttlebelle globally from
-            &lt;a href=&quot;https://www.npmjs.com/&quot; rel=&quot;external&quot;&gt;npm&lt;/a&gt;. Now the &lt;code&gt;cuttlebelle&lt;/code&gt; command is available to you globally.&lt;/p&gt;
+          &lt;p&gt;Some description of the example.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;examples__list__example&quot;&gt;
-        &lt;div class=&quot;content&quot;&gt;
-          &lt;p&gt;npm install cuttlebelle -g&lt;/p&gt;
-        &lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;&lt;pre&gt;&lt;code&gt;code example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       &lt;/div&gt;
     &lt;/li&gt;
     &lt;li&gt;
       &lt;div class=&quot;examples__list__text&quot;&gt;
-        &lt;h3 class=&quot;examples__list__headline&quot;&gt;Get started&lt;/h3&gt;
+        &lt;h3 class=&quot;examples__list__headline&quot;&gt;With JSX front-mater become props in react&lt;/h3&gt;
         &lt;div class=&quot;examples__list__body&quot;&gt;
-          &lt;p&gt;Before you start adding your files and pages, run the &lt;code&gt;init&lt;/code&gt; command to get you started quickly with some common components.&lt;/p&gt;
+          &lt;p&gt;Some description of the example.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;examples__list__example&quot;&gt;
-        &lt;div class=&quot;content&quot;&gt;
-          &lt;p&gt;cuttlebelle --init&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;div class=&quot;examples__list__text&quot;&gt;
-        &lt;h3 class=&quot;examples__list__headline&quot;&gt;Compile your website&lt;/h3&gt;
-        &lt;div class=&quot;examples__list__body&quot;&gt;
-          &lt;p&gt;Now compile your website into the &lt;code&gt;site&lt;/code&gt; folder. The watch will wait after for any additional changes you make to your files and only run on those pages you change affected.&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;examples__list__example&quot;&gt;
-        &lt;div class=&quot;content&quot;&gt;
-          &lt;p&gt;cuttlebelle --watch&lt;/p&gt;
-        &lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;&lt;pre&gt;&lt;code&gt;code example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       &lt;/div&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
