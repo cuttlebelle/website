@@ -5,17 +5,22 @@ import PropTypes from 'prop-types';
 /**
  * The content component
  */
-const Content = ({ _body, _self }) => {
+const Content = ({ _ID, _body, _self }) => {
 	const section = _self.split('/')[ ( _self.split('/').length - 1 ) ].replace( '.md', '' ).replace( 'content-', '' );
 	const SentenceCase = ( text ) => text.charAt( 0 ).toUpperCase() + text.slice( 1 );
 
 	return (
-		<article id={ section } className="content">
-			<a href={`#${ section }`} className="content__link">#</a>
-			<h2>{ SentenceCase( section.replace( /-/g, ' ' ) ) }</h2>
+		<Fragment>
+			<article id={ section } className="content">
+				<a href={`#${ section }`} className="content__link">#</a>
+				<a href={`https://github.com/cuttlebelle/website/blob/master/content/${ _self }`} className="content__edit-this-page">
+					Edit this partial
+				</a>
+				<h2>{ SentenceCase( section.replace( /-/g, ' ' ) ) }</h2>
 
-			{ _body }
-		</article>
+				{ _body }
+			</article>
+		</Fragment>
 	);
 }
 
