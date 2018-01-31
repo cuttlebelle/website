@@ -9,6 +9,7 @@ Cuttlebelle comes with some default settings you can find below:
   "folder": {                     // Where we can adjust folder/file names
     "content": "content/",        // Where does your content live?
     "code": "code/",              // Where do your react layouts live?
+    "assets": "assets/",          // Where do your assets live?
     "site": "site/",              // Where do you want to generate your static site to?
     "docs": "docs",               // Where do you want to generate the docs to?
     "index": "index",             // What is the name of the file we look for to generate pages?
