@@ -19,6 +19,7 @@ All default props begin with an underscore `_` to avoid overwriting possible use
 | `_relativeURL` | A helper function to make an absolute URL relative
 | `_parseMD`     | A helper function to parse markdown into HTML
 | `_parseYaml`   | A helper function to parse yaml into an object
+| `_parseReact`  | A helper function to parse a react component into a string
 
 
 ---
@@ -326,3 +327,18 @@ const yamlString = `
 _parseYaml( yamlString );
 ```
 The output would be `[ 'one', 'two' ]`.
+
+---
+
+### `_parseReact`
+
+A helper function to parse a react component into a string
+
+```js
+import Card from './cards';
+
+_parseReact( <Card name="Card name" shadow={ true } /> );
+```
+The output would be whatever your component renders out as a string.
+
+You can use it via `dangerouslySetInnerHTML` but you might as well use it directly then.
