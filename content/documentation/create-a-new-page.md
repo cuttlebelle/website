@@ -57,7 +57,7 @@ Inside the `index.yml` copy / paste the below content.
 title: Page 1
 
 main:
-  - body.md
+  - Hello world
 ```
 
 Now in your browser append `/page1` to your URL. You should now see the new site.
