@@ -57,12 +57,12 @@ Inside the `index.yml` copy / paste the below content.
 title: Page 1
 
 main:
-  - body.md
+  - Hello world
 ```
 
 Now in your browser append `/page1` to your URL. You should now see the new site.
 
-![A screenshot of a browser showing the new page with the content](/assets/img/website-page.jpg)
+![A screenshot of a browser showing the new page with the content](/assets/img/new-website-page.jpg)
 
 Let’s have a look at this `index.yml` file again.
 
