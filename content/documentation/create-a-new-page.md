@@ -57,12 +57,12 @@ Inside the `index.yml` copy / paste the below content.
 title: Page 1
 
 main:
-  - body.md
+  - Hello world
 ```
 
 Now in your browser append `/page1` to your URL. You should now see the new site.
 
-![A screenshot of a browser showing the new page with the content](/assets/img/website-page.jpg)
+![A screenshot of a browser showing the new page with the hello world phrase](/assets/img/new-website-page.jpg)
 
 Let’s have a look at this `index.yml` file again.
 
@@ -100,6 +100,8 @@ main:
 ```
 
 Your browser should refresh automatically and you see the new content.
+
+![A screenshot of a browser showing the new page with the new content](/assets/img/website-page.jpg)
 
 If you compare this page to the homepage at `/` you’ll see that it’s missing it’s header and footer. We can fix that the same way we added the body partial.
 Edit your `page1/index.yml` so that it looks like the code below:
