@@ -48,7 +48,7 @@ See below an example `package.json` with some npm scripts.
     "docs": "cuttlebelle docs",
     "build:site": "cuttlebelle",
     "build:sass": "node-sass --output-style compressed -o assets/css sass/style.scss",
-    "build:js": "uglifyjs js/script.js --compres --output assets/js/script.js",
+    "build:js": "uglifyjs js/script.js --compress --output assets/js/script.js",
     "build": "npm run build:sass && npm run build:js && npm run build:site",
     "watch:sass": "onchange 'sass/**/*.scss' -- npm run build:sass",
     "watch:js": "onchange 'js/**/*.js' -- npm run build:js",
