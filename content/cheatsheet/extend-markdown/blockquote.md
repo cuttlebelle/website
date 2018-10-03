@@ -7,6 +7,6 @@ The `blockquote` default function.
 
 ```js
 Marked.blockquote = ( quote ) => {
-  return `<blockquote>\n${ + quote + }</blockquote>\n`;
+  return `<blockquote>\n${ quote }</blockquote>\n`;
 }
 ```
