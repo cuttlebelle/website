@@ -9,7 +9,7 @@ When a developer creates a new layout, that layout has to make its way to the co
 This is where documentation comes in. Cuttlebelle actually automates this process for you as a build artifact. All developers have to do is add
 [`PropTypes`](https://reactjs.org/docs/typechecking-with-proptypes.html) and provide example YAML in a comment for each.
 
-This [site comes with it’s own documentation](https://cuttlebelle.github.io/website/) yo can check out.
+This [site comes with its own documentation](https://cuttlebelle.github.io/website/) you can check out.
 
 Let’s have a look at an example documentation that describes each layout for this very site:
 
