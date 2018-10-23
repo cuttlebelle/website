@@ -34,4 +34,4 @@ export default Test;
 ```
 
 Everything that applies to [JSX](https://facebook.github.io/jsx/) will apply to your layouts here to so make sure you pay attention to the console
-and it’s warnings.
+and its warnings.
