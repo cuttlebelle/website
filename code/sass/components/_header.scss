@@ -1,5 +1,6 @@
 .header {
 	position: relative;
+	top: 3.3em;
 	display: block;
 	height: 45rem;
 	background-color: $color-Hero-Background-light;
@@ -89,9 +90,9 @@
 
 .header__rocks--right {
 	right: -25rem;
-	top: 0;
+	top: -2px;
 	width: auto;
-	height: 45rem;
+	height: 45.5rem;
 
 	@media screen and ( min-width: 500px ) {
 		right: -18rem;
