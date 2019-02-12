@@ -10,6 +10,7 @@ cheats:
   - layout/_store.md
   - layout/_pages.md
   - layout/_nav.md
+  - layout/_globalProp.md
   - layout/_parseMD.md
   - layout/_parseYaml.md
   - layout/_relativeURL.md

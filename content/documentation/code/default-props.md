@@ -14,6 +14,7 @@ All default props begin with an underscore `_` to avoid overwriting possible use
 | `_body`        | The body of your markdown file (empty for `index.yml` files)
 | `_pages`       | An object of all pages and their props; with ID as key
 | `_nav`         | A nested object of your site structure
+| `_globalProp`  | A prop that can be set globally from the `package.json`
 | `_storeSet`    | You can set data to persist between react components by setting them with this helper
 | `_store`       | To get that data just call this prop function
 | `_relativeURL` | A helper function to make an absolute URL relative
@@ -249,6 +250,52 @@ You can use those IDs to look more data up via the `_pages` prop.
 Object.keys( _nav ).map( ( page, i ) => (
   console.log( _pages[ page ]._url );
 ));
+```
+
+---
+
+### `_globalProp`
+
+You can set a global prop for your website. This will then be passed into this object.
+This can be good to control different builds for `dev` and `prod` environments etc.
+Inside your `package.json` file you would register it via:
+
+```diff
+{
+  "name": "your name",
+  "version": "1.0.0",
+  "description": "Your description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
++ "cuttlebelle": {
++   "site": {
++     "globalProp": "dev"
++   }
++ },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+And inside any of your components:
+
+```js
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+
+/**
+ * A test component
+ */
+const Test = ({ _globalProp }) => (
+  <Fragment>
+    Environment: { _globalProp }
+  </Fragment>
+);
+
+export default Test;
 ```
 
 ---
