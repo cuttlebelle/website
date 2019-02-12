@@ -15,6 +15,8 @@ cheats:
   - settings/site-redirectreact.md
   - settings/site-markdownrenderer.md
   - settings/site-watchtimeout.md
+  - settings/site-browserSync.md
+  - settings/site-globalProp.md
   - settings/docs-root.md
   - settings/docs-index.md
   - settings/docs-category.md

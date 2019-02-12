@@ -1,4 +1,4 @@
-.code {
+.code:not(.keyword) {
 	display: block;
 	padding: 1.25rem;
 	background-color: $color-Text;

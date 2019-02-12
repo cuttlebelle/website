@@ -32,6 +32,9 @@ Cuttlebelle comes with some default settings you can find below:
                                   // before we go into the markdown parsing
     "watchTimeout": 400           // This is the time in milliseconds the watch waits
                                   // to detect a double saves action
+    "browserSync": {}             // You can overwrite the browserSync options here
+                                  // https://www.browsersync.io/docs/options
+    "globalProp": {}              // A global prop that can be set here accessible for all pages
   },
   "docs": {                                          // Docs settings
     "root": "files/",                                // What is the root folder called where all

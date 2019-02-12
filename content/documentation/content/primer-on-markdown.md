@@ -3,7 +3,7 @@ layout: docs/content
 ---
 
 Markdown is a way to write content for the web. It’s written in what nerds like to call "plaintext", which is exactly the sort of text you’re used to writing
-and seeing. Plaintext is just the regular alphabet, with a few familiar symbols, like asterisks `*` and backticks `` `.
+and seeing. Plaintext is just the regular alphabet, with a few familiar symbols, like asterisks `*` and backticks ```.
 
 Unlike cumbersome word processing applications, text written in Markdown can be easily shared between computers, mobile phones, and people. It’s quickly
 becoming the writing standard for academics, scientists, writers, and many more. Websites like [GitHub](https://github.com/) and

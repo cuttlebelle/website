@@ -15,6 +15,7 @@ module.exports = exports = function renderer({
   _storeSet,   // The store setter
   _store,      // The store getter
   _nav,        // A nested object of your site structure
+  _globalProp, // A prop that can be set globally from the `package.json`
   _relativeURL // A helper function to make an absolute URL relative
 }) {
 
