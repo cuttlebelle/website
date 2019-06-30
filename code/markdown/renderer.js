@@ -67,5 +67,14 @@ module.exports = exports = function renderer({ Marked, _ID, _relativeURL }) {
 			.replace(/\.\.\./g, '<span class="markdown-ellipsis">&hellip;</span>');
 	};
 
+	Marked.paragraph = ( text ) => {
+		if( text.startsWith('💡') ) {
+			return `<p class="markdown-hint">${ text }</p>\n`;
+		}
+		else {
+			return `<p>${ text }</p>\n`;
+		}
+	}
+
 	return Marked;
 };

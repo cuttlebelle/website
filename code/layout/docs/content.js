@@ -14,7 +14,7 @@ const Content = ({ _ID, _body, _self }) => {
 			<article id={ section } className="content">
 				<a href={`#${ section }`} className="content__link">#</a>
 				<a href={`https://github.com/cuttlebelle/website/blob/master/content/${ _self }`} className="content__edit-this-page">
-					Edit this partial
+					✐ Edit this partial
 				</a>
 				<h2>{ SentenceCase( section.replace( /-/g, ' ' ) ) }</h2>
 
@@ -26,7 +26,7 @@ const Content = ({ _ID, _body, _self }) => {
 
 Content.propTypes = {
 	/**
-	 * _body: (partials)(4)
+	 * _body: (text)(6)
 	 */
 	_body: PropTypes.node.isRequired,
 };

@@ -30,7 +30,6 @@ cheats:
   - extend-markdown/headlines-with-classes.md
 ---
 
-You can extend the [built-in markdown parser](https://github.com/chjj/marked#renderer) by defining a `markdownRenderer` file inside your `site`
-settings.
+You can extend the [built-in markdown parser](https://marked.js.org/#/USING_PRO.md#renderer) by defining a `markdownRenderer` file inside your `site` settings.
 
 Read more about how to set this up in the settings section.

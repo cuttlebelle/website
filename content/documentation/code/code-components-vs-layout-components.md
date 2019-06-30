@@ -3,7 +3,7 @@ layout: docs/content
 ---
 
 The difference of components that are just being used for it’s functionality but are not exposed as a layout is slim. You can put essentially anything inside
-the `code/` folder. But layout components, those that can be references as `layout: x` must have a default export.
+the `code/` folder. But layout components, those that can be references as `layout: x` **must have a default export**.
 
 See below for an example of a code component being used inside a layout component.
 
