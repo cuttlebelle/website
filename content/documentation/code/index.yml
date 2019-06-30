@@ -14,6 +14,7 @@ docs:
   - the-assets-folder.md
   - relative-links.md
   - the-difference-between-page-and-partial-layouts.md
+  - async-operations.md
   - enable-self-documentation.md
   - using-the-watch.md
   - change-the-settings.md

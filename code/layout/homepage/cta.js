@@ -56,7 +56,7 @@ Cta.propTypes = {
 	).isRequired,
 
 	/**
-	 * _body: (text)(2)
+	 * _body: (text)(1)
 	 */
 	_body: PropTypes.node.isRequired,
 };

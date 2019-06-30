@@ -19,6 +19,7 @@
 		"watch:js": "onchange 'code/js/**/*.js' -- npm run build:js",
 		"watch:site": "cuttlebelle -w -n",
 		"watch": "npm run build && npm run watch:sass | npm run watch:js | npm run watch:site",
+		"nuke": "rm -rf site && rm -rf docs && rm -rf node_modules && rm yarn.lock",
 		"test": "echo 'Error: no test specified' && exit 0"
 	},
 	"repository": "https://github.com/cuttlebelle/website",

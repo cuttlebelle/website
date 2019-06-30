@@ -2,6 +2,9 @@
 layout: cheats/section
 section: Layout
 cheats:
+  - layout/pureComponent.md
+  - layout/classComponent.md
+  - layout/getInitialProps.md
   - layout/_id.md
   - layout/_self.md
   - layout/_isDocs.md

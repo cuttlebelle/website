@@ -22,7 +22,7 @@ CheatItem.propTypes = {
 	headline: PropTypes.string.isRequired,
 
 	/**
-	 * _body: (partials)(2)
+	 * _body: (text)(5)
 	 */
 	_body: PropTypes.node.isRequired,
 };

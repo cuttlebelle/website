@@ -111,6 +111,7 @@
 
 .content__edit-this-page {
 	opacity: 0.5;
+	transition: opacity 0.3s ease;
 
 	&:hover {
 		opacity: 1;

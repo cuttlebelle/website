@@ -3,7 +3,8 @@ layout: docs/content
 ---
 
 Cuttlebelle comes with a [markdown](https://en.wikipedia.org/wiki/Markdown) engine.
-Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid HTML.
+Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid HTML. Read more about Markdown in our
+[Primer on Markdown](http://localhost:8080/documentation/content/#primer-on-markdown).
 
 Following the example above, let’s add a line below the text that highlights where this text came from.
 

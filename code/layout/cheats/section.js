@@ -21,7 +21,7 @@ Section.propTypes = {
 	section: PropTypes.string.isRequired,
 
 	/**
-	 * _body: Markdown is used to help ...
+	 * _body: (text)(1)
 	 */
 	_body: PropTypes.node.isRequired,
 
