@@ -50,7 +50,7 @@ Now running the watch command will open the browser for you and show you what yo
 cuttlebelle watch
 ```
 
-The address the server will listen on starts at http://localhost:8080/ and increase it’s port number depending on what ports are available on your machine.
+The address the server will listen on starts at http://localhost:8080/ and increase its port number depending on what ports are available on your machine.
 So the address you put in your browser could be http://localhost:8081/ or http://localhost:8085/ etc.
 
 ![A screenshot of a browser showing an almost empty star page that welcomes you to your new Cuttlebelle site](/assets/img/website.jpg)
