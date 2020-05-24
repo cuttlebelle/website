@@ -1,24 +1,18 @@
 ---
 layout: cheats/item
-headline: tablecell
+headline: tableCell
 ---
 
-The `tablecell` default function.
-
 ```js
-Marked.tablecell = ( content, flags ) => {
-  const type = flags.header ? 'th' : 'td';
-  const tag = flags.align
-    ? `<${ type } style="text-align:${ flags.align }">`
-    : `<${ type }>`;
+const visit = require( 'unist-util-visit' );
 
-  return `${ tag }${ content }</${ type }>\n`;
-}
-```
-The `flag` option can be:
-```js
-{
-  header: true || false,
-  align: 'center' || 'left' || 'right',
-}
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'tableCell', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

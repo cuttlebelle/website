@@ -44,11 +44,12 @@
 	],
 	"dependencies": {
 		"autoprefixer": "^9.7.6",
-		"cuttlebelle": "latest",
+		"cuttlebelle": "file:../cuttlebelle-sambauers",
 		"node-sass": "^4.14.0",
 		"postcss-cli": "^7.1.1",
 		"slugify": "^1.4.0",
-		"uglify-js": "^3.9.2"
+		"uglify-js": "^3.9.2",
+		"unist-util-visit": "^2.0.2"
 	},
 	"devDependencies": {
 		"concat-cli": "^4.0.0",
@@ -61,7 +62,11 @@
 		},
 		"site": {
 			"doctype": "<!DOCTYPE html><!--[if lt IE 8]><html class=\"no-js lt-ie8 lt-ie9\" lang=\"en\"><![endif]--><!--[if IE 8]><html class=\"no-js lt-ie9 ie8\" lang=\"en\"><![endif]--><!--[if IE 9 ]><html class=\"no-js ie9\" lang=\"en\"><![endif]--><!--[if !(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![endif]-->",
-			"markdownRenderer": "code/markdown/renderer.js"
+			"markdown": {
+				"plugins": [
+					"code/markdown/plugin.js"
+				]
+			}
 		}
 	}
 }

@@ -3,18 +3,19 @@ layout: cheats/item
 headline: link
 ---
 
-The `link` default function.
+The `link` node holds the `href` value in the `url` property.
 
 ```js
-Marked.link = ( href, title, text ) => {
-  let out = `<a href="${ href }"`;
+const visit = require( 'unist-util-visit' );
 
-  if( title ) {
-    out += ` title="${ title }"`;
-  }
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'link', node => {
+      // transform the node here
+      let href = node.url;
+    } );
+  };
 
-  out += `>${ text }</a>`;
-
-  return out;
-}
+  return transformer;
+};
 ```

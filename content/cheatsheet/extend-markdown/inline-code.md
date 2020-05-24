@@ -1,9 +1,7 @@
 ---
 layout: cheats/item
-headline: code
+headline: inline code
 ---
-
-Code in Remark can be either `inlineCode` (single back-ticks in markdown) or a block `code` (fenced with three back-ticks in markdown).
 
 ```js
 const visit = require( 'unist-util-visit' );
@@ -14,9 +12,9 @@ const attacher = () => {
       // transform the node here
     } );
 
-    visit( tree, 'code', node => {
-      // transform the node here
-      let language = node.lang;
+    // access to the parent node is possible as well
+    visit( tree, 'inlineCode', ( node, index, parent ) => {
+      // transform the node or parent here
     } );
   };
 

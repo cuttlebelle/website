@@ -16,13 +16,12 @@ cheats:
   - extend-markdown/tablecell.md
   - extend-markdown/strong.md
   - extend-markdown/em.md
-  - extend-markdown/codespan.md
+  - extend-markdown/inline-code.md
   - extend-markdown/br.md
   - extend-markdown/del.md
   - extend-markdown/link.md
   - extend-markdown/image.md
   - extend-markdown/text.md
-  - extend-markdown/preparse.md
   - extend-markdown/html-entities.md
   - extend-markdown/relative-links.md
   - extend-markdown/relative-image-urls.md
@@ -30,6 +29,6 @@ cheats:
   - extend-markdown/headlines-with-classes.md
 ---
 
-You can extend the [built-in markdown parser](https://marked.js.org/#/USING_PRO.md#renderer) by defining a `markdownRenderer` file inside your `site` settings.
+You can extend the [built-in markdown parser](https://remark.js.org) by defining an array of files at `markdown.plugins` inside your `site` settings.
 
 Read more about how to set this up in the settings section.

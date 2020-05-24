@@ -1,12 +1,18 @@
 ---
 layout: cheats/item
-headline: tablerow
+headline: tableRow
 ---
 
-The `tablerow` default function.
-
 ```js
-Marked.tablerow = ( content ) => {
-  return `<tr>\n${ content }</tr>\n`;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'tableRow', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

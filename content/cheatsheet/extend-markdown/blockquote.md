@@ -3,10 +3,18 @@ layout: cheats/item
 headline: blockquote
 ---
 
-The `blockquote` default function.
+A `blockquote` node will usually contain children with type `paragraph`.
 
 ```js
-Marked.blockquote = ( quote ) => {
-  return `<blockquote>\n${ quote }</blockquote>\n`;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'blockquote', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

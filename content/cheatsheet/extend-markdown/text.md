@@ -3,10 +3,18 @@ layout: cheats/item
 headline: text
 ---
 
-The `text` default function.
+`text` nodes are where your content is. It would be strange to find any children attached to a `text` node.
 
 ```js
-Marked.text = ( text ) => {
-  return text;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'text', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

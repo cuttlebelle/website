@@ -7,33 +7,57 @@ Sometimes you want to split the semantic value and the look of a headline. The b
 `# [2]headline` which will render `<h1 class="display-2">headline</h1>` or `# [3]headline` which will render `<h1 class="display-3">headline</h1>`.
 
 ```js
-module.exports = exports = function renderer({ Marked }) {
+const visit = require( 'unist-util-visit' );
 
-  const headingLevels = {
-    1: 'display-1',
-    2: 'display-2',
-    3: 'display-3',
-    4: 'display-4',
-    5: 'display-5',
-    6: 'display-6',
-  };
+const attacher = () => {
+  const transformer = ( tree, _file ) => {
+    const headingLevels = {
+      1: 'display-1',
+      2: 'display-2',
+      3: 'display-3',
+      4: 'display-4',
+      5: 'display-5',
+      6: 'display-6',
+    };
 
-  Marked.heading = ( text, level ) => {
-    let display;
+    // Set all headings one way first
+    visit( tree, 'heading', node => {
+      let newClass = Object.keys( headingLevels ).reverse()[ node.depth ];
 
-    if( text.startsWith('[') ) {
-      const displayText = text.split(']');
-      display = displayText[ 0 ].substring( 1 );
+      if( newClass ) {
+        let data = node.data || ( node.data = {} );
+        let hProperties = data.hProperties || ( data.hProperties = {} );
+        node.data.hProperties.class = headingLevels[ newClass ];
+      }
+    } );
 
-      text = displayText.splice( 1 ).join(']');
-    }
-    else {
-      display = Object.keys( headingLevels ).reverse()[ level ];
-    }
+    // Then selectively change them where required
+    visit( tree, 'linkReference', ( node, _index, parent ) => {
+      if( !parent.type || parent.type !== 'heading' ) {
+        return;
+      }
 
-    return `<h${ level }${ headingLevels[ display ] ? ` class="${ headingLevels[ display ] }"` : `` }>${ text }</h${ level }>`;
-  };
+      if( node !== parent.children[0] ) {
+        return;
+      }
 
-  return Marked;
+      if( !node.label || ! /[0-9]+/.test( node.label ) ) {
+        return;
+      }
+
+      let data = parent.data || ( parent.data = {} );
+      let hProperties = data.hProperties || ( data.hProperties = {} );
+
+      let newClass = headingLevels[ node.label ];
+      if( newClass ) {
+        parent.data.hProperties.class = newClass;
+        parent.children.shift();
+      }
+    } );
+  }
+
+  return transformer;
 };
+
+module.exports = attacher;
 ```

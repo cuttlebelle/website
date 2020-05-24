@@ -153,19 +153,29 @@ So is this
 ```
 
 ```js
-module.exports = exports = function renderer({ Marked }) {
+const visit = require( 'unist-util-visit' );
 
-&nbsp; Marked.preparse = ( markdown ) =&gt; {
-&nbsp;   return markdown
-&nbsp;     .replace(/\™/g, &#39;&lt;span class=&quot;markdown-trademark&quot;&gt;&amp;trade;&lt;/span&gt;&#39;)
-&nbsp;     .replace(/\’/g, &#39;&lt;span class=&quot;markdown-quote&quot;&gt;&amp;rsquo;&lt;/span&gt;&#39;)
-&nbsp;     .replace(/\—/g, &#39;&lt;span class=&quot;markdown-mdash&quot;&gt;&amp;mdash;&lt;/span&gt;&#39;)
-&nbsp;     .replace(/\–/g, &#39;&lt;span class=&quot;markdown-ndash&quot;&gt;&amp;ndash;&lt;/span&gt;&#39;)
-&nbsp;     .replace(/\.\.\./g, &#39;&lt;span class=&quot;markdown-ellipsis&quot;&gt;&amp;hellip;&lt;/span&gt;&#39;);
+const attacher = ({
+&nbsp; _ID = null,          // The ID of the current page
+&nbsp; _relativeURL = null, // A helper function to make an absolute URL relative
+} = {}) => {
+&nbsp; const transformer = ( tree, file ) => {
+&nbsp;   visit( tree, 'link', node => {
+&nbsp;     if( node.url.startsWith('http://') || node.url.startsWith('https://') ) {
+&nbsp;       let data = node.data || ( node.data = {} );
+&nbsp;       let hProperties = data.hProperties || ( data.hProperties = {} );
+&nbsp;       node.data.hProperties.rel = 'external';
+&nbsp;     }
+&nbsp;     else if( !node.url.startsWith('#') && _relativeURL && typeof _relativeURL === 'function' ) {
+&nbsp;       node.url = _relativeURL( node.url, _ID );
+&nbsp;     }
+&nbsp;   } );
 &nbsp; };
 
-&nbsp; return Marked;
+&nbsp; return transformer;
 };
+
+module.exports = attacher;
 ```
 </code></pre>
 

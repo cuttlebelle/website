@@ -2,8 +2,7 @@
 layout: docs/content
 ---
 
-You may find yourself in need to extend the [built in markdown parser](https://github.com/chjj/marked). You may just want to add a class or you may want to add
-more complex logic. No matter what your requirements are, we got you covered.
+You may find yourself in need to extend the [built in markdown parser](https://github.com/remarkjs/remark). You may just want to add a class or you may want to add more complex logic. No matter what your requirements are, we got you covered.
 
 To extend markdown you will have to create a javascript file and add the path to that file into your settings object inside your `package.json`.
 
@@ -18,7 +17,11 @@ To extend markdown you will have to create a javascript file and add the path to
   },
 + "cuttlebelle": {
 +   "site": {
-+     "markdownRenderer": "yourextension.js"
++     "markdown": {
++       "plugins": [
++         "yourplugin.js"
++       ]
++     }
 +   }
 + },
   "keywords": [],
@@ -27,72 +30,80 @@ To extend markdown you will have to create a javascript file and add the path to
 }
 ```
 
-Inside `yourextension.js` file make sure you export a function called `renderer` and return the passed in `Marked` object.
+Inside `yourplugin.js` file make sure you export an "attacher" function, it can be called anything you like, but must itself return a "transformer" function which contains your transformations.
 See the boilerplate below:
 
 ```js
-module.exports = exports = function renderer({ Marked }) {
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    // this is where you add your markdown transformations
+  };
 
-  // this is where you add your markdown extension
-
-  return Marked;
+  return transformer;
 };
+
+module.exports = attacher;
 ```
 
 Cuttlebelle actually passes a bunch of props to you that you may find helpful. You can
 [destruct](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) them inside your `renderer` function.
 
 ```js
-module.exports = exports = function renderer({
-  Marked,      // The Marked instance you want to extend
-  _ID,         // The ID of the current page
-  _parents,    // An array of all parent pages IDs
-  _storeSet,   // The store setter
-  _store,      // The store getter
-  _nav,        // A nested object of your site structure
-  _globalProp, // A prop that can be set globally from the `package.json`
-  _relativeURL // A helper function to make an absolute URL relative
-}) {
-
-  // this is where you add your markdown extension
-
-  return Marked;
-};
-```
-
-Now add one or more of the methods you want to overwrite. See a complete list in our [cheat-sheet](/cheatsheet/).
-
-```js
-module.exports = exports = function renderer({
-  Marked,
-  _ID,
-  _parents,
-  _storeSet,
-  _store,
-  _nav,
-  _globalProp,
-  _relativeURL
-}) {
-
-  // adding a class
-  Marked.hr = () => {
-    return `<hr class="my-custom-class">\n`;
-  }
-
-  // making all links relative
-  Marked.link = ( href, title, text ) => {
-    if(
-      !href.startsWith('http://') &&
-      !href.startsWith('https://') &&
-      !href.startsWith('#') &&
-      typeof _relativeURL === 'function'
-    ) {
-      href = _relativeURL( href, _ID );
-    }
-
-    return `<a href="${ href }"${ title ? ` title="${ title }"` : '' }>${ text }</a>`;
+const attacher = ({
+  _ID = null,          // The ID of the current page
+  _self = null,        // The relative path to the content file; can be md or yaml file
+  _isDocs = false,     // A boolean value, true in docs context only
+  _parents = null,     // An array of all parent pages IDs
+  _pages = null,       // An object of all pages and their props; with ID as key
+  _storeSet = null,    // The store setter
+  _store = null,       // The store getter
+  _nav = null,         // A nested object of your site structure
+  _relativeURL = null, // A helper function to make an absolute URL relative
+  _parseYaml = null,   // The YAML parsing function
+  _parseReact = null,  // A function that parses React to static markup
+  _globalProp = null   // A prop that can be set globally from the `package.json`
+} = {}) => {
+  const transformer = ( tree, file ) => {
+    // this is where you add your markdown transformations
   };
 
-  return Marked;
+  return transformer;
+};
+
+module.exports = attacher;
+```
+
+Now add one or more markdown transformations. See a complete list of node types in our [cheat-sheet](/cheatsheet/).
+
+```js
+const visit = require( 'unist-util-visit' );
+
+const attacher = ({
+  _ID = null,
+  _relativeURL = null
+} = {}) => {
+  const transformer = ( tree, file ) => {
+    // Add a class to all <hr> elements
+    visit( tree, 'thematicBreak', node => {
+      let data = node.data || ( node.data = {} );
+      let hProperties = data.hProperties || ( data.hProperties = {} );
+      node.data.hProperties.class = 'my-custom-class';
+    } );
+
+    // Make all links relative
+    visit( tree, 'link', node => {
+      if(
+        !node.url.startsWith('http://') &&
+        !node.url.startsWith('https://') &&
+        !node.url.startsWith('#') &&
+        _relativeURL &&
+        typeof _relativeURL === 'function'
+      ) {
+        node.url = _relativeURL( node.url, _ID );
+      }
+    } );
+  };
+
+  return transformer;
 };
 ```

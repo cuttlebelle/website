@@ -3,10 +3,16 @@ layout: cheats/item
 headline: html
 ---
 
-The `html` default function.
-
 ```js
-Marked.html = ( html ) => {
-  return html;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'html', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

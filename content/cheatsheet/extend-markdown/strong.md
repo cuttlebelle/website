@@ -3,10 +3,16 @@ layout: cheats/item
 headline: strong
 ---
 
-The `strong` default function.
-
 ```js
-Marked.strong = ( text ) => {
-  return `<strong>${ text }</strong>`;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'strong', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

@@ -12,9 +12,9 @@ Cuttlebelle documentation website
 
 ```shell
 cd path/to/this/repo
-npm install
-npm run build
-npm run docs
+yarn install
+yarn run build
+yarn run docs
 ```
 
 The `build` command will build the site from source. The `docs` command will build the site automatic documentation of each layout.
@@ -24,7 +24,7 @@ You can have a look at [the docs files](https://cuttlebelle.github.io/website/).
 
 ```shell
 cd path/to/this/repo
-npm run watch
+yarn run watch
 ```
 
 This command will build the site and open a server for you and a website should open in your browser. Changes are automatically watched now.

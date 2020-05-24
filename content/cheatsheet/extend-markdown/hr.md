@@ -1,12 +1,20 @@
 ---
 layout: cheats/item
-headline: hr
+headline: hr (thematicBreak)
 ---
 
-The `hr` default function.
+An `hr` tag in Remark is called a `thematicBreak`.
 
 ```js
-Marked.hr = () => {
-  return `<hr>\n`;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'thematicBreak', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

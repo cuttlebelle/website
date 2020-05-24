@@ -1,12 +1,20 @@
 ---
 layout: cheats/item
-headline: listitem
+headline: listItem
 ---
 
-The `listitem` default function.
+The `listItem` node will usually have a `list` as the parent.
 
 ```js
-Marked.listitem = ( text ) => {
-  return `<li>${ text }</li>\n`;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'listItem', ( node, index, parent ) => {
+      // transform the node or parent here
+    } );
+  };
+
+  return transformer;
+};
 ```

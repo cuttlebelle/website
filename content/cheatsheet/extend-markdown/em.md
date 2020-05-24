@@ -1,12 +1,18 @@
 ---
 layout: cheats/item
-headline: em
+headline: em (emphasis)
 ---
 
-The `em` default function.
-
 ```js
-Marked.em = ( text ) => {
-  return `<em>${ text }</em>`;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'emphasis', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

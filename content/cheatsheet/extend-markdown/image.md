@@ -3,18 +3,19 @@ layout: cheats/item
 headline: image
 ---
 
-The `image` default function.
+The `image` node holds the `src` value in the `url` property.
 
 ```js
-Marked.image = ( href, title, text ) => {
-  let out = `<img src="${ href }" alt="${ text }"`;
+const visit = require( 'unist-util-visit' );
 
-  if( title ) {
-    out += ` title="${ title }"`;
-  }
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'image', node => {
+      // transform the node here
+      let src = node.url;
+    } );
+  };
 
-  out += '>';
-
-  return out;
-}
+  return transformer;
+};
 ```

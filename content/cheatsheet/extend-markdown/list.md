@@ -3,12 +3,18 @@ layout: cheats/item
 headline: list
 ---
 
-The `list` default function.
+A `list` node will usually contain children with type `listItem`.
 
 ```js
-Marked.list = ( body, ordered ) => {
-  const type = ordered ? 'ol' : 'ul';
+const visit = require( 'unist-util-visit' );
 
-  return `<${ type }>\n${ body }</${ type }>\n`;
-}
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'list', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

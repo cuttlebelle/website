@@ -1,12 +1,18 @@
 ---
 layout: cheats/item
-headline: del
+headline: del (delete)
 ---
 
-The `del` default function.
-
 ```js
-Marked.del = ( text ) => {
-  return `<del>${ text }</del>`;
-}
+const visit = require( 'unist-util-visit' );
+
+const attacher = () => {
+  const transformer = ( tree, file ) => {
+    visit( tree, 'delete', node => {
+      // transform the node here
+    } );
+  };
+
+  return transformer;
+};
 ```

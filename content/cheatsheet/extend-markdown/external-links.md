@@ -6,17 +6,21 @@ headline: External links
 The script below will add `rel="external"` to external links.
 
 ```js
-module.exports = exports = function renderer({ Marked }) {
+const visit = require( 'unist-util-visit' );
 
-  Marked.link = ( href, title, text ) => {
-    let attr = '';
-    if( href.startsWith('http://') || href.startsWith('https://') ) {
-      attr = ` `rel="external"``;
-    }
-
-    return `<a href="${ href }"${ title ? ` title="${ title }"` : '' }${ attr }>${ text }</a>`;
+const attacher = () => {
+  const transformer = ( tree ) => {
+    visit( tree, 'link', node => {
+      if( node.url.startsWith('http://') || node.url.startsWith('https://') ) {
+        let data = node.data || ( node.data = {} );
+        let hProperties = data.hProperties || ( data.hProperties = {} );
+        node.data.hProperties.rel = 'external';
+      }
+    } );
   };
 
-  return Marked;
+  return transformer;
 };
+
+module.exports = attacher;
 ```
