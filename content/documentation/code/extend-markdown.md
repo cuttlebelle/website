@@ -4,7 +4,9 @@ layout: docs/content
 
 You may find yourself in need to extend the [built in markdown parser](https://github.com/remarkjs/remark). You may just want to add a class or you may want to add more complex logic. No matter what your requirements are, we got you covered.
 
-To extend markdown you will have to create a javascript file and add the path to that file into your settings object inside your `package.json`.
+You can either install an existing Remark plugin from NPM or create your own.
+
+Either way, to extend markdown you will have to add the path to that plugin into your settings object inside your `package.json`.
 
 ```diff
 {
@@ -19,7 +21,8 @@ To extend markdown you will have to create a javascript file and add the path to
 +   "site": {
 +     "markdown": {
 +       "plugins": [
-+         "yourplugin.js"
++         "node_modules/remark-plugin-from-npm"
++         "code/markdown/your-plugin.js",
 +       ]
 +     }
 +   }
@@ -30,7 +33,91 @@ To extend markdown you will have to create a javascript file and add the path to
 }
 ```
 
-Inside `yourplugin.js` file make sure you export an "attacher" function, it can be called anything you like, but must itself return a "transformer" function which contains your transformations.
+### Installing an existing Remark plugin from NPM
+
+Add the Remark plugin you want to install via `npm`. The example we are using here is [`remark-toc`](https://github.com/remarkjs/remark-toc).
+
+```shell
+npm install --save-dev remark-toc
+```
+
+#### Adding a Remark plugin from NPM without options
+
+If you don't need to set any options on the plugin that you have installed from NPM, then all you have to do is add the plugin to your `package.json`, similar to the above. You must specify the path it was installed to relative to the root of your project directory, usually this is `node_modules/…`.
+
+```diff
+{
+  "name": "your name",
+  "version": "1.0.0",
+  "description": "Your description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
++ "cuttlebelle": {
++   "site": {
++     "markdown": {
++       "plugins": [
++         "node_modules/remark-toc"
++       ]
++     }
++   }
++ },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+If Cuttlebelle has problems finding the plugin, you may need to specify the path to the main file of the plugin, like `node_modules/remark-toc/index.js`, but this is usually not necessary.
+
+#### Specifying options for the Remark plugin from NPM
+
+Many Remark plugins allow you to set options. To do this you will need to create a file that will pass those options along to Cuttlebelle, along with the plugin.
+
+Again, we will use the `remark-toc` plugin as an example. First, install the plugin using `npm` as usual. Then we will create a new javascript file in `code/markdown/remark-toc-with-options.js`. This file will export an array. The first item in the array will be the plugin function, and the second will be an object containing the plugin options.
+
+```js
+const toc = require('remark-toc');
+
+module.exports = [
+  toc, // this is plugin function
+  {
+    maxDepth: 2,
+    tight: true
+  } // this is the object containing the plugin options
+];
+````
+
+Then we will add this file to your list of plugins in `package.json`. There is no need to also specify the `remark-toc` plugin location as it has been required within the file above.
+
+```diff
+{
+  "name": "your name",
+  "version": "1.0.0",
+  "description": "Your description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
++ "cuttlebelle": {
++   "site": {
++     "markdown": {
++       "plugins": [
++         "code/markdown/remark-toc-with-options.js"
++       ]
++     }
++   }
++ },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+### Creating your own custom plugin
+
+Inside a new `code/markdown/your-plugin.js` file make sure you export an "attacher" function, it can be called anything you like, but must itself return a "transformer" function which contains your transformations.
 See the boilerplate below:
 
 ```js
@@ -106,4 +193,30 @@ const attacher = ({
 
   return transformer;
 };
+```
+
+Finally, add this file to your list of plugins in `package.json`.
+
+```diff
+{
+  "name": "your name",
+  "version": "1.0.0",
+  "description": "Your description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
++ "cuttlebelle": {
++   "site": {
++     "markdown": {
++       "plugins": [
++         "code/markdown/your-plugin.js"
++       ]
++     }
++   }
++ },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
 ```
