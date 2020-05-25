@@ -117,7 +117,7 @@ Then we will add this file to your list of plugins in `package.json`. There is n
 
 ### Creating your own custom plugin
 
-Inside a new `code/markdown/your-plugin.js` file make sure you export an "attacher" function, it can be called anything you like, but must itself return a "transformer" function which contains your transformations.
+Inside a new `code/markdown/your-plugin.js` file make sure you export an `attacher` function, it can be called anything you like, but must itself return a `transformer` function which contains your transformations.
 See the boilerplate below:
 
 ```js
@@ -133,7 +133,7 @@ module.exports = attacher;
 ```
 
 Cuttlebelle actually passes a bunch of props to you that you may find helpful. You can
-[destruct](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) them inside your `renderer` function.
+[destruct](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) them inside your `attacher` function, making them available to any code it contains.
 
 ```js
 const attacher = ({
