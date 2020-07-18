@@ -11,7 +11,7 @@
 		"build:css": "npm run build:sass && npm run build:autoprefix",
 		"build:js-header": "concat-cli -f code/js/header/*.js -o code/assets/js/header.js",
 		"build:js-footer": "concat-cli -f code/js/footer/*.js -o code/assets/js/footer.js",
-		"build:uglify": "uglifyjs code/assets/js/header.js --compres --output code/assets/js/header.js && uglifyjs code/assets/js/footer.js --compres --output code/assets/js/footer.js",
+		"build:uglify": "uglifyjs code/assets/js/header.js --compress --output code/assets/js/header.js && uglifyjs code/assets/js/footer.js --compress --output code/assets/js/footer.js",
 		"build:js": "mkdir -p code/assets/js/ && npm run build:js-header && npm run build:js-footer && npm run build:uglify",
 		"build:assets": "npm run build:css && npm run build:js",
 		"build": "npm run build:assets && npm run build:site",
@@ -43,12 +43,12 @@
 		}
 	],
 	"dependencies": {
-		"autoprefixer": "^9.7.6",
+		"autoprefixer": "^9.8.5",
 		"cuttlebelle": "latest",
-		"node-sass": "^4.14.0",
+		"node-sass": "^4.14.1",
 		"postcss-cli": "^7.1.1",
-		"slugify": "^1.4.0",
-		"uglify-js": "^3.9.2"
+		"slugify": "^1.4.4",
+		"uglify-js": "^3.10.0"
 	},
 	"devDependencies": {
 		"concat-cli": "^4.0.0",
