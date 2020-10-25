@@ -43,16 +43,17 @@
 		}
 	],
 	"dependencies": {
-		"autoprefixer": "^9.8.5",
+		"autoprefixer": "^10.0.1",
 		"cuttlebelle": "latest",
 		"node-sass": "^4.14.1",
-		"postcss-cli": "^7.1.1",
-		"slugify": "^1.4.4",
-		"uglify-js": "^3.10.0"
+		"postcss-cli": "^8.1.0",
+		"slugify": "^1.4.5",
+		"uglify-js": "^3.11.3"
 	},
 	"devDependencies": {
 		"concat-cli": "^4.0.0",
-		"onchange": "^7.0.2"
+		"onchange": "^7.1.0",
+		"postcss": "^8.1.4"
 	},
 	"cuttlebelle": {
 		"folder": {
