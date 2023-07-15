@@ -45,14 +45,14 @@
 	"dependencies": {
 		"autoprefixer": "^10",
 		"cuttlebelle": "latest",
-		"node-sass": "^7.0.1",
-		"postcss-cli": "^8.3.1",
-		"slugify": "^1.6.5",
+		"node-sass": "^7",
+		"postcss-cli": "^8",
+		"slugify": "^1",
 		"uglify-js": "^3"
 	},
 	"devDependencies": {
-		"concat-cli": "^4.0.0",
-		"onchange": "^7.1.0",
+		"concat-cli": "^4",
+		"onchange": "^7",
 		"postcss": "^8"
 	},
 	"cuttlebelle": {
